@@ -20,7 +20,7 @@
     "jsx": "preserve",
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "types": ["jest"],
+    "types": ["jest", "node"],
   },
   "exclude": [
     "dist",
