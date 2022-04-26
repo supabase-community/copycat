@@ -1,4 +1,4 @@
-import { yo } from "./example";
+import { yo } from './example'
 
 describe('x', () => {
   test('y', () => {

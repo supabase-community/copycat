@@ -10,6 +10,11 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
+    "eslint": "8.14.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "@typescript-eslint/eslint-plugin": "5.21.0",
+    "@typescript-eslint/parser": "5.21.0",
     "prettier": "2.6.2",
     "@types/jest": "27.4.1",
     "esbuild": "0.14.38",
