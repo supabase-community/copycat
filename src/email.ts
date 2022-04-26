@@ -11,10 +11,10 @@ const maker = join('', [
   lastName,
   int.options({
     min: 2,
-    max: 999
+    max: 999,
   }),
   '@',
-  oneOf(faker.locales.en!.internet!.free_email!)
+  oneOf(faker.locales.en!.internet!.free_email!),
 ])
 
 export const email = (input: Input): string => maker(input)
