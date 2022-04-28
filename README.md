@@ -61,11 +61,20 @@ copycat.fullName('foo')
 // => 'Liana Howell'
 ```
 
-### `username(input)
+### `username(input)`
 
 Takes in an [input](#input) and returns a string value resembling a username.
 
 ```js
 copycat.username('foo')
 // => 'Liana_Hansen892'
+```
+
+### `uuid(input)`
+
+Takes in an [input](#input) and returns a string value resembling a [v4 uuid](https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_(random)).
+
+```js
+copycat.uuid('foo')
+// => '7f943302-0cd6-4d22-8922-92f792ca8726'
 ```
