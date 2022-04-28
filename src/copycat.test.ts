@@ -84,6 +84,18 @@ test('generated values', () => {
         "Baumbach",
         "Wilderman",
       ],
+      "username": Array [
+        "Jensen.Lockman206",
+        "Missouri.White362",
+        "Johann_Sanford877",
+        "Mireille.Grant458",
+        "Cullen.Jast48",
+        "Leopold_McCullough876",
+        "Cassandre_Kreiger661",
+        "Baron.Huel275",
+        "Vita.Schumm431",
+        "Delores.Halvorson314",
+      ],
     }
   `)
 })
