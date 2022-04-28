@@ -61,7 +61,7 @@ copycat.fullName('foo')
 // => 'Liana Howell'
 ```
 
-### `username(input)
+### `username(input)`
 
 Takes in an [input](#input) and returns a string value resembling a username.
 
