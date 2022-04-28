@@ -72,9 +72,9 @@ copycat.username('foo')
 
 ### `uuid(input)`
 
-Takes in an [input](#input) and returns a string value resembling a [v4 uuid](https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_(random)).
+Takes in an [input](#input) and returns a string value resembling a [uuid](https://en.wikipedia.org/wiki/Universally_unique_identifier).
 
 ```js
 copycat.uuid('foo')
-// => '7f943302-0cd6-4d22-8922-92f792ca8726'
+// => 'f6947007-0ac8-5e7a-aafd-ff12510e5639'
 ```
