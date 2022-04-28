@@ -17,25 +17,6 @@ test('determinism', () => {
   Object.keys(copycat).forEach(check)
 })
 
-test('readme values', () => {
-  const results = {}
-
-  const addResult = (name: string) => {
-    results[name] = copycat[name]('foo')
-  }
-
-  Object.keys(copycat).forEach(addResult)
-
-  expect(results).toMatchInlineSnapshot(`
-    Object {
-      "email": "Liana_Hansen892@hotmail.com",
-      "firstName": "Nasir",
-      "fullName": "Liana Howell",
-      "lastName": "Langosh",
-    }
-  `)
-})
-
 test('generated values', () => {
   const count = 10
   const results = {}
