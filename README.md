@@ -60,3 +60,12 @@ Takes in an [input](#input) and returns a string value resembling a full name.
 copycat.fullName('foo')
 // => 'Liana Howell'
 ```
+
+### `username(input)
+
+Takes in an [input](#input) and returns a string value resembling a username.
+
+```js
+copycat.username('foo')
+// => 'Liana_Hansen892'
+```
