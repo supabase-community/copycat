@@ -96,6 +96,18 @@ test('generated values', () => {
         "Vita.Schumm431",
         "Delores.Halvorson314",
       ],
+      "uuid": Array [
+        "a03b2dc0-c558-5326-8387-39da696f3694",
+        "b5cbcff3-d6dd-5185-8b85-3480cad07fc5",
+        "69cd4963-993c-5271-bc7c-e2ede8492e29",
+        "9dbc28ca-10b3-5bf0-9465-30a0b2569dc2",
+        "1c042e55-2396-5612-b143-d9dd5e189c32",
+        "4279d38f-5d1c-51af-b2f2-62c4109e8301",
+        "695fa4eb-4dce-532d-b2f3-1ffe0bc4abd1",
+        "7a64f12b-60d9-546f-ad4e-74311599313c",
+        "24fddd8f-a7f4-56ee-a636-cdb9070d1abc",
+        "af7c1720-888e-50f5-935e-ee20326abe59",
+      ],
     }
   `)
 })
