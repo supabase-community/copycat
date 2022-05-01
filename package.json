@@ -31,7 +31,7 @@
   },
   "scripts": {
     "build": "yarn build:js && yarn build:types",
-    "build:js": "esbuild src/**.ts --platform=node --target=node14 --outdir=dist",
+    "build:js": "esbuild src/**.ts --platform=node --target=node14 --outdir=dist --format=cjs",
     "build:types": "tsc --build --verbose",
     "test": "jest src"
   }
