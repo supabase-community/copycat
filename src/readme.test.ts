@@ -1,7 +1,7 @@
 import { readFile } from 'fs/promises'
 import path from 'path'
 import { inspect } from 'util'
-import { copycat } from '.'
+import { TRANSFORMATIONS } from './testutils'
 
 expect.extend({
   toHaveUpToDateExamples(source, results: { [s: string]: unknown }) {
@@ -22,7 +22,7 @@ expect.extend({
       return {
         message: () =>
           [
-            'Expected the following API methods to have examples, but could not find them. Are they in the readme and up to date?',
+            'Expected the following API TRANSFORMATIONS to have examples, but could not find them. Are they in the readme and up to date?',
             ...missingResults.map(({ name, value }) => `* ${name}: ${value}`),
           ].join('\n'),
         pass: false,
@@ -44,9 +44,9 @@ test('readme examples are up to date', async () => {
   const results: { [name: string]: unknown } = {}
 
   const addResult = (name: string) => {
-    results[name] = copycat[name]('foo')
+    results[name] = TRANSFORMATIONS[name]('foo')
   }
 
-  Object.keys(copycat).forEach(addResult)
+  Object.keys(TRANSFORMATIONS).forEach(addResult)
   ;(expect(readmeSource) as any).toHaveUpToDateExamples(results)
 })
