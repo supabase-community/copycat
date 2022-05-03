@@ -78,3 +78,47 @@ Takes in an [input](#input) and returns a string value resembling a [uuid](https
 copycat.uuid('foo')
 // => '540b95dd-98a2-56fe-9c95-6e7123c148ca'
 ```
+
+### `city(input)`
+
+Takes in an [input](#input) and returns a string value representing a city.
+
+```js
+copycat.city('foo')
+// => 'Garland'
+```
+### `country(input)`
+
+Takes in an [input](#input) and returns a string value representing a country.
+
+```js
+copycat.country('foo')
+// => 'Bosnia and Herzegovina'
+```
+
+### `streetName`
+
+Takes in an [input](#input) and returns a string value representing a fictitious street name.
+
+```js
+copycat.streetName('foo')
+// => 'Courtney Orchard'
+```
+
+### `streetAddress`
+
+Takes in an [input](#input) and returns a string value representing a fictitious street address.
+
+```js
+copycat.streetAddress('foo')
+// => '757 Evie Vista'
+```
+
+### `postalAddress`
+
+Takes in an [input](#input) and returns a string value representing a fictitious postal address.
+
+```js
+copycat.postalAddress('foo')
+// => '178 Adaline Forge, Moreno Valley 8538, Haiti'
+```
