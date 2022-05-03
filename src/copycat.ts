@@ -1,3 +1,4 @@
+export * from './primitives'
 export * from './email'
 export * from './firstName'
 export * from './lastName'

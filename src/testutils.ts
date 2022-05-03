@@ -1,4 +1,15 @@
 import { Input } from './types'
+import { copycat } from '.'
+import { JSONSerializable } from 'fictional'
+
+export const TRANSFORMATIONS: {
+  [name: string]: (input: Input) => JSONSerializable
+} = {
+  ...copycat,
+  ...{
+    oneOf: (input: Input) => copycat.oneOf(input, ['red', 'green', 'blue']),
+  },
+}
 
 export const NUM_CHECKS = +(process.env.COPYCAT_NUM_CHECKS || 50)
 
