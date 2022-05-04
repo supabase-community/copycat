@@ -1,8 +1,51 @@
 # copycat
 
+```js
+import { copycat } from '@snaplet/copycat'
+
+copycat.email('foo')
+// => 'Zakary.Block356@gmail.com'
+```
+
 ## Motivation
 
-TODO
+### The problem
+Many of the use cases we aim on solving with [snaplet](https://snaplet.dev/) involve anonymizing sensitive information. In practice, this involves replacing each bit of sensitive data with something else that _resembles_ the original value, yet does not allow the original value to be inferred.
+
+To do this, we initially turned to [faker](https://fakerjs.dev/) for replacing the sensitive data with fake data. This approach took us quite far. However, we struggled with getting the replacement data to be _deterministic_: we found we
+did not have enough control over how results are generated to be able to easily ensure that for each value of the original data we wanted to replace, we'd always get the same replacement value out.
+
+Faker allows one to seed a psuedo-random number generator (PRNG), such that the same sequence of values will be generated every time. While this means the sequence is deterministic, the problem was we did not have enough control over where the next value in the sequence was going to be used. Changes to the contents or structure in the original data we're replacing and changes to how we are using faker both had an affect on the way we used this sequence, which in turn had an effect on the resulting replacement value for any particular value in the original data. In other words, we had determinism, but not in a way that is useful for our purposes.
+
+### The solution
+What we were really needing was not the same _sequence_ of generated values every time, but the same _mapping_ to generated values every time.
+
+This is exactly what we designed `copycat` to do. For each method provided by copycat, a given input value will always map to the same output value.
+
+```js
+import { copycat } from '@snaplet/copycat'
+
+copycat.email('foo')
+// => 'Zakary.Block356@gmail.com'
+
+copycat.email('bar')
+// => 'Thurman.Schowalter668@hotmail.com'
+
+copycat.email('foo')
+// => 'Zakary.Block356@gmail.com'
+```
+
+Copycat work statelessly: for the same input, the same value will be returned regardless of the environment, process, call ordering, or any other external factors.
+
+Under the hood, copycat hashes the input values (in part relying on [md5](https://en.wikipedia.org/wiki/MD5#Overview_of_security_issues)), with the intention of making it computationally infeasible for the input values to be inferred from the output values.
+
+### Alternative approaches
+
+It is still technically possible to make use of faker or similar libraries that offer deterministic PRNG - with some modification. That said, these solutions came with practical limitations that we decided made them less viable for us:
+* It is possible to simply seed the PRNG for every identifier, and then use it to generate only a single value. This seems to be a misuse of these libraries though: there is an up-front cost to seeding these PRNGs that can be expensive if done for each and every value to be generated. [Here are benchmarks](https://gist.github.com/justinvdm/eaae3a59c1a1790704db9674e1785afa) that point to this up-front cost.
+* You can generate a sequence of N values, hash identifiers to some integer smaller than N, then simply use that as an index to lookup a value in the sequence. This can even be done lazily. Still, you're now limiting the uniqueness of the values to N. The larger N is, the larger the cost of keeping these sequences in memory, or the more computationally expensive it is if you do not hold onto the sequences in memory. The smaller N is, the less unique your generated values are.
+
+Note though that for either of these approaches, hashing might also still be needed to make it infeasible for the inputs to be inferred from the outputs.
 
 ## API Reference
 ### Overview
@@ -16,7 +59,7 @@ copycat.email('foo')
 // => 'Zakary.Block356@gmail.com'
 ```
 
-The given input can be any JSON-serializable value. For any two calls to the same function, the input given in each call serializes down to the same value, the same output will be returned. Copycat work statelessly: for the same input, the same value will be returned regardless of the enviornment, process, call ordering, or any other external factors.
+The given input can be any JSON-serializable value. For any two calls to the same function, the input given in each call serializes down to the same value, the same output will be returned.
 
 Note that unlike `JSON.stringify()`, object property ordering is not considered.
 
