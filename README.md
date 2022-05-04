@@ -5,6 +5,12 @@ import { copycat } from '@snaplet/copycat'
 
 copycat.email('foo')
 // => 'Zakary.Block356@gmail.com'
+
+copycat.email('bar')
+// => 'Thurman.Schowalter668@hotmail.com'
+
+copycat.email('foo')
+// => 'Zakary.Block356@gmail.com'
 ```
 
 ## Motivation
