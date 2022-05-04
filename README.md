@@ -35,7 +35,7 @@ copycat.email('foo')
 
 Copycat work statelessly: for the same input, the same value will be returned regardless of the environment, process, call ordering, or any other external factors.
 
-Under the hood, copycat hashes the input values (in part relying on [md5](https://en.wikipedia.org/wiki/MD5#Overview_of_security_issues)), with the intention of making it computationally infeasible for the input values to be inferred from the output values.
+Under the hood, copycat hashes the input values (in part relying on [md5](https://en.wikipedia.org/wiki/MD5)), with the intention of making it computationally infeasible for the input values to be inferred from the output values.
 
 ### Alternative approaches
 
