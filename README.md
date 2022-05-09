@@ -273,3 +273,14 @@ Takes in an [`input`](#input) value and an array of `values`, and returns an ite
 oneOf('foo', ['red', 'green', 'blue'])
 // => 'red'
 ```
+
+### `password(input)`
+
+Takes in an [`input`](#input) value and returns a string value resembling a password.
+
+```js
+password('foo')
+// => 'uRkXX&u7^uvjX'
+```
+
+**Note:** not recommended for use as a personal password generator.
