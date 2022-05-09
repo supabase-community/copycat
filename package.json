@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "",
   "main": "dist/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/snaplet/copycat.git"
@@ -11,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "@faker-js/faker": "^6.2.0",
-    "fictional": "^0.4.12",
+    "fictional": "^0.4.13",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
