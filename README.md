@@ -75,7 +75,7 @@ A re-export of the exports of [`@faker-js/faker`](https://github.com/faker-js/fa
 
 ### `email(input)`
 
-Takes in an [input](#input) a string value resembling an email address.
+Takes in an [input](#input) and returns a string value resembling an email address.
 
 ```js
 copycat.email('foo')
