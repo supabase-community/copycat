@@ -312,3 +312,12 @@ Takes in an [`input`](#input) value and returns a string value resembling an [IP
 copycat.ipv4('foo')
 // => '166.164.23.159'
 ```
+
+### `mac(input)`
+
+Takes in an [`input`](#input) value and returns a string value resembling a [MAC](https://en.wikipedia.org/wiki/MAC_address) address.
+
+```js
+copycat.mac('foo')
+// => 'e1:2c:54:74:b7:80'
+```

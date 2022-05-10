@@ -2252,6 +2252,13 @@ is-glob@^4.0.0, is-glob@^4.0.1, is-glob@^4.0.3:
   dependencies:
     is-extglob "^2.1.1"
 
+is-mac-address@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/is-mac-address/-/is-mac-address-1.0.4.tgz#f6bfd337d760d16885671d32da02703078176c85"
+  integrity sha1-9r/TN9dg0WiFZx0y2gJwMHgXbIU=
+  dependencies:
+    node-ratify "~1.1.0"
+
 is-number@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/is-number/-/is-number-3.0.0.tgz#24fd6201a4782cf50561c810276afc7d12d71195"
@@ -3041,6 +3048,11 @@ node-int64@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/node-int64/-/node-int64-0.4.0.tgz#87a9065cdb355d3182d8f94ce11188b825c68a3b"
   integrity sha1-h6kGXNs1XTGC2PlM4RGIuCXGijs=
+
+node-ratify@~1.1.0:
+  version "1.1.32"
+  resolved "https://registry.yarnpkg.com/node-ratify/-/node-ratify-1.1.32.tgz#3957837f2caed83bb61b9992db537d0521db2df5"
+  integrity sha1-OVeDfyyu2Du2G5mS21N9BSHbLfU=
 
 node-releases@^2.0.3:
   version "2.0.3"
