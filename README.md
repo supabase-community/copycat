@@ -73,16 +73,16 @@ Note that unlike `JSON.stringify()`, object property ordering is not considered.
 
 A re-export of the exports of [`@faker-js/faker`](https://github.com/faker-js/faker) as an object. We do not alter faker in any way, and do not seed it.
 
-### `oneOf(input, values)`
+### `copycat.oneOf(input, values)`
 
 Takes in an [`input`](#input) value and an array of `values`, and returns an item in `values` that corresponds to that `input`:
 
 ```js
-oneOf('foo', ['red', 'green', 'blue'])
+copycat.oneOf('foo', ['red', 'green', 'blue'])
 // => 'red'
 ```
 
-### `int(input[, options])`
+### `copycat.int(input[, options])`
 
 Takes in an [`input`](#input) value and returns an integer.
 
@@ -95,30 +95,30 @@ int('foo')
 
 - **`min=0` and `max=Infinity`:** the minimum and maximum possible values for returned numbers
 
-### `bool(input)`
+### `copycat.bool(input)`
 
 Takes in an [`input`](#input) value and returns a boolean.
 
 ```js
-bool('foo')
+copycat.bool('foo')
 // => false
 ```
 
-### `float(input[, options])`
+### `copycat.float(input[, options])`
 
 Takes in an [`input`](#input) value and returns a number value with both a whole and decimal segment.
 
 ```js
-float('foo')
+copycat.float('foo')
 // => 2566716916.329745
 ```
 
-### `char(input)`
+### `copycat.char(input)`
 
 Takes in an [`input`](#input) value and returns a string with a single character.
 
 ```js
-char('foo')
+copycat.char('foo')
 // => 'M'
 ```
 
@@ -128,7 +128,7 @@ The generated character will be an alphanumeric: lower and upper case ASCII lett
 
 - **`min=0` and `max=Infinity`:** the minimum and maximum possible values for returned numbers
 
-### `dateString(input[, options])`
+### `copycat.dateString(input[, options])`
 
 Takes in an [`input`](#input) value and returns a string representing a date in [ISO 8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString) format.
 
@@ -141,7 +141,7 @@ dateString('foo')
 
 - **`minYear=1980` and `maxYear=2019`:** the minimum and maximum possible year values for returned dates
 
-### `uuid(input)`
+### `copycat.uuid(input)`
 
 Takes in an [input](#input) and returns a string value resembling a [uuid](https://en.wikipedia.org/wiki/Universally_unique_identifier).
 
@@ -150,7 +150,7 @@ copycat.uuid('foo')
 // => '540b95dd-98a2-56fe-9c95-6e7123c148ca'
 ```
 
-### `email(input)`
+### `copycat.email(input)`
 
 Takes in an [input](#input) and returns a string value resembling an email address.
 
@@ -159,7 +159,7 @@ copycat.email('foo')
 // => 'Zakary.Block356@gmail.com'
 ```
 
-### `firstName(input)`
+### `copycat.firstName(input)`
 
 Takes in an [input](#input) and returns a string value resembling a first name.
 
@@ -168,7 +168,7 @@ copycat.firstName('foo')
 // => 'Alejandrin'
 ```
 
-### `lastName(input)`
+### `copycat.lastName(input)`
 
 Takes in an [input](#input) and returns a string value resembling a last name.
 
@@ -177,7 +177,7 @@ copycat.lastName('foo')
 // => 'Keeling'
 ```
 
-### `fullName(input)`
+### `copycat.fullName(input)`
 
 Takes in an [input](#input) and returns a string value resembling a full name.
 
@@ -186,7 +186,7 @@ copycat.fullName('foo')
 // => 'Zakary Hessel'
 ```
 
-### `username(input)`
+### `copycat.username(input)`
 
 Takes in an [input](#input) and returns a string value resembling a username.
 
@@ -195,7 +195,7 @@ copycat.username('foo')
 // => 'Zakary.Block356'
 ```
 
-### `password(input)`
+### `copycat.password(input)`
 
 Takes in an [`input`](#input) value and returns a string value resembling a password.
 
@@ -206,7 +206,7 @@ password('foo')
 
 **Note:** not recommended for use as a personal password generator.
 
-### `city(input)`
+### `copycat.city(input)`
 
 Takes in an [input](#input) and returns a string value representing a city.
 
@@ -214,7 +214,7 @@ Takes in an [input](#input) and returns a string value representing a city.
 copycat.city('foo')
 // => 'Garland'
 ```
-### `country(input)`
+### `copycat.country(input)`
 
 Takes in an [input](#input) and returns a string value representing a country.
 
@@ -223,7 +223,7 @@ copycat.country('foo')
 // => 'Bosnia and Herzegovina'
 ```
 
-### `streetName`
+### `copycat.streetName(input)`
 
 Takes in an [input](#input) and returns a string value representing a fictitious street name.
 
@@ -232,7 +232,7 @@ copycat.streetName('foo')
 // => 'Courtney Orchard'
 ```
 
-### `streetAddress`
+### `copycat.streetAddress(input)`
 
 Takes in an [input](#input) and returns a string value representing a fictitious street address.
 
@@ -241,7 +241,7 @@ copycat.streetAddress('foo')
 // => '757 Evie Vista'
 ```
 
-### `postalAddress`
+### `copycat.postalAddress(input)`
 
 Takes in an [input](#input) and returns a string value representing a fictitious postal address.
 
@@ -250,7 +250,7 @@ copycat.postalAddress('foo')
 // => '178 Adaline Forge, Moreno Valley 8538, Haiti'
 ```
 
-### `countryCode(input)`
+### `copycat.countryCode(input)`
 
 Takes in an [input](#input) and returns a string value representing a country code.
 
@@ -259,7 +259,7 @@ copycat.countryCode('foo')
 // => 'BV'
 ```
 
-## `timezone(input)`
+## `copycat.timezone(input)`
 
 Takes in an [input](#input) and returns a string value representing a time zone.
 
@@ -268,7 +268,7 @@ copycat.timezone('foo')
 // => 'Asia/Tbilisi'
 ```
 
-### `word(input)`
+### `copycat.word(input)`
 
 Takes in an [`input`](#input) value and returns a string value resembling a fictitious word.
 
@@ -277,7 +277,7 @@ copycat.word('foo')
 // => 'Kinkami'
 ```
 
-### `words(input)`
+### `copycat.words(input)`
 
 Takes in an [`input`](#input) value and returns a string value resembling fictitious words.
 
@@ -286,7 +286,7 @@ copycat.words('foo')
 // => 'Niko vichinashi'
 ```
 
-### `sentence(input)`
+### `copycat.sentence(input)`
 
 Takes in an [`input`](#input) value and returns a string value resembling a sentence of fictitious words.
 
@@ -295,7 +295,7 @@ copycat.sentence('foo')
 // => 'Kiraevavi somani kihy viyoshi nihahyke kimeraeni.'
 ```
 
-### `paragraph(input)`
+### `copycat.paragraph(input)`
 
 Takes in an [`input`](#input) value and returns a string value resembling a paragraph of fictitious words.
 
@@ -304,7 +304,7 @@ copycat.paragraph('foo')
 // => 'Vakochiko ke rako kimuvachi hayuso mi vako kaichina, mishi mukaimo hakin va racea. Raechime miko kaimo keki shi navi makin yomehyha, na hya nano kin yokimo rae ra. Ke chi kakinaki kakorae machi. Raeva ka kaiko muvani ka racea kaichiyuchi muvinota, sokaiyu komechino shiso yuha raeraceaki kin chitavi. Kokaiashi chirako rae muyo vachi mukani nakoyuta kinmochikai, muhamuva hy mayushita ke shimo takinka notavi kinvayo.'
 ```
 
-### `ipv4(input)`
+### `copycat.ipv4(input)`
 
 Takes in an [`input`](#input) value and returns a string value resembling an [IPv4](https://en.wikipedia.org/wiki/IPv4) address.
 
@@ -313,7 +313,7 @@ copycat.ipv4('foo')
 // => '166.164.23.159'
 ```
 
-### `mac(input)`
+### `copycat.mac(input)`
 
 Takes in an [`input`](#input) value and returns a string value resembling a [MAC](https://en.wikipedia.org/wiki/MAC_address) address.
 
@@ -323,7 +323,7 @@ copycat.mac('foo')
 ```
 
 
-### `userAgent(input)`
+### `copycat.userAgent(input)`
 
 Takes in an [`input`](#input) value and returns a string value resembling a browser [User Agent](https://en.wikipedia.org/wiki/User_agent) string.
 
