@@ -264,7 +264,7 @@ copycat.countryCode('foo')
 Takes in an [input](#input) and returns a string value representing a time zone.
 
 ```js
-copycat.countryCode('foo')
+copycat.timezone('foo')
 // => 'Asia/Tbilisi'
 ```
 
@@ -273,7 +273,7 @@ copycat.countryCode('foo')
 Takes in an [`input`](#input) value and returns a string value resembling a fictitious word.
 
 ```js
-word('foo')
+copycat.word('foo')
 // => 'Kinkami'
 ```
 
@@ -282,7 +282,7 @@ word('foo')
 Takes in an [`input`](#input) value and returns a string value resembling fictitious words.
 
 ```js
-words('foo')
+copycat.words('foo')
 // => 'Niko vichinashi'
 ```
 
@@ -291,7 +291,7 @@ words('foo')
 Takes in an [`input`](#input) value and returns a string value resembling a sentence of fictitious words.
 
 ```js
-sentence('foo')
+copycat.sentence('foo')
 // => 'Kiraevavi somani kihy viyoshi nihahyke kimeraeni.'
 ```
 
@@ -300,7 +300,7 @@ sentence('foo')
 Takes in an [`input`](#input) value and returns a string value resembling a paragraph of fictitious words.
 
 ```js
-paragraph('foo')
+copycat.paragraph('foo')
 // => 'Vakochiko ke rako kimuvachi hayuso mi vako kaichina, mishi mukaimo hakin va racea. Raechime miko kaimo keki shi navi makin yomehyha, na hya nano kin yokimo rae ra. Ke chi kakinaki kakorae machi. Raeva ka kaiko muvani ka racea kaichiyuchi muvinota, sokaiyu komechino shiso yuha raeraceaki kin chitavi. Kokaiashi chirako rae muyo vachi mukani nakoyuta kinmochikai, muhamuva hy mayushita ke shimo takinka notavi kinvayo.'
 ```
 
