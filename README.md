@@ -195,6 +195,17 @@ copycat.username('foo')
 // => 'Zakary.Block356'
 ```
 
+### `password(input)`
+
+Takes in an [`input`](#input) value and returns a string value resembling a password.
+
+```js
+password('foo')
+// => 'uRkXX&u7^uvjX'
+```
+
+**Note:** not recommended for use as a personal password generator.
+
 ### `city(input)`
 
 Takes in an [input](#input) and returns a string value representing a city.

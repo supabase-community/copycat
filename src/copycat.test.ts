@@ -193,6 +193,18 @@ test('generated values', () => {
         "Shike mi mukoka kimu mochi kakehy, vaceamota vavi kai yukinshi yu mokayo keayo. Mokinmukin rahycea nome hamovami shikai keka mi kishikamu. Hykinvamu muchi ka vahynoma moni. Ko miashi ceashiko nikeracea nomaso kikai. Noceame ka kekai rae hy cea, kaimurame hynihavi yohy hy rano kamiyoke vaso.",
         "Nia kamoha shi shinovino mu kinyuna kinomamo muahy, vitake va yomunirae mukaima mi. Ke vimashiha kemohyme kaceamu soamu, kashiyochi raemomume ni vishi kokaso tacea yu miahy. Nameva ra vashi kinsokai mahy memayoha, kin mu vaceamikai hacea ceasohy. Ni niso ceani shikako muke vinome, tayomiyu me chihy nona no munamiyo shimu.",
       ],
+      "password": Array [
+        "*sp[GaF7Jj{%V9",
+        "Y{HKWKI6[QM6OZ",
+        "k$3GV0YkLioE",
+        "yWY&KN93^y{PLo",
+        "5meoVdqUh[&u%t",
+        "Tdoo5wLM{H5XA#",
+        "a8W&T}it}o7e6B",
+        "pXFGCTEsXV2VZx",
+        "RAGmBD}aKp@6eO",
+        "w[2G!EoUN]JX[",
+      ],
       "postalAddress": Array [
         "932 Krista Union, Santa Fe 8316, Maldives",
         "655 Maudie Stravenue, Caldwell 5338, Paraguay",
