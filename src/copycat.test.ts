@@ -85,6 +85,18 @@ test('generated values', () => {
         "Thailand",
         "Maldives",
       ],
+      "countryCode": Array [
+        "RW",
+        "AS",
+        "AW",
+        "GI",
+        "BF",
+        "SI",
+        "LK",
+        "MG",
+        "NU",
+        "PN",
+      ],
       "dateString": Array [
         "1989-02-14T01:52:57.000Z",
         "2011-08-16T07:33:14.000Z",

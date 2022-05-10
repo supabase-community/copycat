@@ -223,6 +223,15 @@ copycat.country('foo')
 // => 'Bosnia and Herzegovina'
 ```
 
+### `countryCode(input)`
+
+Takes in an [input](#input) and returns a string value representing a country code.
+
+```js
+copycat.countryCode('foo')
+// => 'BV'
+```
+
 ### `streetName`
 
 Takes in an [input](#input) and returns a string value representing a fictitious street name.
