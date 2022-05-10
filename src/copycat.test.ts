@@ -265,6 +265,18 @@ test('generated values', () => {
         "Towne Tunnel",
         "Kirk Freeway",
       ],
+      "timezone": Array [
+        "Asia/Kuwait",
+        "Asia/Kolkata",
+        "Australia/Perth",
+        "America/Godthab",
+        "America/Juneau",
+        "America/Denver",
+        "America/Argentina/Buenos_Aires",
+        "Europe/Paris",
+        "America/Halifax",
+        "Asia/Yakutsk",
+      ],
       "username": Array [
         "Dewayne_Yost801",
         "Faye.Luettgen942",

@@ -223,15 +223,6 @@ copycat.country('foo')
 // => 'Bosnia and Herzegovina'
 ```
 
-### `countryCode(input)`
-
-Takes in an [input](#input) and returns a string value representing a country code.
-
-```js
-copycat.countryCode('foo')
-// => 'BV'
-```
-
 ### `streetName`
 
 Takes in an [input](#input) and returns a string value representing a fictitious street name.
@@ -257,6 +248,24 @@ Takes in an [input](#input) and returns a string value representing a fictitious
 ```js
 copycat.postalAddress('foo')
 // => '178 Adaline Forge, Moreno Valley 8538, Haiti'
+```
+
+### `countryCode(input)`
+
+Takes in an [input](#input) and returns a string value representing a country code.
+
+```js
+copycat.countryCode('foo')
+// => 'BV'
+```
+
+## `timezone(input)`
+
+Takes in an [input](#input) and returns a string value representing a time zone.
+
+```js
+copycat.countryCode('foo')
+// => 'Asia/Tbilisi'
 ```
 
 ### `word(input)`
