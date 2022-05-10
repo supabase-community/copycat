@@ -301,6 +301,18 @@ test('generated values', () => {
         "America/Halifax",
         "Asia/Yakutsk",
       ],
+      "userAgent": Array [
+        "Mozilla/5.0 (Windows NT 6.0; WOW64; rv:6.6) Gecko/20100101 Firefox/6.6.5",
+        "Mozilla/5.0 (Windows NT 6.0; WOW64; rv:12.0) Gecko/20100101 Firefox/12.0.1",
+        "Mozilla/5.0 (Windows NT 5.0; rv:13.0) Gecko/20100101 Firefox/13.0.0",
+        "Mozilla/5.0 (Windows; U; Windows NT 5.1) AppleWebKit/534.1.0 (KHTML, like Gecko) Chrome/30.0.802.0 Safari/534.1.0",
+        "Mozilla/5.0 (Windows NT 5.1; rv:14.3) Gecko/20100101 Firefox/14.3.1",
+        "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_7_5)  AppleWebKit/531.2.2 (KHTML, like Gecko) Chrome/38.0.829.0 Safari/531.2.2",
+        "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.0; Trident/5.0)",
+        "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_10_6 rv:6.0; BR) AppleWebKit/535.1.0 (KHTML, like Gecko) Version/6.0.4 Safari/535.1.0",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6.7; rv:5.6) Gecko/20100101 Firefox/5.6.8",
+        "Mozilla/5.0 (Windows; U; Windows NT 6.2) AppleWebKit/537.1.1 (KHTML, like Gecko) Chrome/38.0.852.0 Safari/537.1.1",
+      ],
       "username": Array [
         "Dewayne_Yost801",
         "Faye.Luettgen942",

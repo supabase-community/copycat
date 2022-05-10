@@ -3839,6 +3839,11 @@ use@^3.1.0:
   resolved "https://registry.yarnpkg.com/use/-/use-3.1.1.tgz#d50c8cac79a19fbc20f2911f56eb973f4e10070f"
   integrity sha512-cwESVXlO3url9YWlFW/TA9cshCEhtu7IKJ/p5soJ/gGpj7vbvFrAY/eIioQ6Dw23KjZhYgiIo8HOs1nQ2vr/oQ==
 
+user-agent-is-browser@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/user-agent-is-browser/-/user-agent-is-browser-0.1.0.tgz#192cfed378bb8557c383e483eb0f79442dc0f4a0"
+  integrity sha1-GSz+03i7hVfDg+SD6w95RC3A9KA=
+
 uuid@^8.3.2:
   version "8.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"

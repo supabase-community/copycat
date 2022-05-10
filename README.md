@@ -321,3 +321,16 @@ Takes in an [`input`](#input) value and returns a string value resembling a [MAC
 copycat.mac('foo')
 // => 'e1:2c:54:74:b7:80'
 ```
+
+
+### `userAgent(input)`
+
+Takes in an [`input`](#input) value and returns a string value resembling a browser [User Agent](https://en.wikipedia.org/wiki/User_agent) string.
+
+```js
+copycat.userAgent('foo')
+// => 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 5.3; Trident/3.1; .NET CLR 1.2.39149.4)'
+```
+
+**note** For simplicity, this is currently working off of a list of 500 pre-defined user agent strings. If this is too limiting
+for your needs and you need something more dynamic than this, please let us know, and feel free to contribute :)
