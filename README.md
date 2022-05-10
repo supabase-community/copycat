@@ -186,6 +186,14 @@ copycat.fullName('foo')
 // => 'Zakary Hessel'
 ```
 
+### `phoneNumber(input)`
+
+Takes in an [input](#input) and returns a string value resembling a [phone number](https://en.wikipedia.org/wiki/MSISDN).
+
+```js
+copycat.phoneNumber('foo')
+// => '+3387100418630'
+```
 ### `username(input)`
 
 Takes in an [input](#input) and returns a string value resembling a username.
