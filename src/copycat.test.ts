@@ -241,6 +241,18 @@ test('generated values', () => {
         "RAGmBD}aKp@6eO",
         "w[2G!EoUN]JX[",
       ],
+      "phoneNumber": Array [
+        "+4344587214015",
+        "+112513898127",
+        "+96886848678793",
+        "+09777826973412",
+        "+2462989476266",
+        "+51908693459543",
+        "+735172736793519",
+        "+0419348444915",
+        "+08002038022628",
+        "+64521165915763",
+      ],
       "postalAddress": Array [
         "932 Krista Union, Santa Fe 8316, Maldives",
         "655 Maudie Stravenue, Caldwell 5338, Paraguay",
