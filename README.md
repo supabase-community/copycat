@@ -1,4 +1,4 @@
-# copycat
+# ![copycat](https://user-images.githubusercontent.com/1731223/167850970-584e6953-6543-4085-af5a-f9d8b7ffe988.png)
 
 ```js
 import { copycat } from '@snaplet/copycat'
