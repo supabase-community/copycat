@@ -126,6 +126,15 @@ The generated character will be an alphanumeric: lower and upper case ASCII lett
 
 ### `copycat.hex(input)`
 
+Takes in an [`input`](#input) value and returns a string with a single digit value.
+
+```js
+copycat.digit('foo')
+// => '2'
+```
+
+### `copycat.hex(input)`
+
 Takes in an [`input`](#input) value and returns a string with a single hex value.
 
 ```js

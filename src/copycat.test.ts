@@ -109,6 +109,18 @@ test('generated values', () => {
         "2001-06-10T05:42:40.000Z",
         "1989-02-26T01:49:11.000Z",
       ],
+      "digit": Array [
+        "9",
+        "1",
+        "3",
+        "6",
+        "1",
+        "7",
+        "0",
+        "9",
+        "1",
+        "9",
+      ],
       "email": Array [
         "Dewayne_Yost801@yahoo.com",
         "Faye.Luettgen942@yahoo.com",

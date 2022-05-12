@@ -8,6 +8,8 @@ export const dateString = fictional.dateString
 
 export const char = fictional.char
 
+export const digit = fictional.char.digit
+
 export const word = fictional.word.options({ unicode: false })
 
 export const words = fictional.words.options({
