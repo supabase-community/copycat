@@ -7,6 +7,7 @@ export const TRANSFORMATIONS: {
 } = {
   ...copycat,
   ...{
+    times: (input: Input) => copycat.times(input, [4, 5], copycat.word),
     oneOf: (input: Input) => copycat.oneOf(input, ['red', 'green', 'blue']),
   },
 }

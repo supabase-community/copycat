@@ -71,7 +71,7 @@ Note that unlike `JSON.stringify()`, object property ordering is not considered.
 
 ### `faker`
 
-A re-export of the exports of [`@faker-js/faker`](https://github.com/faker-js/faker) as an object. We do not alter faker in any way, and do not seed it.
+A re-export of `faker` from [`@faker-js/faker`](https://github.com/faker-js/faker). We do not alter faker in any way, and do not seed it.
 
 ### `copycat.oneOf(input, values)`
 
@@ -80,6 +80,22 @@ Takes in an [`input`](#input) value and an array of `values`, and returns an ite
 ```js
 copycat.oneOf('foo', ['red', 'green', 'blue'])
 // => 'red'
+```
+
+### `times(input, range, fn)`
+
+Takes in an [`input`](#input) value and a function `fn`, calls that function repeatedly (each time with a unique input) for a number of times within the given `range`, and returns the results as an array:
+
+```js
+copycat.times('foo', [4, 5], copycat.word)
+// => [ 'Raeko', 'Vame', 'Kiyumo', 'Koviva', 'Kiyovami' ]
+```
+
+As shown above, `range` can be a tuple array of the minimum and maximum possible number of times the maker should be called. It can also be given as a number, in which case `fn`  will be called exactly that number of times:
+
+```js
+copycat.times('foo', 2, copycat.word)
+// => [ 'Raeko', 'Vame' ]
 ```
 
 ### `copycat.int(input[, options])`
@@ -123,6 +139,24 @@ copycat.char('foo')
 ```
 
 The generated character will be an alphanumeric: lower and upper case ASCII letters and digits 0 to 9.
+
+### `copycat.hex(input)`
+
+Takes in an [`input`](#input) value and returns a string with a single digit value.
+
+```js
+copycat.digit('foo')
+// => '2'
+```
+
+### `copycat.hex(input)`
+
+Takes in an [`input`](#input) value and returns a string with a single hex value.
+
+```js
+copycat.hex('foo')
+// => '2'
+```
 
 #### `options`
 
@@ -289,6 +323,21 @@ copycat.word('foo')
 // => 'Kinkami'
 ```
 
+#### `options`
+
+- **`capitalize=true`:** whether or not the word should start with an upper case letter
+- **`minSyllables=2` and `maxSyllables=4`:** the minimum and maximum possible number of syllables that returned words will contain
+
+```js
+word('id-2', {
+  minSyllables: 1,
+  maxSyllables: 6,
+  unicode: 0.382
+})
+// =>
+'Rayuashira'
+```
+
 ### `copycat.words(input)`
 
 Takes in an [`input`](#input) value and returns a string value resembling fictitious words.
@@ -297,6 +346,13 @@ Takes in an [`input`](#input) value and returns a string value resembling fictit
 copycat.words('foo')
 // => 'Niko vichinashi'
 ```
+
+#### `options`
+
+- **`min=2` and `max=3`:** the minimum and maximum possible number of words that returned strings will contain.
+- **`capitalize='first'`:** whether or not the words should start with upper
+  case letters. If `true` or `'all'` is given, each string returned will start with an upper case letter in each word. If `'first'` is given, for each string returned, only the first word will start with an upper case letter. If `false` is given, each string returned will always contain only lower case letters.
+- **`minSyllables=1` and `maxSyllables=4`:** the minimum and maximum possible number of syllables that returned words will contain
 
 ### `copycat.sentence(input)`
 
@@ -307,6 +363,12 @@ copycat.sentence('foo')
 // => 'Kiraevavi somani kihy viyoshi nihahyke kimeraeni.'
 ```
 
+#### `options`
+
+- **`minClauses=1` and `maxClauses=2`:** the minimum and maximum possible number of clauses that a returned sentence will contain.
+- **`minWords=5` and `maxWords=8`:** the minimum and maximum possible number of words that each clause will contain.
+- **`minSyllables=1` and `maxSyllables=4`:** the minimum and maximum possible number of syllables that returned words will contain
+
 ### `copycat.paragraph(input)`
 
 Takes in an [`input`](#input) value and returns a string value resembling a paragraph of fictitious words.
@@ -315,6 +377,13 @@ Takes in an [`input`](#input) value and returns a string value resembling a para
 copycat.paragraph('foo')
 // => 'Vakochiko ke rako kimuvachi hayuso mi vako kaichina, mishi mukaimo hakin va racea. Raechime miko kaimo keki shi navi makin yomehyha, na hya nano kin yokimo rae ra. Ke chi kakinaki kakorae machi. Raeva ka kaiko muvani ka racea kaichiyuchi muvinota, sokaiyu komechino shiso yuha raeraceaki kin chitavi. Kokaiashi chirako rae muyo vachi mukani nakoyuta kinmochikai, muhamuva hy mayushita ke shimo takinka notavi kinvayo.'
 ```
+
+#### `options`
+
+- **`minSentences=3` and `minSentences=7`:** the minimum and maximum possible number of sentences that a returned paragraph will contain.
+- **`minClauses=1` and `maxClauses=2`:** the minimum and maximum possible number of clauses that each sentence will contain.
+- **`minWords=5` and `maxWords=8`:** the minimum and maximum possible number of words that each clause will contain.
+- **`minSyllables=1` and `maxSyllables=4`:** the minimum and maximum possible number of syllables that returned words will contain
 
 ### `copycat.ipv4(input)`
 
