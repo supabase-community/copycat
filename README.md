@@ -124,6 +124,15 @@ copycat.char('foo')
 
 The generated character will be an alphanumeric: lower and upper case ASCII letters and digits 0 to 9.
 
+### `copycat.hex(input)`
+
+Takes in an [`input`](#input) value and returns a string with a single hex value.
+
+```js
+copycat.hex('foo')
+// => '2'
+```
+
 #### `options`
 
 - **`min=0` and `max=Infinity`:** the minimum and maximum possible values for returned numbers

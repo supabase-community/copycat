@@ -157,6 +157,18 @@ test('generated values', () => {
         "Ida Ernser",
         "Shana Quitzon",
       ],
+      "hex": Array [
+        "1",
+        "7",
+        "9",
+        "0",
+        "f",
+        "1",
+        "8",
+        "f",
+        "d",
+        "9",
+      ],
       "int": Array [
         3112761889,
         3637691191,

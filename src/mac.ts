@@ -1,11 +1,6 @@
-import { int, join, times } from 'fictional'
+import { join, times } from 'fictional'
 import { Input } from './types'
-
-const hex = (input: Input) =>
-  int(input, {
-    min: 0,
-    max: 15,
-  }).toString(16)
+import { hex } from './primitives'
 
 const maker = join(':', [times(6, join('', [times(2, hex)]))])
 
