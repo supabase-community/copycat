@@ -23,6 +23,8 @@ export const paragraph = fictional.paragraph.options({ unicode: false })
 
 export const oneOf = fictional.oneOf
 
+export const times = fictional.times
+
 export const hex = (input: Input) =>
   int(input, {
     min: 0,

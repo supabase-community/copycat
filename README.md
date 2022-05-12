@@ -82,6 +82,22 @@ copycat.oneOf('foo', ['red', 'green', 'blue'])
 // => 'red'
 ```
 
+### `times(input, range, fn)`
+
+Takes in an [`input`](#input) value and a function `fn`, calls that function repeatedly (each time with a unique input) for a number of times within the given `range`, and returns the results as an array:
+
+```js
+copycat.times('foo', [4, 5], copycat.word)
+// => [ 'Raeko', 'Vame', 'Kiyumo', 'Koviva', 'Kiyovami' ]
+```
+
+As shown above, `range` can be a tuple array of the minimum and maximum possible number of times the maker should be called. It can also be given as a number, in which case `fn`  will be called exactly that number of times:
+
+```js
+copycat.times('foo', 2, copycat.word)
+// => [ 'Raeko', 'Vame' ]
+```
+
 ### `copycat.int(input[, options])`
 
 Takes in an [`input`](#input) value and returns an integer.
