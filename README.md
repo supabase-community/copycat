@@ -71,7 +71,7 @@ Note that unlike `JSON.stringify()`, object property ordering is not considered.
 
 ### `faker`
 
-A re-export of the exports of [`@faker-js/faker`](https://github.com/faker-js/faker) as an object. We do not alter faker in any way, and do not seed it.
+A re-export of `faker` from [`@faker-js/faker`](https://github.com/faker-js/faker). We do not alter faker in any way, and do not seed it.
 
 ### `copycat.oneOf(input, values)`
 
