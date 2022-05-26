@@ -140,7 +140,7 @@ copycat.char('foo')
 
 The generated character will be an alphanumeric: lower and upper case ASCII letters and digits 0 to 9.
 
-### `copycat.hex(input)`
+### `copycat.digit(input)`
 
 Takes in an [`input`](#input) value and returns a string with a single digit value.
 
