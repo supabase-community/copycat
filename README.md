@@ -415,3 +415,17 @@ copycat.userAgent('foo')
 
 **note** For simplicity, this is currently working off of a list of 500 pre-defined user agent strings. If this is too limiting
 for your needs and you need something more dynamic than this, please let us know, and feel free to contribute :)
+
+### `copycat.setSalt(string)`
+
+Uses the given `string` value as salt when copycat hashes input values. Helpful for changing the generated results.
+
+```js
+copycat.fullName('foo')
+// => 'Zakary Hessel'
+
+copycat.setSalt('something-else')
+
+copycat.fullName('foo')
+// => 'Damion Brown'
+```
