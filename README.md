@@ -425,7 +425,7 @@ copycat.userAgent('foo')
 **note** For simplicity, this is currently working off of a list of 500 pre-defined user agent strings. If this is too limiting
 for your needs and you need something more dynamic than this, please let us know, and feel free to contribute :)
 
-### `times(input, range, fn)`
+### `copycat.times(input, range, fn)`
 
 Takes in an [`input`](#input) value and a function `fn`, calls that function repeatedly (each time with a unique input) for a number of times within the given `range`, and returns the results as an array:
 
@@ -439,4 +439,16 @@ As shown above, `range` can be a tuple array of the minimum and maximum possible
 ```js
 copycat.times('foo', 2, copycat.word)
 // => [ 'Raeko', 'Vame' ]
+### `copycat.setSalt(string)`
+
+Uses the given `string` value as salt when copycat hashes input values. Helpful for changing the generated results.
+
+```js
+copycat.fullName('foo')
+// => 'Zakary Hessel'
+
+copycat.setSalt('something-else')
+
+copycat.fullName('foo')
+// => 'Damion Brown'
 ```

@@ -1,4 +1,3 @@
-import { copycat } from '.'
 import { TRANSFORMATIONS, NUM_CHECKS } from './testutils'
 
 test('determinism', () => {
@@ -14,7 +13,7 @@ test('determinism', () => {
     }
   }
 
-  Object.keys(copycat).forEach(check)
+  Object.keys(TRANSFORMATIONS).forEach(check)
 })
 
 test('generated values', () => {
@@ -22,7 +21,7 @@ test('generated values', () => {
   const results = {}
 
   const addResults = (name: string) => {
-    const valueResults = []
+    const valueResults: unknown[] = []
 
     let i = -1
 

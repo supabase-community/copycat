@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "@faker-js/faker": "^6.2.0",
-    "fictional": "^0.4.13",
+    "fictional": "^0.4.15",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
