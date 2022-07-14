@@ -288,6 +288,18 @@ test('generated values', () => {
         "71 Hahn Club, South Gate 5660, Cyprus",
         "305 Roob Trail, Costa Mesa 5708, Macao",
       ],
+      "scramble": Array [
+        "Evpitkg Zhans",
+        "Qqgh Ajmfw",
+        "Ltquwqj Buirwwg",
+        "Lsh Jgtnrwe",
+        "Bic Fkgqzfgsi",
+        "Hqtqyey Kvvbprgjc",
+        "Mgwo Ebzx",
+        "Npyeas Fzgdwx",
+        "Igc Lrkslv",
+        "Kratw Trbekhh",
+      ],
       "sentence": Array [
         "Vivano mera nanichiha ni moshiyu sochi kinrame kinma.",
         "Nake ke masonako vikeki kinva ma raeshi munoniko, ceahyke ko soyukaiha hahy chi.",

@@ -73,6 +73,30 @@ Note that unlike `JSON.stringify()`, object property ordering is not considered.
 
 A re-export of `faker` from [`@faker-js/faker`](https://github.com/faker-js/faker). We do not alter faker in any way, and do not seed it.
 
+### `copycat.scramble(string[, options])`
+
+Takes in a `string` value, and returns a string with the same length, but with each character replaced with a different character in the same character range:
+* By default, spaces are preserved (see `preserve` option below)
+* Lower case ascii characters are replaced with lower case ascii letters
+* Upper case ascii characters are replaced with upper case ascii letters
+* Digits are replaced with digits
+* Any other ascii character in the code point range `32` to `126` (`0x20 - 0x7e`) is replaced with an ascii in the same range
+* Any other character is replaced with a [Latin-1](https://en.wikipedia.org/wiki/Latin-1_Supplement) character in the range of (`0x20 - 0x7e`, or `0xa0 - 0xff`)
+
+```js
+copycat.scramble('Zakary Hessel')
+// => 'Wradls Kbicbs'
+```
+
+#### `options`
+
+- **preserve**: An array of characters that should remain the same if present in the given input string
+
+```js
+copycat.scramble('foo@bar.org', { preserve: ['@', '.'] })
+// => 'oxb@fmc.ahs'
+```
+
 ### `copycat.oneOf(input, values)`
 
 Takes in an [`input`](#input) value and an array of `values`, and returns an item in `values` that corresponds to that `input`:
@@ -82,28 +106,13 @@ copycat.oneOf('foo', ['red', 'green', 'blue'])
 // => 'red'
 ```
 
-### `times(input, range, fn)`
-
-Takes in an [`input`](#input) value and a function `fn`, calls that function repeatedly (each time with a unique input) for a number of times within the given `range`, and returns the results as an array:
-
-```js
-copycat.times('foo', [4, 5], copycat.word)
-// => [ 'Raeko', 'Vame', 'Kiyumo', 'Koviva', 'Kiyovami' ]
-```
-
-As shown above, `range` can be a tuple array of the minimum and maximum possible number of times the maker should be called. It can also be given as a number, in which case `fn`  will be called exactly that number of times:
-
-```js
-copycat.times('foo', 2, copycat.word)
-// => [ 'Raeko', 'Vame' ]
-```
 
 ### `copycat.int(input[, options])`
 
 Takes in an [`input`](#input) value and returns an integer.
 
 ```js
-int('foo')
+copycat.int('foo')
 // => 2196697842
 ```
 
@@ -416,6 +425,20 @@ copycat.userAgent('foo')
 **note** For simplicity, this is currently working off of a list of 500 pre-defined user agent strings. If this is too limiting
 for your needs and you need something more dynamic than this, please let us know, and feel free to contribute :)
 
+### `copycat.times(input, range, fn)`
+
+Takes in an [`input`](#input) value and a function `fn`, calls that function repeatedly (each time with a unique input) for a number of times within the given `range`, and returns the results as an array:
+
+```js
+copycat.times('foo', [4, 5], copycat.word)
+// => [ 'Raeko', 'Vame', 'Kiyumo', 'Koviva', 'Kiyovami' ]
+```
+
+As shown above, `range` can be a tuple array of the minimum and maximum possible number of times the maker should be called. It can also be given as a number, in which case `fn`  will be called exactly that number of times:
+
+```js
+copycat.times('foo', 2, copycat.word)
+// => [ 'Raeko', 'Vame' ]
 ### `copycat.setSalt(string)`
 
 Uses the given `string` value as salt when copycat hashes input values. Helpful for changing the generated results.
