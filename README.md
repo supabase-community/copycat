@@ -84,8 +84,6 @@ Takes in a `string` value, and returns a string with the same length, but with e
 * Any other character is replaced with a [Latin-1](https://en.wikipedia.org/wiki/Latin-1_Supplement) character in the range of (`0x20 - 0x7e`, or `0xa0 - 0xff`)
 
 ```js
-import { copycat } from '@snaplet/copycat'
-
 copycat.scramble('Zakary Hessel')
 // => 'Wradls Kbicbs'
 ```
@@ -95,8 +93,6 @@ copycat.scramble('Zakary Hessel')
 - **preserve**: An array of characters that should remain the same if present in the given input string
 
 ```js
-import { copycat } from '@snaplet/copycat'
-
 copycat.scramble('foo@bar.org', { preserve: ['@', '.'] })
 // => 'oxb@fmc.ahs'
 ```
@@ -116,7 +112,7 @@ copycat.oneOf('foo', ['red', 'green', 'blue'])
 Takes in an [`input`](#input) value and returns an integer.
 
 ```js
-int('foo')
+copycat.int('foo')
 // => 2196697842
 ```
 
