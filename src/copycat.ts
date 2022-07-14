@@ -17,3 +17,5 @@ export * from './password'
 export * from './ipv4'
 export * from './mac'
 export * from './userAgent'
+
+export * from './scramble'
