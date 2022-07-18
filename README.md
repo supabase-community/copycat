@@ -97,7 +97,7 @@ copycat.firstName('Sarah') // -> 'Florencio', no match
 copycat.firstName('Susan') // -> 'Therese', match!
 ```
 
-To mitigate this, copycat supports [salt](`https://en.wikipedia.org/wiki/Salt_(cryptography)`) with [`setSalt`](#set-salt) - additional data concatenated onto the input value before hashing:
+To mitigate this, copycat supports [salt](https://en.wikipedia.org/wiki/Salt_(cryptography)) with [`setSalt`](#set-salt) - additional data concatenated onto the input value before hashing:
 
 ```js
 copycat.fullName('foo')
