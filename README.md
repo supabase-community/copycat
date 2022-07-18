@@ -68,6 +68,52 @@ The given input can be any JSON-serializable value. For any two calls to the sam
 
 Note that unlike `JSON.stringify()`, object property ordering is not considered.
 
+## Working with PII (Personal Identifiable Information)
+
+If you're using sensitive information as input to Copycat, the fact that Copycat makes use of [md5](https://en.wikipedia.org/wiki/MD5) means it is difficult for the original input value to be inferred from the output value - it is computationally infeasible.
+
+```js
+// It is difficult to reverse engineer 'Some sensitive input'
+// from 'Rhianna Ebert'
+copycat.fullName('Some sensitive input')
+// => 'Rhianna Ebert'
+```
+
+That said, there is still something we need to watch out for: with enough guessing, the input values can still be figured out from the output values.
+
+Lets say we replaced all the first names in some table of data. Included in this data was the name `'Susan'`, which was replaced with `'Therese'`:
+
+```js
+copycat.firstName('Susan') // -> 'Therese'
+```
+
+While the attacker is able to see the name `Therese`, it is difficult for them to look at Copycat's code, and figure out `'Susan'` from `'Therese'`. But the attacker knows they're dealing with first names, and they have access to the Copycat library. What they can do, is input a list of first names into Copycat, until they find a matching name.
+
+Let's say they input the name `'John'`. The result is `'April'`, which does not match `'Therese'`, so they move on. They next try `'Sarah'`, which maps to `'Florencio'` - again no match, they move on. They next try `Susan`, which maps to the name they see - `Therese`. This means they have a match, and now know that the original name was `Susan`:
+
+```js
+copycat.firstName('John') // -> 'April', no match
+copycat.firstName('Sarah') // -> 'Florencio', no match
+copycat.firstName('Susan') // -> 'Therese', match!
+```
+
+To mitigate this, Copycat supports [salt](https://en.wikipedia.org/wiki/Salt_(cryptography)) with [`setSalt`](#set-salt) - additional data concatenated onto the input value before hashing:
+
+```js
+copycat.fullName('foo')
+// => 'Zakary Hessel'
+
+copycat.setSalt('something-else')
+
+copycat.fullName('foo')
+// => 'Damion Brown'
+```
+
+The idea is that while Copycat's code is publicly known, the salt isn't publically known. This means that even though attackers have access to Copycat's
+code, they are not able to figure out which inputs map to which outputs, since
+they do not have access to the salt.
+
+Ideally, one salt should be used per-value, rather than re-used for several values. If salt is re-used, an attacker can [pre-compute a table of results](https://en.wikipedia.org/wiki/Rainbow_table). In our example, a salt value can be chosen and used along with a list of names to pre-compute the corresponding output values.
 
 ### `faker`
 
@@ -441,7 +487,7 @@ copycat.times('foo', 2, copycat.word)
 // => [ 'Raeko', 'Vame' ]
 ### `copycat.setSalt(string)`
 
-Uses the given `string` value as salt when copycat hashes input values. Helpful for changing the generated results.
+<a name="set-salt"></a>Uses the given `string` value as salt when copycat hashes input values. Helpful for changing the generated results.
 
 ```js
 copycat.fullName('foo')
