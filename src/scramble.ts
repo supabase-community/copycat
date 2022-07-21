@@ -16,9 +16,10 @@ const CHAR_RANGES_TO_MAKERS: [[number, number], (input: Input) => string][] = [
 const FALLBACK_MAKER = char.inRanges([char.ascii, char.latin1])
 
 export const scramble = (
-  input: string,
+  input: string | null,
   options: ScrambleOptions = {}
 ): string => {
+  input ||= ''
   const { preserve = [' '] } = options
   const preserveSet = new Set(preserve)
 
