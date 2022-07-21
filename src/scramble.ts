@@ -15,11 +15,14 @@ const CHAR_RANGES_TO_MAKERS: [[number, number], (input: Input) => string][] = [
 
 const FALLBACK_MAKER = char.inRanges([char.ascii, char.latin1])
 
-export const scramble = (
-  input: string | null,
+export const scramble = <Input extends string | null>(
+  input: Input,
   options: ScrambleOptions = {}
-): string => {
-  input ||= ''
+): Input => {
+  if (typeof input !== 'string') {
+    return input
+  }
+
   const { preserve = [' '] } = options
   const preserveSet = new Set(preserve)
 
@@ -37,7 +40,7 @@ export const scramble = (
     }
   }
 
-  return result
+  return result as Input
 }
 
 const findMatchingMaker = (char: string): ((input: Input) => string) => {
