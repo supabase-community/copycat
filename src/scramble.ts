@@ -6,11 +6,20 @@ interface ScrambleOptions {
 
 const codeOf = (x: string) => x.charCodeAt(0)
 
+const safeSpecialChars = '-_+'.split('').map(codeOf)
+
+const safeAscii = char.inRanges([
+  char.lower,
+  char.upper,
+  char.digit,
+  ...safeSpecialChars.map((code): [number, number] => [code, code]),
+])
+
 const CHAR_RANGES_TO_MAKERS: [[number, number], (input: Input) => string][] = [
   [[codeOf('a'), codeOf('z')], char.lower],
   [[codeOf('A'), codeOf('Z')], char.upper],
   [[codeOf('0'), codeOf('9')], char.digit],
-  [[0x20, 0x7e], char.ascii],
+  [[0x20, 0x7e], safeAscii],
 ]
 
 const FALLBACK_MAKER = char.inRanges([char.ascii, char.latin1])
