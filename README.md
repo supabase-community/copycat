@@ -126,8 +126,8 @@ Takes in a `string` value, and returns a string with the same length, but with e
 * Lower case ascii characters are replaced with lower case ascii letters
 * Upper case ascii characters are replaced with upper case ascii letters
 * Digits are replaced with digits
-* Any other ascii character in the code point range `32` to `126` (`0x20 - 0x7e`) is replaced with an ascii in the same range
-* Any other character is replaced with a [Latin-1](https://en.wikipedia.org/wiki/Latin-1_Supplement) character in the range of (`0x20 - 0x7e`, or `0xa0 - 0xff`)
+* Any other ascii character in the code point range 32 to 126 (0x20 - 0x7e) is replaced with either an alphanumeric character, or `_`, `-`, or `+`
+* Any other character is replaced with a Latin-1 character in the range of (0x20 - 0x7e, or 0xa0 - 0xff)
 
 ```js
 copycat.scramble('Zakary Hessel')
