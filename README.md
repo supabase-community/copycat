@@ -16,16 +16,16 @@ copycat.email('foo')
 ## Motivation
 
 ### The problem
-Many of the use cases we aim on solving with [snaplet](https://snaplet.dev/) involve anonymizing sensitive information. In practice, this involves replacing each bit of sensitive data with something else that _resembles_ the original value, yet does not allow the original value to be inferred.
+Many of the use cases we aim to solve with [snaplet](https://snaplet.dev/) involves anonymizing sensitive information. In practice, this involves replacing each bit of sensitive data with something else that _resembles_ the original value, yet does not allow the original value to be inferred.
 
 To do this, we initially turned to [faker](https://fakerjs.dev/) for replacing the sensitive data with fake data. This approach took us quite far. However, we struggled with getting the replacement data to be _deterministic_: we found we did not have enough control over how results are generated to be able to easily ensure that for each value of the original data we wanted to replace, we'd always get the same replacement value out.
 
-Faker allows one to seed a psuedo-random number generator (PRNG), such that the same sequence of values will be generated every time. While this means the sequence is deterministic, the problem was we did not have enough control over where the next value in the sequence was going to be used. Changes to the contents or structure in the original data we're replacing and changes to how we are using faker both had an effect on the way we used this sequence, which in turn had an effect on the resulting replacement value for any particular value in the original data. In other words, we had determinism, but not in a way that is useful for our purposes.
+Faker allows one to seed a psuedo-random number generator (PRNG), such that the same sequence of values will be generated every time. While this means the sequence is deterministic, the problem was we did not have enough control over where the next value in the sequence was going to be used. Changes to the contents or structure in the original data we're replacing and changes to how we are using faker both had an effect on the way we used this sequence, which in turn had an effect on the resulting replacement value for any particular value in the original data. In other words, we had determinism, but not in a way that is useful for our purpose.
 
 ### The solution
 What we were really needing was not the same _sequence_ of generated values every time, but the same _mapping_ to generated values every time.
 
-This is exactly what we designed `copycat` to do. For each method provided by copycat, a given input value will always map to the same output value.
+This is exactly what we designed `Copycat` to do. For each method provided by Copycat, a given input value will always map to the same output value.
 
 ```js
 import { copycat } from '@snaplet/copycat'
@@ -40,9 +40,9 @@ copycat.email('foo')
 // => 'Zakary.Block356@gmail.com'
 ```
 
-Copycat work statelessly: for the same input, the same value will be returned regardless of the environment, process, call ordering, or any other external factors.
+Copycat works statelessly: for the same input, the same value will be returned regardless of the environment, process, call ordering, or any other external factors.
 
-Under the hood, copycat hashes the input values (in part relying on [md5](https://en.wikipedia.org/wiki/MD5)), with the intention of making it computationally infeasible for the input values to be inferred from the output values.
+Under the hood, Copycat hashes the input values (in part relying on [md5](https://en.wikipedia.org/wiki/MD5)), with the intention of making it computationally infeasible for the input values to be inferred from the output values.
 
 ### Alternative approaches
 
@@ -55,7 +55,7 @@ Note though that for either of these approaches, hashing might also still be nee
 ## API Reference
 ### Overview
 
-<a name="input"></a>All copycat functions take in an `input` value as their first parameter:
+<a name="input"></a>All Copycat functions take in an `input` value as their first parameter:
 
 ```js
 import { copycat } from '@snaplet/copycat'
@@ -64,7 +64,7 @@ copycat.email('foo')
 // => 'Zakary.Block356@gmail.com'
 ```
 
-The given input can be any JSON-serializable value. For any two calls to the same function, the input given in each call serializes down to the same value, the same output will be returned.
+The given input can be any JSON-serializable value. For any two calls to the same function, the input given in each call serializes down to the same value and the same output will be returned.
 
 Note that unlike `JSON.stringify()`, object property ordering is not considered.
 
@@ -110,8 +110,7 @@ copycat.fullName('foo')
 ```
 
 The idea is that while Copycat's code is publicly known, the salt isn't publically known. This means that even though attackers have access to Copycat's
-code, they are not able to figure out which inputs map to which outputs, since
-they do not have access to the salt.
+code, they are not able to figure out which inputs map to which outputs, since they do not have access to the salt.
 
 Ideally, one salt should be used per-value, rather than re-used for several values. If salt is re-used, an attacker can [pre-compute a table of results](https://en.wikipedia.org/wiki/Rainbow_table). In our example, a salt value can be chosen and used along with a list of names to pre-compute the corresponding output values.
 
@@ -487,7 +486,7 @@ copycat.times('foo', 2, copycat.word)
 // => [ 'Raeko', 'Vame' ]
 ### `copycat.setSalt(string)`
 
-<a name="set-salt"></a>Uses the given `string` value as salt when copycat hashes input values. Helpful for changing the generated results.
+<a name="set-salt"></a>Uses the given `string` value as salt when Copycat hashes input values. Helpful for changing the generated results.
 
 ```js
 copycat.fullName('foo')
