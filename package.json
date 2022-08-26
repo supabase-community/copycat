@@ -11,6 +11,7 @@
     "url": "git+https://github.com/snaplet/copycat.git"
   },
   "license": "MIT",
+  "types": "dist/index.d.ts",
   "dependencies": {
     "@faker-js/faker": "^6.2.0",
     "fictional": "^0.4.15",
