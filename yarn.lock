@@ -1330,6 +1330,11 @@ debug@^4.1.0, debug@^4.1.1, debug@^4.3.2:
   dependencies:
     ms "2.1.2"
 
+decimal.js@^10.4.0:
+  version "10.4.1"
+  resolved "https://registry.yarnpkg.com/decimal.js/-/decimal.js-10.4.1.tgz#be75eeac4a2281aace80c1a8753587c27ef053e7"
+  integrity sha512-F29o+vci4DodHYT9UrR5IEbfBw9pE5eSapIJdTqXK5+6hq+t8VRxwQyKlW2i+KDKFkkJQRvFyI/QXD83h8LyQw==
+
 decode-uri-component@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
@@ -1858,14 +1863,14 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "2.1.1"
 
-fictional@^0.4.15:
-  version "0.4.15"
-  resolved "https://registry.yarnpkg.com/fictional/-/fictional-0.4.15.tgz#94eb44f4ec08e7c775a7ee1407df6449586205e9"
-  integrity sha512-K2Jn/bP7+rE6asZqFiVN8qG6VpMac2QQGlxU502ZXsb1Zx4Ve5En9lksgPNl8/M6S+erDbOSuxaRsP6pL8nKgw==
+fictional@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/fictional/-/fictional-0.5.0.tgz#1876615ac670d3c5526e41f35526b2b681a7c969"
+  integrity sha512-XObmxz8Fnk8oJDC7WHKDUJxmyGFsXw1oBpHI6IYeXgFzlY5S0LMYcV+4zCN++f0gPDTlQHOx2to/S0p5NCXgpg==
   dependencies:
+    decimal.js "^10.4.0"
     fast-json-stable-stringify "^2.1.0"
     md5 "^2.3.0"
-    string-hash "^1.1.3"
 
 file-entry-cache@^6.0.1:
   version "6.0.1"
@@ -3611,11 +3616,6 @@ static-extend@^0.1.1:
   dependencies:
     define-property "^0.2.5"
     object-copy "^0.1.0"
-
-string-hash@^1.1.3:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/string-hash/-/string-hash-1.1.3.tgz#e8aafc0ac1855b4666929ed7dd1275df5d6c811b"
-  integrity sha512-kJUvRUFK49aub+a7T1nNE66EJbZBMnBgoC1UbCZ5n6bsZKBRga4KgBRTMn/pFkeCZSYtNeSyMxPDM0AXWELk2A==
 
 string-length@^4.0.1:
   version "4.0.2"
