@@ -1,9 +1,18 @@
 import fictional from 'fictional'
 import { Input } from './types'
 
-export const int = fictional.int
+export const int = fictional.int.options({
+  min: 0,
+  max: Number.MAX_SAFE_INTEGER
+})
+
+export const float = fictional.float.options({
+  min: 0,
+  max: Number.MAX_SAFE_INTEGER
+})
+
 export const bool = fictional.bool
-export const float = fictional.float
+
 export const dateString = fictional.dateString
 
 export const char = fictional.char
