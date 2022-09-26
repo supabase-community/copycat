@@ -27,15 +27,15 @@ const runWorker = promisify(workers)
 const findFirstCollisionN = (methodName) => {
   const fn = TRANSFORMATIONS[methodName]
   let i = -1
-  const seen = new Set()
+  const seen = {}
   let firstCollisionN = null
 
   while (++i < MAX_N && firstCollisionN == null) {
     const result = fn(uuid()).toString()
-    if (seen.has(result)) {
+    if (seen[result]) {
       firstCollisionN = i
     } else {
-      seen.add(result)
+      seen[result] = true
     }
   }
 
