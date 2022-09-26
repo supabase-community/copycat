@@ -8,7 +8,7 @@ const { TRANSFORMATIONS } = require('../dist/testutils')
 const METHOD_BLACKLIST = ['scramble']
 
 const MAX_N = +(process.env.MAX_N ?? 999999)
-const MIN_RUNS = Math.max(2, +(process.env.MIN_RUNS ?? 1))
+const MIN_RUNS = Math.max(2, +(process.env.MIN_RUNS ?? 100))
 const MIN_N_SUM = +(process.env.MIN_N_SUM ?? 100)
 const MAX_N_SUM = +(process.env.MAX_N_SUM ?? MAX_N)
 const MOE = +(process.env.MOE ?? 0.05)
