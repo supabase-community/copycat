@@ -9,7 +9,7 @@ const METHOD_BLACKLIST = ['scramble']
 
 const MAX_N = +(process.env.MAX_N ?? 999999)
 const MIN_RUNS = Math.max(2, +(process.env.MIN_RUNS ?? 1))
-const MAX_RUNS = +(process.env.MAX_RUNS ?? 999)
+const MIN_N_SUM = +(process.env.MIN_N_SUM ?? 100)
 const MAX_N_SUM = +(process.env.MAX_N_SUM ?? MAX_N)
 const MOE = +(process.env.MOE ?? 0.05)
 
@@ -49,8 +49,8 @@ const worker = (methodName, done) => {
   let sum = 0
 
   const isComplete = () =>
-    (stats.length > MIN_RUNS) &&
-    ((stats.moe() / stats.amean() < MOE || stats.length > MAX_RUNS || sum < MAX_N_SUM))
+    (stats.length >= MIN_RUNS && sum >= MIN_N_SUM) &&
+    ((stats.moe() / stats.amean() <= MOE || stats.length >= MAX_RUNS || sum >= MAX_N_SUM))
 
   while (!isComplete()) {
     const firstCollisionN = findFirstCollisionN(methodName)
