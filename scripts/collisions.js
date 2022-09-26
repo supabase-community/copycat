@@ -48,11 +48,11 @@ const worker = (methodName, done) => {
   let hasCollided = false
   let sum = 0
 
-  const shouldContinue = () =>
-    (sum < MAX_N_SUM) &&
-    ((stats.length < MIN_RUNS) || (stats.moe() / stats.amean() > MOE && stats.length < MAX_RUNS))
+  const isComplete = () =>
+    (stats.length > MIN_RUNS) &&
+    ((stats.moe() / stats.amean() < MOE || stats.length > MAX_RUNS || sum < MAX_N_SUM))
 
-  while (shouldContinue()) {
+  while (!isComplete()) {
     const firstCollisionN = findFirstCollisionN(methodName)
 
     if (findFirstCollisionN != null) {
