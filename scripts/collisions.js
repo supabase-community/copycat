@@ -9,7 +9,7 @@ const METHOD_BLACKLIST = ['scramble']
 
 const MAX_N = +(process.env.MAX_N ?? 999999)
 const MIN_RUNS = Math.max(2, +(process.env.MIN_RUNS ?? 100))
-const MAX_RUNS = +(process.env.MAX_RUNS ?? 9999)
+const MAX_RUNS = +(process.env.MAX_RUNS ?? 1000)
 const MOE = +(process.env.MOE ?? 0.05)
 
 const workerOptions = {
