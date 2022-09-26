@@ -30,7 +30,6 @@ const findFirstCollisionN = (methodName) => {
   let i = -1
   const seen = new Set()
   let firstCollisionN = null
-  let
 
   while (++i < MAX_N && firstCollisionN == null) {
     const result = fn(uuid()).toString()
