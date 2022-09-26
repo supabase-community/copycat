@@ -7,7 +7,7 @@ const { TRANSFORMATIONS } = require('../dist/testutils')
 
 const METHOD_BLACKLIST = ['scramble']
 
-const MAX_N = +(process.env.MAX_N ?? Number.MAX_SAFE_INTEGER)
+const MAX_N = +(process.env.MAX_N ?? 999999)
 const MIN_RUNS = Math.max(2, +(process.env.MIN_RUNS ?? 100))
 const MAX_RUNS = +(process.env.MAX_RUNS ?? 9999)
 const MOE = +(process.env.MOE ?? 0.05)
@@ -32,7 +32,7 @@ const findFirstCollisionN = (methodName) => {
 
   while (++i < MAX_N && firstCollisionN == null) {
     const result = fn(uuid()).toString()
-    if (seen[result]) {
+    if (seen.has(result)) {
       firstCollisionN = i
     } else {
       seen[result] = true
