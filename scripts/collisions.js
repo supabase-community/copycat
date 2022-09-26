@@ -61,12 +61,16 @@ const worker = (methodName, done) => {
     stats.push(firstCollisionN)
   }
 
+  const [min, max] = stats.range()
+
   done(null, {
     methodName,
     mean: stats.amean().toFixed(2),
     stddev: stats.stddev().toFixed(2),
     moe: (stats.moe() / stats.amean()).toFixed(2),
     runs: stats.length,
+    min,
+    max,
     hasCollided,
   })
 }
