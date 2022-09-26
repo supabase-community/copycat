@@ -8,8 +8,9 @@ const { TRANSFORMATIONS } = require('../dist/testutils')
 const METHOD_BLACKLIST = ['scramble']
 
 const MAX_N = +(process.env.MAX_N ?? 999999)
-const MIN_RUNS = Math.max(2, +(process.env.MIN_RUNS ?? 100))
-const MAX_RUNS = +(process.env.MAX_RUNS ?? 1000)
+const MIN_RUNS_LO = Math.max(2, +(process.env.MIN_RUNS_LO ?? 1))
+const MIN_RUNS_HI = Math.max(MIN_RUNS_LO, +(process.env.MIN_RUNS_HI ?? 100))
+const MAX_RUNS = +(process.env.MAX_RUNS ?? 9999)
 const MOE = +(process.env.MOE ?? 0.05)
 
 const workerOptions = {
@@ -27,15 +28,15 @@ const runWorker = promisify(workers)
 const findFirstCollisionN = (methodName) => {
   const fn = TRANSFORMATIONS[methodName]
   let i = -1
-  const seen = {}
+  const seen = new Set()
   let firstCollisionN = null
 
   while (++i < MAX_N && firstCollisionN == null) {
     const result = fn(uuid()).toString()
-    if (seen[result]) {
+    if (seen.has(result)) {
       firstCollisionN = i
     } else {
-      seen[result] = true
+      seen.add(result)
     }
   }
 
@@ -44,9 +45,19 @@ const findFirstCollisionN = (methodName) => {
 
 const worker = (methodName, done) => {
   const stats = new Stats()
+  let hasCollided = false
 
-  while ((stats.length < MIN_RUNS || (stats.moe() / stats.amean() > MOE && stats.length < MAX_RUNS))) {
+  const shouldContinue = () =>
+    (hasCollided ? stats.length < MIN_RUNS_HI : stats.length < MIN_RUNS_LO) ||
+    (stats.moe() / stats.amean() > MOE && stats.length < MAX_RUNS)
+
+  while (shouldContinue()) {
     const firstCollisionN = findFirstCollisionN(methodName)
+
+    if (findFirstCollisionN != null) {
+      hasCollided = true
+    }
+
     stats.push(firstCollisionN)
   }
 
@@ -56,6 +67,7 @@ const worker = (methodName, done) => {
     stddev: stats.stddev().toFixed(2),
     moe: (stats.moe() / stats.amean()).toFixed(2),
     runs: stats.length,
+    hasCollided,
   })
 }
 
