@@ -32,7 +32,7 @@ const findFirstCollisionN = (methodName) => {
 
   while (++i < MAX_N && firstCollisionN == null) {
     const result = fn(uuid()).toString()
-    if (seen.has(result)) {
+    if (seen[result]) {
       firstCollisionN = i
     } else {
       seen[result] = true
