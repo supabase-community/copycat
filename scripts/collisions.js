@@ -57,7 +57,7 @@ const worker = (methodName, done) => {
 
     if (findFirstCollisionN != null) {
       hasCollided = true
-      sum += findFirstCollisionN
+      sum += firstCollisionN
     } else {
       sum = MAX_N
     }
