@@ -5,7 +5,19 @@ const Stats = require('fast-stats').Stats
 
 const { TRANSFORMATIONS } = require('../dist/testutils')
 
-const METHOD_BLACKLIST = ['scramble']
+const METHODS = [
+  'email',
+  'int',
+  'dateString',
+  'ipv4',
+  'mac',
+  'float',
+  'fullName',
+  'streetAddress',
+  'postalAddress',
+  'password',
+  'uuid',
+]
 
 const MAX_N = +(process.env.MAX_N ?? 999999)
 const MIN_RUNS = Math.max(2, +(process.env.MIN_RUNS ?? 100))
@@ -88,23 +100,13 @@ const worker = (methodName, done) => {
 
 async function main() {
   await Promise.all(
-    computeMethods().map(async (methodName) => {
+    METHODS.map(async (methodName) => {
       const results = await runWorker(methodName)
       console.log(JSON.stringify(results))
     })
   )
 
   workerFarm.end(workers)
-}
-
-function computeMethods() {
-  const methodNames = new Set(Object.keys(TRANSFORMATIONS))
-
-  for (const blacklistedMethodName of METHOD_BLACKLIST) {
-    methodNames.delete(blacklistedMethodName)
-  }
-
-  return Array.from(methodNames)
 }
 
 module.exports = worker
