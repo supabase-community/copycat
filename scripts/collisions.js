@@ -11,7 +11,8 @@ const MAX_N = +(process.env.MAX_N ?? 999999)
 const MIN_RUNS = Math.max(2, +(process.env.MIN_RUNS ?? 100))
 const MIN_N_SUM = +(process.env.MIN_N_SUM ?? 100)
 const MAX_N_SUM = +(process.env.MAX_N_SUM ?? MAX_N)
-const MOE = +(process.env.MOE ?? 0.05)
+const LO_MOE = +(process.env.MOE ?? 0.05)
+const HI_MOE = +(process.env.MOE ?? 0.10)
 
 const workerOptions = {
   workerOptions: {
@@ -48,9 +49,14 @@ const worker = (methodName, done) => {
   let hasCollided = false
   let sum = 0
 
-  const isComplete = () =>
-    (stats.length >= MIN_RUNS || sum >= MIN_N_SUM) &&
-    (((stats.length > 2 && stats.moe() / stats.amean() <= MOE) || sum >= MAX_N_SUM))
+  const isComplete = () => {
+    const moe = stats.length > 2
+      ? stats.moe() / stats.amean()
+      : null
+
+    return (stats.length >= MIN_RUNS || sum >= MIN_N_SUM)
+        && (moe != null && (moe <= LO_MOE || (moe <= HI_MOE && sum >= MAX_N_SUM)))
+  }
 
   while (!isComplete()) {
     const firstCollisionN = findFirstCollisionN(methodName)
