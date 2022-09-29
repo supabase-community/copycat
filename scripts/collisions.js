@@ -21,8 +21,7 @@ const METHODS = [
 
 const MAX_N = +(process.env.MAX_N ?? 999999)
 const MIN_RUNS = Math.max(2, +(process.env.MIN_RUNS ?? 100))
-const MIN_N_SUM = +(process.env.MIN_N_SUM ?? 100)
-const MAX_N_SUM = +(process.env.MAX_N_SUM ?? MAX_N)
+const MAX_SUM = +(process.env.MAX_SUM ?? MAX_N)
 const LO_MOE = +(process.env.MOE ?? 0.05)
 const HI_MOE = +(process.env.MOE ?? 0.10)
 
@@ -66,8 +65,7 @@ const worker = (methodName, done) => {
       ? stats.moe() / stats.amean()
       : null
 
-    return (stats.length >= MIN_RUNS || sum >= MIN_N_SUM)
-        && (moe != null && (moe <= LO_MOE || (moe <= HI_MOE && sum >= MAX_N_SUM)))
+    return stats.length >= MIN_RUNS && (moe != null && (moe <= LO_MOE || (moe <= HI_MOE && sum >= MAX_SUM)))
   }
 
   while (!isComplete()) {
