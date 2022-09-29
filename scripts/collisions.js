@@ -50,7 +50,7 @@ const worker = (methodName, done) => {
 
   const isComplete = () =>
     (stats.length >= MIN_RUNS || sum >= MIN_N_SUM) &&
-    ((stats.moe() / stats.amean() <= MOE || sum >= MAX_N_SUM))
+    (((stats.length > 2 && stats.moe() / stats.amean() <= MOE) || sum >= MAX_N_SUM))
 
   while (!isComplete()) {
     const firstCollisionN = findFirstCollisionN(methodName)
@@ -75,6 +75,7 @@ const worker = (methodName, done) => {
     runs: stats.length,
     min,
     max,
+    sum,
     hasCollided,
   })
 }
