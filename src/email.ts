@@ -7,7 +7,11 @@ import { oneOfString } from './oneOfString'
 
 import { Input } from './types'
 
-export const email = (input: Input, options = {}): string =>
+interface EmailOptions {
+  limit?: number
+}
+
+export const email = (input: Input, options: EmailOptions = {}): string =>
   join(
     input,
     '',
