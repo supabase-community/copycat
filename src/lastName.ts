@@ -1,6 +1,8 @@
-import { Input } from './types'
 import faker from '@faker-js/faker'
-import { oneOf } from 'fictional'
+import { oneOfString } from './oneOfString'
+import { word } from './primitives'
 
-export const lastName = (input: Input): string =>
-  oneOf(input, faker.locales.en!.name!.last_name!)
+export const lastName = oneOfString(
+  faker.locales.en!.name!.last_name!,
+  word.options({ capitalize: true })
+)

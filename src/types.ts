@@ -1,1 +1,1 @@
-export type { Input } from 'fictional'
+export type { Input, Maker as Transform } from 'fictional'

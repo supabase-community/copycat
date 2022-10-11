@@ -1,20 +1,32 @@
 import faker from '@faker-js/faker'
-import { int, oneOf, join } from 'fictional'
+import { int } from 'fictional'
 import { firstName } from './firstName'
+import { join } from './join'
 import { lastName } from './lastName'
+import { oneOfString } from './oneOfString'
 
 import { Input } from './types'
 
-const maker = join('', [
-  firstName,
-  oneOf(['_', '.']),
-  lastName,
-  int.options({
-    min: 2,
-    max: 999,
-  }),
-  '@',
-  oneOf(faker.locales.en!.internet!.free_email!),
-])
+interface EmailOptions {
+  limit?: number
+}
 
-export const email = (input: Input): string => maker(input)
+export const email = (input: Input, options: EmailOptions = {}): string =>
+  join(
+    input,
+    '',
+    [
+      firstName,
+      oneOfString(['_', '.']),
+      lastName,
+      int.options({
+        min: 2,
+        max: 999,
+      }),
+      '@',
+      oneOfString(['gmail', 'yahoo', 'hotmail']),
+      '.',
+      oneOfString(faker.locales.en!.internet!.domain_suffix!),
+    ],
+    options
+  )

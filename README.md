@@ -247,6 +247,10 @@ copycat.email('foo')
 // => 'Zakary.Block356@gmail.com'
 ```
 
+#### `options`
+
+- **`limit`:** Constrain generated values to be less than or equal to `limit` number of chars
+
 ### `copycat.firstName(input)`
 
 Takes in an [input](#input) and returns a string value resembling a first name.
@@ -255,6 +259,10 @@ Takes in an [input](#input) and returns a string value resembling a first name.
 copycat.firstName('foo')
 // => 'Alejandrin'
 ```
+
+#### `options`
+
+- **`limit`:** Constrain generated values to be less than or equal to `limit` number of chars
 
 ### `copycat.lastName(input)`
 
@@ -265,6 +273,10 @@ copycat.lastName('foo')
 // => 'Keeling'
 ```
 
+#### `options`
+
+- **`limit`:** Constrain generated values to be less than or equal to `limit` number of chars
+
 ### `copycat.fullName(input)`
 
 Takes in an [input](#input) and returns a string value resembling a full name.
@@ -273,6 +285,10 @@ Takes in an [input](#input) and returns a string value resembling a full name.
 copycat.fullName('foo')
 // => 'Zakary Hessel'
 ```
+
+#### `options`
+
+- **`limit`:** Constrain generated values to be less than or equal to `limit` number of chars
 
 ### `copycat.phoneNumber(input)`
 
