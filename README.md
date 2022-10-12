@@ -500,6 +500,8 @@ As shown above, `range` can be a tuple array of the minimum and maximum possible
 ```js
 copycat.times('foo', 2, copycat.word)
 // => [ 'Raeko', 'Vame' ]
+```
+
 ### `copycat.setSalt(string)`
 
 <a name="set-salt"></a>Uses the given `string` value as salt when Copycat hashes input values. Helpful for changing the generated results.
