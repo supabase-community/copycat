@@ -54,7 +54,10 @@ export const join = (
     )
 
     segmentBudgetState = nextSegmentBudgetState
-    resolvedSegments.push(segmentResult)
+
+    if (segmentResult) {
+      resolvedSegments.push(segmentResult)
+    }
   }
 
   return resolvedSegments.join(joiner)
