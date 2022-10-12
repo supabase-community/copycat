@@ -5,7 +5,7 @@ const Stats = require('fast-stats').Stats
 
 const { TRANSFORMATIONS } = require('../dist/testutils')
 
-const METHODS = [
+const METHODS = process.env.METHODS ? process.env.METHODS.split(',') : [
   'email',
   'int',
   'dateString',
