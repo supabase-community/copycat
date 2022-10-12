@@ -16,7 +16,17 @@ interface SegmentBudgetState {
   takenFnSegmentLen: number
 }
 
-export const join = (
+const joinEntry = (a: any, b: any, c: any, d: any) =>
+  c != null ? joinMain(a, b, c, d) : joinCurried(a, b)
+
+export const join = joinEntry as unknown as typeof joinCurried & typeof joinMain
+
+export const joinCurried =
+  (joiner: string, segments: Transform[]) =>
+  (input: Input, options?: JoinOptions) =>
+    joinMain(input, joiner, segments, options)
+
+export const joinMain = (
   input: Input,
   joiner: string,
   segments: Transform[],

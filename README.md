@@ -4,13 +4,13 @@
 import { copycat } from '@snaplet/copycat'
 
 copycat.email('foo')
-// => 'Blair.Tromp686@hotmail.info'
+// => 'Blair.Tromp1180@extra-large-buy.info'
 
 copycat.email('bar')
-// => 'Thurman.Schowalter668@hotmail.com'
+// => 'Francesco.Daugherty6647@designateapple.name'
 
 copycat.email('foo')
-// => 'Zakary.Block356@gmail.com'
+// => 'Blair.Tromp1180@extra-large-buy.info'
 ```
 
 ## Motivation
@@ -31,13 +31,13 @@ This is exactly what we designed `Copycat` to do. For each method provided by Co
 import { copycat } from '@snaplet/copycat'
 
 copycat.email('foo')
-// => 'Zakary.Block356@gmail.com'
+// => ''Blair.Tromp1180@extra-large-buy.info''
 
 copycat.email('bar')
-// => 'Thurman.Schowalter668@hotmail.com'
+// => 'Francesco.Daugherty6647@designateapple.name'
 
 copycat.email('foo')
-// => 'Zakary.Block356@gmail.com'
+// => ''Blair.Tromp1180@extra-large-buy.info''
 ```
 
 Copycat works statelessly: for the same input, the same value will be returned regardless of the environment, process, call ordering, or any other external factors.
@@ -61,7 +61,7 @@ Note though that for either of these approaches, hashing might also still be nee
 import { copycat } from '@snaplet/copycat'
 
 copycat.email('foo')
-// => 'Zakary.Block356@gmail.com'
+// => ''Blair.Tromp1180@extra-large-buy.info''
 ```
 
 The given input can be any JSON-serializable value. For any two calls to the same function, the input given in each call serializes down to the same value and the same output will be returned.
@@ -244,7 +244,7 @@ Takes in an [input](#input) and returns a string value resembling an email addre
 
 ```js
 copycat.email('foo')
-// => 'Zakary.Block356@gmail.com'
+// => ''Blair.Tromp1180@extra-large-buy.info''
 ```
 
 #### `options`
