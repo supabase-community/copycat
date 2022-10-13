@@ -136,6 +136,11 @@ const computeSegmentBudget = (
   const { seenFnSegmentCount, takenFnSegmentLen } = state
   const availableLen = limit - fixedLen - takenFnSegmentLen
   const remainingSegmentCount = fnSegmentCount - seenFnSegmentCount
+
+  // context(justinvdm, 13 October 2022): We try get the first segment to have at least one character
+  // Of the usages so far, its usually the first segment that needs to be present for the result to be
+  // valid, rather than the segments that follow. For example, without this, we could end up with an
+  // invalid email like `@b.c` for small `limit`s, or usernames starting with numbers rather than letters
   return Math.max(
     index === 0 ? 1 : 0,
     Math.floor(availableLen / remainingSegmentCount)
