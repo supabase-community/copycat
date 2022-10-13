@@ -98,13 +98,13 @@ const worker = (methodName, done) => {
     numRuns++
   }
 
-  const [min, max] = stats.range()
+  const [min = null, max = null] = stats.range() ?? []
 
   done(null, {
     methodName,
-    mean: stats.amean().toFixed(2),
-    stddev: stats.stddev().toFixed(2),
-    moe: computeMoe().toFixed(2),
+    mean: format(stats.amean()),
+    stddev: format(stats.stddev()),
+    moe: format(computeMoe()),
     runs: numRuns,
     n: stats.length,
     min,
@@ -114,6 +114,8 @@ const worker = (methodName, done) => {
     duration: computeDuration()
   })
 }
+
+const format = (v) => v == null || isNaN(v) ? null : v.toFixed(2)
 
 async function main() {
   await Promise.all(
