@@ -67,6 +67,7 @@ const worker = (methodName, done) => {
   let hasCollided = false
   let sum = 0
   let startTime = Date.now()
+  let numRuns = 0
 
   const computeMoe = () => stats.length > 2 && stats.amean() > 0
       ? stats.moe() / stats.amean()
@@ -78,7 +79,7 @@ const worker = (methodName, done) => {
     const duration = computeDuration()
 
     const moe = computeMoe()
-    return stats.length >= MIN_RUNS &&
+    return numRuns >= MIN_RUNS &&
       ((duration >= MAX_DURATION) ||
        ((moe != null && (moe <= LO_MOE || (moe <= HI_MOE && sum >= MAX_SUM))) || (moe == null && !hasCollided)))
   }
@@ -89,11 +90,12 @@ const worker = (methodName, done) => {
     if (firstCollisionN != null) {
       hasCollided = true
       sum += firstCollisionN
+      stats.push(firstCollisionN)
     } else {
       sum = MAX_N
     }
 
-    stats.push(firstCollisionN)
+    numRuns++
   }
 
   const [min, max] = stats.range()
@@ -103,7 +105,8 @@ const worker = (methodName, done) => {
     mean: stats.amean().toFixed(2),
     stddev: stats.stddev().toFixed(2),
     moe: computeMoe().toFixed(2),
-    runs: stats.length,
+    runs: numRuns,
+    n: stats.length,
     min,
     max,
     sum,
