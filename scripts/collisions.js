@@ -18,7 +18,6 @@ const METHODS = process.env.METHODS ? process.env.METHODS.split(',') : [
   'password',
   'uuid',
 ]
-
 const MAX_N = +(process.env.MAX_N ?? 999999)
 const MIN_RUNS = Math.max(2, +(process.env.MIN_RUNS ?? 100))
 const MAX_SUM = +(process.env.MAX_SUM ?? MAX_N)
@@ -28,6 +27,11 @@ const HI_MOE = +(process.env.MOE ?? 0.10)
 const workerOptions = {
   workerOptions: {
     env: {
+      MAX_N,
+      MIN_RUNS,
+      MAX_SUM,
+      LO_MOE,
+      HI_MOE,
       IS_WORKER: '1',
     },
   }
@@ -61,7 +65,7 @@ const worker = (methodName, done) => {
   let sum = 0
 
   const isComplete = () => {
-    const moe = stats.length > 2
+    const moe = stats.length > 2 && stats.amean() > 0
       ? stats.moe() / stats.amean()
       : null
 
