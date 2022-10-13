@@ -64,18 +64,19 @@ const worker = (methodName, done) => {
   let hasCollided = false
   let sum = 0
 
-  const isComplete = () => {
-    const moe = stats.length > 2 && stats.amean() > 0
+  const computeMoe = () => stats.length > 2 && stats.amean() > 0
       ? stats.moe() / stats.amean()
       : null
 
-    return stats.length >= MIN_RUNS && (moe != null && (moe <= LO_MOE || (moe <= HI_MOE && sum >= MAX_SUM)))
+  const isComplete = () => {
+    const moe = computeMoe()
+    return stats.length >= MIN_RUNS && ((moe != null && (moe <= LO_MOE || (moe <= HI_MOE && sum >= MAX_SUM))) || (moe == null && !hasCollided))
   }
 
   while (!isComplete()) {
     const firstCollisionN = findFirstCollisionN(methodName)
 
-    if (findFirstCollisionN != null) {
+    if (firstCollisionN != null) {
       hasCollided = true
       sum += firstCollisionN
     } else {
@@ -91,7 +92,7 @@ const worker = (methodName, done) => {
     methodName,
     mean: stats.amean().toFixed(2),
     stddev: stats.stddev().toFixed(2),
-    moe: (stats.moe() / stats.amean()).toFixed(2),
+    moe: computeMoe().toFixed(2),
     runs: stats.length,
     min,
     max,
