@@ -4,13 +4,13 @@
 import { copycat } from '@snaplet/copycat'
 
 copycat.email('foo')
-// => 'Blair.Tromp1180@extra-large-buy.info'
+// => 'Edmund_Boyer77485@haunting-dynamo.info'
 
 copycat.email('bar')
 // => 'Francesco.Daugherty6647@designateapple.name'
 
 copycat.email('foo')
-// => 'Blair.Tromp1180@extra-large-buy.info'
+// => 'Edmund_Boyer77485@haunting-dynamo.info'
 ```
 
 ## Motivation
@@ -31,13 +31,13 @@ This is exactly what we designed `Copycat` to do. For each method provided by Co
 import { copycat } from '@snaplet/copycat'
 
 copycat.email('foo')
-// => ''Blair.Tromp1180@extra-large-buy.info''
+// => 'Edmund_Boyer77485@haunting-dynamo.info'
 
 copycat.email('bar')
 // => 'Francesco.Daugherty6647@designateapple.name'
 
 copycat.email('foo')
-// => ''Blair.Tromp1180@extra-large-buy.info''
+// => 'Edmund_Boyer77485@haunting-dynamo.info'
 ```
 
 Copycat works statelessly: for the same input, the same value will be returned regardless of the environment, process, call ordering, or any other external factors.
@@ -61,7 +61,7 @@ Note though that for either of these approaches, hashing might also still be nee
 import { copycat } from '@snaplet/copycat'
 
 copycat.email('foo')
-// => ''Blair.Tromp1180@extra-large-buy.info''
+// => 'Edmund_Boyer77485@haunting-dynamo.info'
 ```
 
 The given input can be any JSON-serializable value. For any two calls to the same function, the input given in each call serializes down to the same value and the same output will be returned.
@@ -244,7 +244,7 @@ Takes in an [input](#input) and returns a string value resembling an email addre
 
 ```js
 copycat.email('foo')
-// => ''Blair.Tromp1180@extra-large-buy.info''
+// => 'Edmund_Boyer77485@haunting-dynamo.info'
 ```
 
 #### `options`
@@ -308,8 +308,11 @@ Takes in an [input](#input) and returns a string value resembling a username.
 
 ```js
 copycat.username('foo')
-// => 'Blair.Tromp686'
+// => ''severe.dinosaur77485'
 ```
+
+#### `options`
+- **`limit`:** Constrain generated values to be less than or equal to `limit` number of chars
 
 ### `copycat.password(input)`
 

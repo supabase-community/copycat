@@ -4,6 +4,7 @@ const NUM_CHECKS = 10
 
 export const LIMIT_TRANSFORMATION_NAMES = [
   'email',
+  'username',
   'firstName',
   'lastName',
   'fullName',
@@ -32,16 +33,16 @@ test('limit: medium', () => {
   expect(generateValues(25)).toMatchInlineSnapshot(`
     Object {
       "email": Array [
-        "Bo_King2572@-coke.net",
-        "Bo_Koch155@gofen.net",
-        "Bo_Ward9817@gosow.com",
-        "Bo_Toy7503@-tram.com",
-        "Ed_Dare5256@axwar.com",
-        "Bo_Wiza1859@goape.info",
-        "Bo_Toy207@-mill.info",
-        "Bo_Von6128@-lava.biz",
-        "Ed_Kub4243@-jot.org",
-        "Ed_Cole7465@gowad.net",
+        "M_Yu55370@fgene.biz",
+        "V.Vi21967@q-rap.info",
+        "V_Ra85431@S-guy.org",
+        "V.So17165@axhead.org",
+        "K_Yu46526@cccake.org",
+        "K.Mi84888@h-bee.com",
+        "K.Ra65715@c-bow.info",
+        "Y_So44969@R-pun.com",
+        "Y_Ko37263@V-pop.com",
+        "V_Yu5335@J-sir.org",
       ],
       "firstName": Array [
         "Cindy",
@@ -79,6 +80,18 @@ test('limit: medium', () => {
         "Zulauf",
         "Kuphal",
       ],
+      "username": Array [
+        "ugly_clasp55370",
+        "flat-shift21967",
+        "good_wit85431",
+        "mild-derby17165",
+        "find-mess46526",
+        "vast_magic84888",
+        "mad-bootee65715",
+        "thin_dew44969",
+        "find.moai37263",
+        "damn-guava5335",
+      ],
     }
   `)
 })
@@ -87,16 +100,16 @@ test('limit: small', () => {
   expect(generateValues(10)).toMatchInlineSnapshot(`
     Object {
       "email": Array [
-        "VvK2@-.yus",
-        "MmK1@.com",
-        "SsK9@.com",
-        "KsY7@-.sov",
-        "MmR5@.com",
-        "YrK1@.net",
-        "KkS2@-.vik",
-        "MmR6@-.rav",
-        "YsM4@-.yur",
-        "MyV7@.com",
+        "M55@fA.koy",
+        "V21@q.net",
+        "V85@S.net",
+        "V17@yK.mik",
+        "K46@PG.yuk",
+        "K84@h.biz",
+        "K65@c.biz",
+        "Y44@R.biz",
+        "Y37@V.net",
+        "V53@J.com",
       ],
       "firstName": Array [
         "Eryn",
@@ -134,6 +147,18 @@ test('limit: small', () => {
         "Gerlach",
         "Dibbert",
       ],
+      "username": Array [
+        "B55370",
+        "I21967",
+        "J85431",
+        "Y17165",
+        "b46526",
+        "r84888",
+        "f65715",
+        "b44969",
+        "T37263",
+        "C5335",
+      ],
     }
   `)
 })
@@ -142,16 +167,16 @@ test('limit: very large', () => {
   expect(generateValues(999)).toMatchInlineSnapshot(`
     Object {
       "email": Array [
-        "Liliane_Powlowski2572@frilly-hiking.net",
-        "Emely_Buckridge155@messagepentagon.net",
-        "Jeffry_Kshlerin9817@inveigletap.com",
-        "Norbert_Funk7503@lopsided-cane.com",
-        "Lyda_Schowalter5256@stingentry.com",
-        "Kaylie_Yost1859@finessemoody.info",
-        "Catherine_Schmitt207@favorable-sprag.info",
-        "Elinore_Kshlerin6128@artistic-shakedown.biz",
-        "Jace_Boehm4243@deserted-battleship.org",
-        "Howell_Bergnaum7465@jogglepersonality.net",
+        "Ibrahim_Robel55370@flamboyantphenotype.biz",
+        "Randal.Sipes21967@postpone-bloodflow.info",
+        "Frank_Hahn85431@coach-competence.org",
+        "Eugene.Kuvalis17165@joldisguise.org",
+        "Scarlett_Farrell46526@eddyslapstick.org",
+        "Lloyd.Koss84888@grateful-adobe.com",
+        "Alford.Harber65715@dirty-catalyst.info",
+        "Deven_Jakubowski44969@coat-caution.com",
+        "Matilda_Buckridge37263@tidy-corn.com",
+        "Cody_Murazik5335@expensive-wasp.org",
       ],
       "firstName": Array [
         "Cindy",
@@ -189,6 +214,18 @@ test('limit: very large', () => {
         "Zulauf",
         "Kuphal",
       ],
+      "username": Array [
+        "careless_scrutiny55370",
+        "cluttered-executor21967",
+        "grouchy_advantage85431",
+        "nutty-elevator17165",
+        "snipe-saffron46526",
+        "fitting_young84888",
+        "functional-thistle65715",
+        "fussy_graphic44969",
+        "denitrify.conduct37263",
+        "embitter-shift5335",
+      ],
     }
   `)
 })
@@ -197,16 +234,16 @@ test('limit: tiny', () => {
   expect(generateValues(5)).toMatchInlineSnapshot(`
     Object {
       "email": Array [
-        "2@-.y",
-        "1@.ra",
-        "9@.vi",
-        "7@-.s",
-        "5@.ko",
-        "1@.vi",
-        "2@-.v",
-        "6@-.r",
-        "4@-.y",
-        "7@.yu",
+        "M@f.k",
+        "V@q.m",
+        "V@S.v",
+        "V@y.m",
+        "K@P.y",
+        "K@h.y",
+        "K@c.r",
+        "Y@R.k",
+        "Y@V.y",
+        "V@J.s",
       ],
       "firstName": Array [
         "Otto",
@@ -243,6 +280,18 @@ test('limit: tiny', () => {
         "Howe",
         "Roob",
         "Roob",
+      ],
+      "username": Array [
+        "B5537",
+        "I2196",
+        "J8543",
+        "Y1716",
+        "b4652",
+        "r8488",
+        "f6571",
+        "b4496",
+        "T3726",
+        "C5335",
       ],
     }
   `)

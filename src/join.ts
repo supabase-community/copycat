@@ -32,12 +32,13 @@ export const joinMain = (
   segments: Transform[],
   options: JoinOptions = {}
 ) => {
-  const { limit } = options
+  const { limit: rawLimit } = options
 
-  if (limit == null) {
+  if (rawLimit == null) {
     return fictionalJoin(input, joiner, segments)
   }
 
+  const limit = Math.max(1, rawLimit)
   let nextInput = hash([input, 'copycat:join'] as JSONSerializable)
 
   const segmentBudgetMetadata = computeSegmentBudgetMetadata(
@@ -52,6 +53,7 @@ export const joinMain = (
   }
 
   const resolvedSegments = []
+  let i = -1
 
   for (const segment of segments) {
     nextInput = hash(nextInput)
@@ -60,7 +62,8 @@ export const joinMain = (
       nextInput,
       segmentBudgetState,
       segmentBudgetMetadata,
-      segment
+      segment,
+      ++i
     )
 
     segmentBudgetState = nextSegmentBudgetState
@@ -77,13 +80,14 @@ const resolveSegment = (
   input: Input,
   state: SegmentBudgetState,
   metadata: SegmentBudgetMetadata,
-  segment: Transform
+  segment: Transform,
+  index: number
 ): [SegmentBudgetState, string] => {
   if (typeof segment !== 'function') {
     return [state, (segment as string).toString()]
   }
 
-  const budget = computeSegmentBudget(state, metadata)
+  const budget = computeSegmentBudget(state, metadata, index)
 
   const segmentResult = segment(input, { limit: budget })
     .toString()
@@ -125,11 +129,15 @@ const computeSegmentBudgetMetadata = (
 
 const computeSegmentBudget = (
   state: SegmentBudgetState,
-  metadata: SegmentBudgetMetadata
+  metadata: SegmentBudgetMetadata,
+  index: number
 ) => {
   const { fnSegmentCount, fixedLen, limit } = metadata
   const { seenFnSegmentCount, takenFnSegmentLen } = state
   const availableLen = limit - fixedLen - takenFnSegmentLen
   const remainingSegmentCount = fnSegmentCount - seenFnSegmentCount
-  return Math.max(0, Math.floor(availableLen / remainingSegmentCount))
+  return Math.max(
+    index === 0 ? 1 : 0,
+    Math.floor(availableLen / remainingSegmentCount)
+  )
 }
