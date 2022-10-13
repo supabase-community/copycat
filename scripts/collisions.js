@@ -77,12 +77,10 @@ const worker = (methodName, done) => {
   const isComplete = () => {
     const duration = computeDuration()
 
-    if (duration >= MAX_DURATION) {
-      return true
-    }
-
     const moe = computeMoe()
-    return stats.length >= MIN_RUNS && ((moe != null && (moe <= LO_MOE || (moe <= HI_MOE && sum >= MAX_SUM))) || (moe == null && !hasCollided))
+    return stats.length >= MIN_RUNS &&
+      ((duration >= MAX_DURATION) ||
+       ((moe != null && (moe <= LO_MOE || (moe <= HI_MOE && sum >= MAX_SUM))) || (moe == null && !hasCollided)))
   }
 
   while (!isComplete()) {
