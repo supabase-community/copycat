@@ -18,11 +18,13 @@ const METHODS = process.env.METHODS ? process.env.METHODS.split(',') : [
   'password',
   'uuid',
 ]
+
 const MAX_N = +(process.env.MAX_N ?? 999999)
 const MIN_RUNS = Math.max(2, +(process.env.MIN_RUNS ?? 100))
 const MAX_SUM = +(process.env.MAX_SUM ?? MAX_N)
 const LO_MOE = +(process.env.MOE ?? 0.05)
 const HI_MOE = +(process.env.MOE ?? 0.10)
+const MAX_DURATION = +(process.env.MAX_MS ?? 1000 * 60 * 5)
 
 const workerOptions = {
   workerOptions: {
@@ -32,6 +34,7 @@ const workerOptions = {
       MAX_SUM,
       LO_MOE,
       HI_MOE,
+      MAX_DURATION,
       IS_WORKER: '1',
     },
   }
@@ -63,12 +66,21 @@ const worker = (methodName, done) => {
   const stats = new Stats()
   let hasCollided = false
   let sum = 0
+  let startTime = Date.now()
 
   const computeMoe = () => stats.length > 2 && stats.amean() > 0
       ? stats.moe() / stats.amean()
       : null
 
+  const computeDuration = () => Date.now() - startTime
+
   const isComplete = () => {
+    const duration = computeDuration()
+
+    if (duration >= MAX_DURATION) {
+      return true
+    }
+
     const moe = computeMoe()
     return stats.length >= MIN_RUNS && ((moe != null && (moe <= LO_MOE || (moe <= HI_MOE && sum >= MAX_SUM))) || (moe == null && !hasCollided))
   }
@@ -98,6 +110,7 @@ const worker = (methodName, done) => {
     max,
     sum,
     hasCollided,
+    duration: computeDuration()
   })
 }
 
