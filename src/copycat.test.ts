@@ -312,6 +312,44 @@ test('generated values', () => {
         "Rakomia korayu kovia miyumi yu.",
         "Rakorako raviko viaso ko sorasoyu rayuso yuaviyu, vi soravi raso viyuso yu visoa yuakomi ko.",
       ],
+      "someOf": Array [
+        Array [
+          "paper",
+        ],
+        Array [
+          "rock",
+          "paper",
+        ],
+        Array [
+          "scissors",
+          "rock",
+        ],
+        Array [
+          "rock",
+          "paper",
+        ],
+        Array [
+          "scissors",
+          "rock",
+        ],
+        Array [
+          "rock",
+        ],
+        Array [
+          "paper",
+          "rock",
+        ],
+        Array [
+          "rock",
+        ],
+        Array [
+          "paper",
+        ],
+        Array [
+          "paper",
+          "rock",
+        ],
+      ],
       "streetAddress": Array [
         "246 Fabian Mountains",
         "816 Block Harbors",

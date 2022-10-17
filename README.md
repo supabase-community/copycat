@@ -151,6 +151,14 @@ copycat.oneOf('foo', ['red', 'green', 'blue'])
 // => 'red'
 ```
 
+### `copycat.someOf(input, range, values)`
+
+Takes in an [`input`](#input) value and an array of `values`, repeatedly picks items from that array a number of times within the given range that corresponds to that `input`. Each item will be picked no more than once.
+
+```js
+copycat.someOf('foo', [1,2], ['paper', 'rock'])
+// => [ 'paper', 'rock' ]
+```
 
 ### `copycat.int(input[, options])`
 
