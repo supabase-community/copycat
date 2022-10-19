@@ -118,6 +118,10 @@ Ideally, one salt should be used per-value, rather than re-used for several valu
 
 A re-export of `faker` from [`@faker-js/faker`](https://github.com/faker-js/faker). We do not alter faker in any way, and do not seed it.
 
+### `fictional`
+
+A re-export of [`fictional`](https://github.com/oftherivier/fictional), a library used under the hood by copycat for mapping inputs to primitive values.
+
 ### `copycat.scramble(string[, options])`
 
 Takes in a `string` value, and returns a string with the same length, but with each character replaced with a different character in the same character range:
