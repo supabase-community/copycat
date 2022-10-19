@@ -4,6 +4,7 @@ const NUM_CHECKS = 10
 
 export const LIMIT_TRANSFORMATION_NAMES = [
   'email',
+  'username',
   'firstName',
   'lastName',
   'fullName',
@@ -32,16 +33,16 @@ test('limit: medium', () => {
   expect(generateValues(25)).toMatchInlineSnapshot(`
     Object {
       "email": Array [
-        "Bo_King114@gmail.net",
-        "Bo_Koch349@yahoo.net",
-        "Bo_Ward471@yahoo.com",
-        "Bo_Toy949@gmail.com",
-        "Ed_Dare472@yahoo.com",
-        "Bo_Wiza59@yahoo.info",
-        "Bo_Toy189@gmail.info",
-        "Bo_Von60@gmail.biz",
-        "Ed_Kub941@gmail.org",
-        "Ed_Cole773@yahoo.net",
+        "M_Yu55370@fgene.biz",
+        "V.Vi21967@q-rap.info",
+        "V_Ra85431@S-guy.org",
+        "V.So17165@axhead.org",
+        "K_Yu46526@cccake.org",
+        "K.Mi84888@h-bee.com",
+        "K.Ra65715@c-bow.info",
+        "Y_So44969@R-pun.com",
+        "Y_Ko37263@V-pop.com",
+        "V_Yu5335@J-sir.org",
       ],
       "firstName": Array [
         "Cindy",
@@ -79,6 +80,18 @@ test('limit: medium', () => {
         "Zulauf",
         "Kuphal",
       ],
+      "username": Array [
+        "ugly_clasp55370",
+        "flat-shift21967",
+        "good_wit85431",
+        "mild-derby17165",
+        "find-mess46526",
+        "vast_magic84888",
+        "mad-bootee65715",
+        "thin_dew44969",
+        "find.moai37263",
+        "damn-guava5335",
+      ],
     }
   `)
 })
@@ -87,16 +100,16 @@ test('limit: small', () => {
   expect(generateValues(10)).toMatchInlineSnapshot(`
     Object {
       "email": Array [
-        "VvK1@ko.yu",
-        "MmK3@mi.ra",
-        "SsK4@vi.vi",
-        "KsY9@mi.so",
-        "MmR4@yu.ko",
-        "YrK5@yu.vi",
-        "KkS1@ra.vi",
-        "MmR6@ko.ra",
-        "YsM9@yu.yu",
-        "MyV7@so.yu",
+        "M55@fA.koy",
+        "V21@q.net",
+        "V85@S.net",
+        "V17@yK.mik",
+        "K46@PG.yuk",
+        "K84@h.biz",
+        "K65@c.biz",
+        "Y44@R.biz",
+        "Y37@V.net",
+        "V53@J.com",
       ],
       "firstName": Array [
         "Eryn",
@@ -134,6 +147,18 @@ test('limit: small', () => {
         "Gerlach",
         "Dibbert",
       ],
+      "username": Array [
+        "B55370",
+        "I21967",
+        "J85431",
+        "Y17165",
+        "b46526",
+        "r84888",
+        "f65715",
+        "b44969",
+        "T37263",
+        "C5335",
+      ],
     }
   `)
 })
@@ -142,16 +167,16 @@ test('limit: very large', () => {
   expect(generateValues(999)).toMatchInlineSnapshot(`
     Object {
       "email": Array [
-        "Liliane_Powlowski114@gmail.net",
-        "Emely_Buckridge349@yahoo.net",
-        "Jeffry_Kshlerin471@yahoo.com",
-        "Norbert_Funk949@gmail.com",
-        "Lyda_Schowalter472@yahoo.com",
-        "Kaylie_Yost59@yahoo.info",
-        "Catherine_Schmitt189@gmail.info",
-        "Elinore_Kshlerin60@gmail.biz",
-        "Jace_Boehm941@gmail.org",
-        "Howell_Bergnaum773@yahoo.net",
+        "Ibrahim_Robel55370@flamboyantphenotype.biz",
+        "Randal.Sipes21967@postpone-bloodflow.info",
+        "Frank_Hahn85431@coach-competence.org",
+        "Eugene.Kuvalis17165@joldisguise.org",
+        "Scarlett_Farrell46526@eddyslapstick.org",
+        "Lloyd.Koss84888@grateful-adobe.com",
+        "Alford.Harber65715@dirty-catalyst.info",
+        "Deven_Jakubowski44969@coat-caution.com",
+        "Matilda_Buckridge37263@tidy-corn.com",
+        "Cody_Murazik5335@expensive-wasp.org",
       ],
       "firstName": Array [
         "Cindy",
@@ -189,6 +214,18 @@ test('limit: very large', () => {
         "Zulauf",
         "Kuphal",
       ],
+      "username": Array [
+        "careless_scrutiny55370",
+        "cluttered-executor21967",
+        "grouchy_advantage85431",
+        "nutty-elevator17165",
+        "snipe-saffron46526",
+        "fitting_young84888",
+        "functional-thistle65715",
+        "fussy_graphic44969",
+        "denitrify.conduct37263",
+        "embitter-shift5335",
+      ],
     }
   `)
 })
@@ -197,16 +234,16 @@ test('limit: tiny', () => {
   expect(generateValues(5)).toMatchInlineSnapshot(`
     Object {
       "email": Array [
-        "1@k.y",
-        "3@m.r",
-        "4@v.v",
-        "9@m.s",
-        "4@y.k",
-        "5@y.v",
-        "1@r.v",
-        "6@k.r",
-        "9@y.y",
-        "7@s.y",
+        "M@f.k",
+        "V@q.m",
+        "V@S.v",
+        "V@y.m",
+        "K@P.y",
+        "K@h.y",
+        "K@c.r",
+        "Y@R.k",
+        "Y@V.y",
+        "V@J.s",
       ],
       "firstName": Array [
         "Otto",
@@ -243,6 +280,18 @@ test('limit: tiny', () => {
         "Howe",
         "Roob",
         "Roob",
+      ],
+      "username": Array [
+        "B5537",
+        "I2196",
+        "J8543",
+        "Y1716",
+        "b4652",
+        "r8488",
+        "f6571",
+        "b4496",
+        "T3726",
+        "C5335",
       ],
     }
   `)

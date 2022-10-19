@@ -1,5 +1,6 @@
 import { Input, JSONSerializable, oneOf } from 'fictional'
 import { word } from './primitives'
+import { Transform } from './types'
 
 export interface OneOfOptions {
   limit?: number
@@ -9,7 +10,7 @@ const defaultFallback = word.options({ capitalize: false })
 
 export const oneOfString = (
   rawChoices: string[],
-  fallback = defaultFallback
+  fallback: string | number | Transform = defaultFallback
 ) => {
   const sortedChoices = rawChoices.slice().sort(compareByLength)
 
@@ -23,10 +24,12 @@ export const oneOfString = (
     const choices = constrainChoices(sortedChoices, limit)
 
     if (choices.length === 0) {
-      return fallback([input, 'copycat:oneOfString'] as JSONSerializable).slice(
-        0,
-        limit
-      )
+      const fallbackResult =
+        typeof fallback !== 'function'
+          ? fallback
+          : fallback([input, 'copycat:oneOfString'] as JSONSerializable)
+
+      return fallbackResult.toString().slice(0, limit)
     }
 
     return oneOf(input, choices)
