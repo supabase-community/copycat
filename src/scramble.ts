@@ -57,9 +57,13 @@ export const scramble = <Value extends ScrambleInput>(
     return scrambleObject(input, options) as Value
   }
 
-  throw new Error(
+  const error = new TypeError(
     `copycat.scramble() received value of type ${typeof input}, this type cannot be scrambled`
   )
+
+  error.name = 'ScrambleTypeError'
+
+  throw error
 }
 
 const scrambleObject = <Value extends ScrambleInput>(
