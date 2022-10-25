@@ -1,11 +1,11 @@
-import { char, Input, PlainNested } from 'fictional'
+import { char, Input, JSONPrimitive, PlainNested } from 'fictional'
 
 interface ScrambleOptions {
   preserve?: string[]
   charMaps?: CharMapEntry[]
 }
 
-type ScrambleInput = PlainNested<Date | Input>
+type ScrambleInput = PlainNested<Date | JSONPrimitive>
 
 type CharMapEntry = [[number, number], (input: Input) => string]
 
