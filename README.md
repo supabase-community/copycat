@@ -122,9 +122,11 @@ A re-export of `faker` from [`@faker-js/faker`](https://github.com/faker-js/fake
 
 A re-export of [`fictional`](https://github.com/oftherivier/fictional), a library used under the hood by copycat for mapping inputs to primitive values.
 
-### `copycat.scramble(string[, options])`
+### `copycat.scramble(input[, options])`
 
-Takes in a `string` value, and returns a string with the same length, but with each character replaced with a different character in the same character range:
+Takes in an `input` value, and returns a value of the same type and length, but with each character/digit replaced with a different character/digit.
+
+For string, the replacement characters will be in the same character range:
 * By default, spaces are preserved (see `preserve` option below)
 * Lower case ASCII characters are replaced with lower case ASCII letters
 * Upper case ASCII characters are replaced with upper case ASCII letters
@@ -136,6 +138,46 @@ Takes in a `string` value, and returns a string with the same length, but with e
 copycat.scramble('Zakary Hessel')
 // => 'Yizmm Lrnjkizj'
 ```
+
+If a number is given, each digit will be replaced, and the floating point (if relevant) will be preserved:
+
+
+```js
+copycat.scramble(782364.902374)
+// => 387998.531441
+```
+
+If an object or array is given, the values inside the object or array will be recursively scrambled:
+
+```js
+copycat.scramble({
+  a: [
+    {
+      b: 23,
+      c: 'foo',
+    },
+  ],
+})
+/* =>
+{
+  "a": [{
+    "b": 19,
+    "c": "ebp"
+  }]
+}
+*/
+```
+
+If a date is given, each segment in the date will be scrambled:
+
+```js
+copycat.scramble(new Date('2022-10-25T19:08:39.374Z'))
+// => Date(6332-05-05T02:01:15.366Z)
+```
+
+If a boolean or null value is given, the value will simply be returned.
+
+If a value of any other type is given, an error will be thrown
 
 #### `options`
 
