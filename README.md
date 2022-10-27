@@ -203,7 +203,7 @@ Takes in an [`input`](#input) value and an array of `values`, repeatedly picks i
 
 ```js
 copycat.someOf('foo', [1,2], ['paper', 'rock'])
-// => [ 'paper', 'rock' ]
+// => [ 'scissors', 'paper' ]
 ```
 
 ### `copycat.int(input[, options])`
@@ -462,7 +462,7 @@ word('id-2', {
   unicode: 0.382
 })
 // =>
-'Rayuashira'
+'Memu'
 ```
 
 ### `copycat.words(input)`
@@ -471,7 +471,7 @@ Takes in an [`input`](#input) value and returns a string value resembling fictit
 
 ```js
 copycat.words('foo')
-// => 'Viso visoviso yusoa'
+// => 'Mokin tavisokin mimakiha'
 ```
 
 #### `options`
@@ -487,7 +487,7 @@ Takes in an [`input`](#input) value and returns a string value resembling a sent
 
 ```js
 copycat.sentence('foo')
-// => 'Vi yuvia kora ra somiravi ravi mi viso.'
+// => 'Cea mikaihy kovi ra tasohako meni rae kota.'
 ```
 
 #### `options`
@@ -502,7 +502,7 @@ Takes in an [`input`](#input) value and returns a string value resembling a para
 
 ```js
 copycat.paragraph('foo')
-// => ''Soyu yu komi koamiso vi viavia vi yuso, viso kovia yu raviko sovi somikoyu kovi so. Miasomi korayura miyumi korasovi sora sorakomi vira, ko koa mira komikoyu sovi viavi mi ramirayu. Mirami komiraso yu sora yu. Ko yua raso miravi soa yukora. Vi rasoaso ra somia vi komiavi sora yu.'
+// => 'Hymo yurae rakichi kinmo meso mi kamukoyu kichiyokin, kaki momina so mohako kaiyo tanikaima meka shi. Nirasota nachimurae mevachi makeyu mirakin rae keyuno, yu keso chiva kevi ceakoa muyo chishino virae. Mutami kamekin sokinyuno komekin novi. Hy raeshi make chirae chita yuchimoki. Ni sotasovi ta koshihy yu ceamukirae viha me.'
 ```
 
 #### `options`
@@ -549,7 +549,7 @@ Takes in an [`input`](#input) value and a function `fn`, calls that function rep
 
 ```js
 copycat.times('foo', [4, 5], copycat.word)
-// => [ 'Rami', 'Misoyu', 'Koa', 'Somira', 'Soviraso' ]
+// => [ 'Tami', 'Kaiyuko', 'Nova', 'Haviyu', 'Yovamiha' ]
 ```
 
 As shown above, `range` can be a tuple array of the minimum and maximum possible number of times the maker should be called. It can also be given as a number, in which case `fn`  will be called exactly that number of times:
