@@ -1,4 +1,4 @@
-import { char, Input, JSONPrimitive, PlainNested } from 'fictional'
+import { char, hash, Input, JSONPrimitive, PlainNested } from 'fictional'
 
 interface ScrambleOptions {
   preserve?: string[]
@@ -86,18 +86,17 @@ const scrambleString = (
   const { preserve = [' '] } = options
   const preserveSet = new Set(preserve)
   const charMaps = [...(options.charMaps ?? []), ...CHAR_RANGES_TO_MAKERS]
+  const baseHash = hash(input)
 
-  let i = -1
   let result = ''
+  let i = -1
 
   for (const char of input.split('')) {
-    ++i
-
     if (preserveSet.has(char)) {
       result += char
     } else {
       const maker = findMatchingMaker(char, charMaps)
-      result += maker([input, i])
+      result += maker(baseHash + hash(++i) + hash(char))
     }
   }
 
