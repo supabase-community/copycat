@@ -39,9 +39,10 @@
     "worker-farm": "^1.7.0"
   },
   "scripts": {
-    "build": "yarn build:js && yarn build:types",
+    "build": "yarn build:js && yarn build:types && yarn build:docs",
     "build:js": "esbuild src/**.ts --platform=node --target=node14 --outdir=dist --format=cjs",
     "build:types": "tsc --build --verbose",
+    "build:docs": "./scripts/update-readme.sh",
     "test": "jest src"
   }
 }
