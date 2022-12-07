@@ -9,3 +9,4 @@
 {"methodName":"mac","mean":null,"stddev":null,"moe":null,"runs":100,"n":0,"min":null,"max":null,"sum":999999,"hasCollided":false,"duration":3696984}
 {"methodName":"postalAddress","mean":null,"stddev":null,"moe":null,"runs":100,"n":0,"min":null,"max":null,"sum":999999,"hasCollided":false,"duration":1729571}
 {"methodName":"password","mean":null,"stddev":null,"moe":null,"runs":100,"n":0,"min":null,"max":null,"sum":999999,"hasCollided":false,"duration":3490483}
+{"methodName":"username","mean":"616981.95","stddev":"250947.89","moe":"0.18","runs":100,"n":19,"min":108998,"max":975868,"sum":999999,"hasCollided":true,"duration":938424}
