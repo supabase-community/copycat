@@ -4,13 +4,13 @@
 import { copycat } from '@snaplet/copycat'
 
 copycat.email('foo')
-// => 'Eric_Harvey3407@growingmodeling.biz'
+// => 'Brigitte_Wiegand43088@clumsyinvestigation.net'
 
 copycat.email('bar')
-// => 'Jed.Fay75463@oblongtheft.com'
+// => 'Ben_Durgan74476@rustyfunction.net'
 
 copycat.email('foo')
-// => 'Eric_Harvey3407@growingmodeling.biz'
+// => 'Brigitte_Wiegand43088@clumsyinvestigation.net'
 ```
 
 ## Motivation
@@ -31,13 +31,13 @@ This is exactly what we designed `Copycat` to do. For each method provided by Co
 import { copycat } from '@snaplet/copycat'
 
 copycat.email('foo')
-// => 'Eric_Harvey3407@growingmodeling.biz'
+// => 'Brigitte_Wiegand43088@clumsyinvestigation.net'
 
 copycat.email('bar')
-// => 'Jed.Fay75463@oblongtheft.com'
+// => 'Ben_Durgan74476@rustyfunction.net'
 
 copycat.email('foo')
-// => 'Eric_Harvey3407@growingmodeling.biz'
+// => 'Brigitte_Wiegand43088@clumsyinvestigation.net'
 ```
 
 Copycat works statelessly: for the same input, the same value will be returned regardless of the environment, process, call ordering, or any other external factors.
@@ -61,7 +61,7 @@ Note though that for either of these approaches, hashing might also still be nee
 import { copycat } from '@snaplet/copycat'
 
 copycat.email('foo')
-// => 'Eric_Harvey3407@growingmodeling.biz'
+// => 'Brigitte_Wiegand43088@clumsyinvestigation.net'
 ```
 
 The given input can be any JSON-serializable value. For any two calls to the same function, the input given in each call serializes down to the same value and the same output will be returned.
@@ -76,7 +76,7 @@ If you're using sensitive information as input to Copycat, the fact that Copycat
 // It is difficult to reverse engineer 'Some sensitive input'
 // from 'Rhianna Ebert'
 copycat.fullName('Some sensitive input')
-// => 'Boyd Kuvalis'
+// => 'Lowell Williamson'
 ```
 
 That said, there is still something we need to watch out for: with enough guessing, the input values can still be figured out from the output values.
@@ -101,12 +101,12 @@ To mitigate this, Copycat supports [salt](https://en.wikipedia.org/wiki/Salt_(cr
 
 ```js
 copycat.fullName('foo')
-// => 'Tia Kozey'
+// => 'Nasir Ebert'
 
 copycat.setSalt('something-else')
 
 copycat.fullName('foo')
-// => 'Tia Kozey'
+// => 'Nasir Ebert'
 ```
 
 The idea is that while Copycat's code is publicly known, the salt isn't publically known. This means that even though attackers have access to Copycat's
@@ -136,7 +136,7 @@ For string, the replacement characters will be in the same character range:
 
 ```js
 copycat.scramble('Zakary Hessel')
-// => 'Rvuspu Qoazin'
+// => 'Bfvqvt Mycreq'
 ```
 
 If a number is given, each digit will be replaced, and the floating point (if relevant) will be preserved:
@@ -144,7 +144,7 @@ If a number is given, each digit will be replaced, and the floating point (if re
 
 ```js
 copycat.scramble(782364.902374)
-// => 344584.136919
+// => 819889.948887
 ```
 
 If an object or array is given, the values inside the object or array will be recursively scrambled:
@@ -158,7 +158,7 @@ copycat.scramble({
     },
   ],
 })
-// => { a: [ { b: 12, c: 'pdu' } ] }
+// => { a: [ { b: 81, c: 'cbz' } ] }
 ```
 
 If a date is given, each segment in the date will be scrambled:
@@ -178,7 +178,7 @@ If a value of any other type is given, an error will be thrown
 
 ```js
 copycat.scramble('foo@bar.org', { preserve: ['@', '.'] })
-// => 'whb@riz.xla'
+// => 'oub@rrh.pns'
 ```
 
 ### `copycat.oneOf(input, values)`
@@ -205,7 +205,7 @@ Takes in an [`input`](#input) value and returns an integer.
 
 ```js
 copycat.int('foo')
-// => 4394408153753457
+// => 4738872167090029
 ```
 
 #### `options`
@@ -227,7 +227,7 @@ Takes in an [`input`](#input) value and returns a number value with both a whole
 
 ```js
 copycat.float('foo')
-// => 6362903629765.7
+// => 66671755093.75689
 ```
 
 ### `copycat.char(input)`
@@ -236,7 +236,7 @@ Takes in an [`input`](#input) value and returns a string with a single character
 
 ```js
 copycat.char('foo')
-// => 'F'
+// => 'B'
 ```
 
 The generated character will be an alphanumeric: lower and upper case ASCII letters and digits 0 to 9.
@@ -247,7 +247,7 @@ Takes in an [`input`](#input) value and returns a string with a single digit val
 
 ```js
 copycat.digit('foo')
-// => '7'
+// => '9'
 ```
 
 ### `copycat.hex(input)`
@@ -256,7 +256,7 @@ Takes in an [`input`](#input) value and returns a string with a single hex value
 
 ```js
 copycat.hex('foo')
-// => '1'
+// => 'd'
 ```
 
 #### `options`
@@ -269,7 +269,7 @@ Takes in an [`input`](#input) value and returns a string representing a date in 
 
 ```js
 copycat.dateString('foo')
-// => '1997-10-22T10:11:00.000Z'
+// => '2009-02-18T14:05:09.000Z'
 ```
 
 #### `options`
@@ -282,7 +282,7 @@ Takes in an [input](#input) and returns a string value resembling a [uuid](https
 
 ```js
 copycat.uuid('foo')
-// => 'e182c20c-262a-55b0-820c-fd9a8e278abc'
+// => '1251f237-43c8-5ada-a1f5-4c47f58c5135'
 ```
 
 ### `copycat.email(input)`
@@ -291,7 +291,7 @@ Takes in an [input](#input) and returns a string value resembling an email addre
 
 ```js
 copycat.email('foo')
-// => 'Eric_Harvey3407@growingmodeling.biz'
+// => 'Brigitte_Wiegand43088@clumsyinvestigation.net'
 ```
 
 #### `options`
@@ -304,7 +304,7 @@ Takes in an [input](#input) and returns a string value resembling a first name.
 
 ```js
 copycat.firstName('foo')
-// => 'Emmett'
+// => 'Shawna'
 ```
 
 #### `options`
@@ -317,7 +317,7 @@ Takes in an [input](#input) and returns a string value resembling a last name.
 
 ```js
 copycat.lastName('foo')
-// => 'Kulas'
+// => 'MacGyver'
 ```
 
 #### `options`
@@ -330,7 +330,7 @@ Takes in an [input](#input) and returns a string value resembling a full name.
 
 ```js
 copycat.fullName('foo')
-// => 'Tia Kozey'
+// => 'Nasir Ebert'
 ```
 
 #### `options`
@@ -343,7 +343,7 @@ Takes in an [input](#input) and returns a string value resembling a [phone numbe
 
 ```js
 copycat.phoneNumber('foo')
-// => '+45322423384412'
+// => '+59104985064426'
 ```
 
 **note** The strings _resemble_ phone numbers, but will not always be valid. For example, the country dialing code may not exist, or for a particular country, the number of digits may be incorrect. Please let us know if you need valid
@@ -355,7 +355,7 @@ Takes in an [input](#input) and returns a string value resembling a username.
 
 ```js
 copycat.username('foo')
-// => 'Eric.Harvey3407'
+// => 'Brigitte.Wiegand43088'
 ```
 
 #### `options`
@@ -367,7 +367,7 @@ Takes in an [`input`](#input) value and returns a string value resembling a pass
 
 ```js
 copycat.password('foo')
-// => '0Bma%uMO5%y#Sg'
+// => 'iBy5Kq{jc6Uk{'
 ```
 
 **Note:** not recommended for use as a personal password generator.
@@ -378,7 +378,7 @@ Takes in an [input](#input) and returns a string value representing a city.
 
 ```js
 copycat.city('foo')
-// => 'Spring Valley'
+// => 'Wilmington'
 ```
 ### `copycat.country(input)`
 
@@ -386,7 +386,7 @@ Takes in an [input](#input) and returns a string value representing a country.
 
 ```js
 copycat.country('foo')
-// => 'Italy'
+// => 'Guinea'
 ```
 
 ### `copycat.streetName(input)`
@@ -395,7 +395,7 @@ Takes in an [input](#input) and returns a string value representing a fictitious
 
 ```js
 copycat.streetName('foo')
-// => 'Russ Drive'
+// => 'Aryanna Vista'
 ```
 
 ### `copycat.streetAddress(input)`
@@ -404,7 +404,7 @@ Takes in an [input](#input) and returns a string value representing a fictitious
 
 ```js
 copycat.streetAddress('foo')
-// => '260 Justyn Fort'
+// => '936 Giovanni Ridge'
 ```
 
 ### `copycat.postalAddress(input)`
@@ -413,7 +413,7 @@ Takes in an [input](#input) and returns a string value representing a fictitious
 
 ```js
 copycat.postalAddress('foo')
-// => '203 Hammes Road, Jeffersonville 6781, Croatia'
+// => '37 Ena Forks, Palm Springs 7194, Micronesia'
 ```
 
 ### `copycat.countryCode(input)`
@@ -422,7 +422,7 @@ Takes in an [input](#input) and returns a string value representing a country co
 
 ```js
 copycat.countryCode('foo')
-// => 'ET'
+// => 'KH'
 ```
 
 ## `copycat.timezone(input)`
@@ -431,7 +431,7 @@ Takes in an [input](#input) and returns a string value representing a time zone.
 
 ```js
 copycat.timezone('foo')
-// => 'America/Guyana'
+// => 'America/Caracas'
 ```
 
 ### `copycat.word(input)`
@@ -440,7 +440,7 @@ Takes in an [`input`](#input) value and returns a string value resembling a fict
 
 ```js
 copycat.word('foo')
-// => 'Hymushimo'
+// => 'Hayu'
 ```
 
 #### `options`
@@ -454,7 +454,7 @@ copycat.word('id-2', {
   maxSyllables: 6,
   unicode: 0.382
 })
-// => 'Vĩnoviraeso'
+// => 'Yơna'
 'Memu'
 ```
 
@@ -464,7 +464,7 @@ Takes in an [`input`](#input) value and returns a string value resembling fictit
 
 ```js
 copycat.words('foo')
-// => 'Niha ceavirano sochike'
+// => 'Koakihy kemino mihykai'
 ```
 
 #### `options`
@@ -480,7 +480,7 @@ Takes in an [`input`](#input) value and returns a string value resembling a sent
 
 ```js
 copycat.sentence('foo')
-// => 'Ni kaiyohy minako chi mu mamimekin na.'
+// => 'Meyotacea ceashimoyu yu kintamu hyra kekinokai na konakinmu, ki ceano keyumemu ra kovimemu mumime kin.'
 ```
 
 #### `options`
@@ -495,7 +495,7 @@ Takes in an [`input`](#input) value and returns a string value resembling a para
 
 ```js
 copycat.paragraph('foo')
-// => 'Ko kamekai mekinmahy ma chivamochi sonimeha raevi. Kin na rae ki chiceanita yo. Vachi va nihyme raechina no yonichi, shi kaimuchi hy shi ka vino. Vahyko hykinshicea shi ta taso. So kevakeko kaisokiyo ta moashiva hy, ki mominota mo kin kavikai hycea mukamo. Ke shi kairaeha mohychi korae kin ke, rae ni mumamu niyu somea so mikerae nichiceako.'
+// => 'Nayomi taki koa kaiha yurake nia, kanomu me yucea mi mamokin ni ramiyu chimoma. Misomake ke meyokin hashinora chiame vanoa kin. Nisoraeni ko shimoa vakinma tachikoma raeva, yoyuko viko hakeva ki hyrae yu kai. Mo yona kinshikai sonano me notacea yokinhani. No munivamo raema ni yukiraeni. Niraeva tako chikevashi ta noke chihakinmu raeyoka chi. Kaso hykairaehy rae masorano raena kiramuha.'
 ```
 
 #### `options`
@@ -511,7 +511,7 @@ Takes in an [`input`](#input) value and returns a string value resembling an [IP
 
 ```js
 copycat.ipv4('foo')
-// => '108.99.114.75'
+// => '187.192.22.97'
 ```
 
 ### `copycat.mac(input)`
@@ -520,7 +520,7 @@ Takes in an [`input`](#input) value and returns a string value resembling a [MAC
 
 ```js
 copycat.mac('foo')
-// => '43:e1:da:80:3d:b7'
+// => '02:c7:95:fe:1f:d5'
 ```
 
 
@@ -530,7 +530,7 @@ Takes in an [`input`](#input) value and returns a string value resembling a brow
 
 ```js
 copycat.userAgent('foo')
-// => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_9)  AppleWebKit/533.2.2 (KHTML, like Gecko) Chrome/13.0.865.0 Safari/533.2.2'
+// => 'Mozilla/5.0 (Windows; U; Windows NT 5.2) AppleWebKit/537.1.1 (KHTML, like Gecko) Chrome/25.0.826.0 Safari/537.1.1'
 ```
 
 **note** For simplicity, this is currently working off of a list of 500 pre-defined user agent strings. If this is too limiting
@@ -542,14 +542,14 @@ Takes in an [`input`](#input) value and a function `fn`, calls that function rep
 
 ```js
 copycat.times('foo', [4, 5], copycat.word)
-// => [ 'Somanishi', 'Chiyu', 'Nima', 'Viyukaki' ]
+// => [ 'Chihamu', 'Tameha', 'Tamemomi', 'Vashira' ]
 ```
 
 As shown above, `range` can be a tuple array of the minimum and maximum possible number of times the maker should be called. It can also be given as a number, in which case `fn`  will be called exactly that number of times:
 
 ```js
 copycat.times('foo', 2, copycat.word)
-// => [ 'Somanishi', 'Chiyu' ]
+// => [ 'Chihamu', 'Tameha' ]
 ```
 
 ### `copycat.setSalt(string)`
@@ -558,10 +558,10 @@ copycat.times('foo', 2, copycat.word)
 
 ```js
 copycat.fullName('foo')
-// => 'Tia Kozey'
+// => 'Nasir Ebert'
 
 copycat.setSalt('something-else')
 
 copycat.fullName('foo')
-// => 'Tia Kozey'
+// => 'Nasir Ebert'
 ```
