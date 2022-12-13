@@ -2,34 +2,34 @@ import { copycat } from '.'
 
 test('scrambling', () => {
   expect(copycat.scramble('the DOG ate the cheese!')).toMatchInlineSnapshot(
-    `"mzl BYW dxe woc rbdpxki"`
+    `"zyp AZH shy kyi ufjqeuj"`
   )
 
   expect(copycat.scramble('99 red balloons')).toMatchInlineSnapshot(
-    `"76 bvp kliytpsw"`
+    `"39 yve himgsawv"`
   )
 })
 
 test('preserving chars', () => {
   expect(
     copycat.scramble('foo@bar.org', { preserve: ['@', '.'] })
-  ).toMatchInlineSnapshot(`"iak@gye.vrz"`)
+  ).toMatchInlineSnapshot(`"utf@fcr.ozl"`)
 })
 
 test('special chars', () => {
   expect(
     copycat.scramble('foo-bar_baz+quux@corge.org', { preserve: ['@', '.'] })
-  ).toMatchInlineSnapshot(`"lbdgzan5paeZmmqh@ilijl.xfe"`)
+  ).toMatchInlineSnapshot(`"iex5duxUwom8ihuk@kcxbb.ppn"`)
 })
 
 test('numbers', () => {
-  expect(copycat.scramble(999999999)).toMatchInlineSnapshot(`273668465`)
-  expect(copycat.scramble(782364.902374)).toMatchInlineSnapshot(`437873.831174`)
+  expect(copycat.scramble(999999999)).toMatchInlineSnapshot(`955796979`)
+  expect(copycat.scramble(782364.902374)).toMatchInlineSnapshot(`696898.958526`)
 })
 
 test('dates', () => {
   expect(copycat.scramble(new Date(89723948723948))).toMatchInlineSnapshot(
-    `1896-03-04T00:05:45.164Z`
+    `7881-05-06T10:04:12.973Z`
   )
 })
 
@@ -56,8 +56,8 @@ test('nested values', () => {
     Object {
       "a": Array [
         Object {
-          "b": 45,
-          "c": "bch",
+          "b": 12,
+          "c": "pqz",
         },
       ],
     }
