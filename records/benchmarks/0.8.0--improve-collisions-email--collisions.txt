@@ -1,0 +1,2 @@
+{"methodName":"username","mean":"800847.73","stddev":"138023.51","moe":"0.10","runs":50,"n":11,"min":485308,"max":994067,"sum":999999,"hasCollided":true,"duration":7921728}
+{"methodName":"email","mean":null,"stddev":null,"moe":null,"runs":50,"n":0,"min":null,"max":null,"sum":999999,"hasCollided":false,"duration":19710157}
