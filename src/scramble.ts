@@ -86,16 +86,16 @@ const scrambleString = (
   const { preserve = [' '] } = options
   const preserveSet = new Set(preserve)
   const charMaps = [...(options.charMaps ?? []), ...CHAR_RANGES_TO_MAKERS]
+  const hashSeq = hash.sequence(input)
 
   let result = ''
-  let i = -1
 
   for (const char of input.split('')) {
     if (preserveSet.has(char)) {
       result += char
     } else {
       const maker = findMatchingMaker(char, charMaps)
-      result += maker(hash.hash3(input, ++i, char))
+      result += maker(hashSeq.next().value)
     }
   }
 
