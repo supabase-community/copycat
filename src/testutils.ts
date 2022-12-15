@@ -1,7 +1,7 @@
 import { Input } from './types'
 import { copycat } from '.'
 
-const EXCLUDED_METHODS = new Set(['setSalt'])
+const EXCLUDED_METHODS = new Set(['setHashKey', 'generateHashKey'])
 
 export const TRANSFORMATIONS: {
   [name: string]: (input: Input) => unknown

@@ -1,0 +1,12 @@
+{"methodName":"dateString","mean":"426.09","stddev":"217.25","moe":"0.05","runs":400,"n":400,"min":34,"max":1240,"sum":170436,"hasCollided":true,"duration":1030}
+{"methodName":"fullName","mean":"1417.87","stddev":"732.35","moe":"0.05","runs":411,"n":411,"min":55,"max":5142,"sum":582744,"hasCollided":true,"duration":15736}
+{"methodName":"ipv4","mean":"82338.19","stddev":"46680.13","moe":"0.10","runs":112,"n":112,"min":8288,"max":225470,"sum":9221877,"hasCollided":true,"duration":301550}
+{"methodName":"int","mean":null,"stddev":null,"moe":null,"runs":100,"n":0,"min":null,"max":null,"sum":999999,"hasCollided":false,"duration":575762}
+{"methodName":"uuid","mean":null,"stddev":null,"moe":null,"runs":100,"n":0,"min":null,"max":null,"sum":999999,"hasCollided":false,"duration":1206274}
+{"methodName":"float","mean":null,"stddev":null,"moe":null,"runs":100,"n":0,"min":null,"max":null,"sum":999999,"hasCollided":false,"duration":1224389}
+{"methodName":"username","mean":"628583.95","stddev":"280319.12","moe":"0.19","runs":100,"n":22,"min":139884,"max":984619,"sum":999999,"hasCollided":true,"duration":4175307}
+{"methodName":"streetAddress","mean":"21214.99","stddev":"10655.61","moe":"0.10","runs":100,"n":100,"min":276,"max":55414,"sum":2121499,"hasCollided":true,"duration":91272}
+{"methodName":"email","mean":null,"stddev":null,"moe":null,"runs":100,"n":0,"min":null,"max":null,"sum":999999,"hasCollided":false,"duration":9540746}
+{"methodName":"mac","mean":null,"stddev":null,"moe":null,"runs":100,"n":0,"min":null,"max":null,"sum":999999,"hasCollided":false,"duration":13300072}
+{"methodName":"password","mean":null,"stddev":null,"moe":null,"runs":100,"n":0,"min":null,"max":null,"sum":999999,"hasCollided":false,"duration":15471258}
+{"methodName":"postalAddress","mean":null,"stddev":null,"moe":null,"runs":100,"n":0,"min":null,"max":null,"sum":999999,"hasCollided":false,"duration":6561428}

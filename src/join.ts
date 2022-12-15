@@ -1,4 +1,4 @@
-import { hash, Input, join as fictionalJoin, JSONSerializable } from 'fictional'
+import { hash, Input, join as fictionalJoin } from 'fictional'
 import { Transform } from './types'
 
 interface JoinOptions {
@@ -39,7 +39,7 @@ export const joinMain = (
   }
 
   const limit = Math.max(1, rawLimit)
-  let nextInput = hash([input, 'copycat:join'] as JSONSerializable)
+  const ids = hash.sequence2(input, 'copycat:join')
 
   const segmentBudgetMetadata = computeSegmentBudgetMetadata(
     segments,
@@ -56,10 +56,8 @@ export const joinMain = (
   let i = -1
 
   for (const segment of segments) {
-    nextInput = hash(nextInput)
-
     const [nextSegmentBudgetState, segmentResult] = resolveSegment(
-      nextInput,
+      ids.next().value,
       segmentBudgetState,
       segmentBudgetMetadata,
       segment,

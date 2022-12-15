@@ -14,7 +14,7 @@
   "types": "dist/index.d.ts",
   "dependencies": {
     "@faker-js/faker": "^6.2.0",
-    "fictional": "^0.7.7",
+    "fictional": "^0.8.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
@@ -23,6 +23,7 @@
     "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.21.0",
     "@typescript-eslint/parser": "^5.21.0",
+    "benny": "^3.7.1",
     "esbuild": "^0.14.38",
     "esbuild-jest": "^0.5.0",
     "eslint": "^8.14.0",
@@ -38,9 +39,10 @@
     "worker-farm": "^1.7.0"
   },
   "scripts": {
-    "build": "yarn build:js && yarn build:types",
+    "build": "yarn build:js && yarn build:types && yarn build:docs",
     "build:js": "esbuild src/**.ts --platform=node --target=node14 --outdir=dist --format=cjs",
     "build:types": "tsc --build --verbose",
+    "build:docs": "./scripts/update-readme.sh",
     "test": "jest src"
   }
 }

@@ -1,9 +1,9 @@
 import faker from '@faker-js/faker'
 import { int } from 'fictional'
 import { despace } from './despace'
-import { firstName } from './firstName'
+import { firstName as baseFirstName } from './firstName'
 import { join } from './join'
-import { lastName } from './lastName'
+import { lastName as baseLastName } from './lastName'
 import { oneOfString } from './oneOfString'
 import { char, oneOf } from './primitives'
 
@@ -12,6 +12,11 @@ import { Input } from './types'
 interface EmailOptions {
   limit?: number
 }
+
+const emailifyName = (s: string) => s.replace(/[^A-Za-z]/g, '_')
+
+const firstName = (input: Input): string => emailifyName(baseFirstName(input))
+const lastName = (input: Input): string => emailifyName(baseLastName(input))
 
 const domainNameSegments = ['', '-']
   .map((joiner: string) => [

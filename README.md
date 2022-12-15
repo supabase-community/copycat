@@ -4,13 +4,13 @@
 import { copycat } from '@snaplet/copycat'
 
 copycat.email('foo')
-// => 'Edmund_Boyer77485@haunting-dynamo.info'
+// => 'Raleigh.Kirlin81607@jumpy-disembodiment.name'
 
 copycat.email('bar')
-// => 'Francesco.Daugherty6647@designateapple.name'
+// => 'Amir_Towne20608@frizzle-broad.biz'
 
 copycat.email('foo')
-// => 'Edmund_Boyer77485@haunting-dynamo.info'
+// => 'Raleigh.Kirlin81607@jumpy-disembodiment.name'
 ```
 
 ## Motivation
@@ -31,18 +31,18 @@ This is exactly what we designed `Copycat` to do. For each method provided by Co
 import { copycat } from '@snaplet/copycat'
 
 copycat.email('foo')
-// => 'Edmund_Boyer77485@haunting-dynamo.info'
+// => 'Raleigh.Kirlin81607@jumpy-disembodiment.name'
 
 copycat.email('bar')
-// => 'Francesco.Daugherty6647@designateapple.name'
+// => 'Amir_Towne20608@frizzle-broad.biz'
 
 copycat.email('foo')
-// => 'Edmund_Boyer77485@haunting-dynamo.info'
+// => 'Raleigh.Kirlin81607@jumpy-disembodiment.name'
 ```
 
 Copycat works statelessly: for the same input, the same value will be returned regardless of the environment, process, call ordering, or any other external factors.
 
-Under the hood, Copycat hashes the input values (in part relying on [md5](https://en.wikipedia.org/wiki/MD5)), with the intention of making it computationally infeasible for the input values to be inferred from the output values.
+Under the hood, Copycat hashes the input values (using [SipHash](https://en.wikipedia.org/wiki/SipHash)), with the intention of making it computationally infeasible for the input values to be inferred from the output values.
 
 ### Alternative approaches
 
@@ -61,7 +61,7 @@ Note though that for either of these approaches, hashing might also still be nee
 import { copycat } from '@snaplet/copycat'
 
 copycat.email('foo')
-// => 'Edmund_Boyer77485@haunting-dynamo.info'
+// => 'Raleigh.Kirlin81607@jumpy-disembodiment.name'
 ```
 
 The given input can be any JSON-serializable value. For any two calls to the same function, the input given in each call serializes down to the same value and the same output will be returned.
@@ -70,13 +70,12 @@ Note that unlike `JSON.stringify()`, object property ordering is not considered.
 
 ## Working with PII (Personal Identifiable Information)
 
-If you're using sensitive information as input to Copycat, the fact that Copycat makes use of [md5](https://en.wikipedia.org/wiki/MD5) means it is difficult for the original input value to be inferred from the output value - it is computationally infeasible.
+<a name="pii"></a>If you're using sensitive information as input to Copycat, the fact that Copycat makes use of [SipHash](https://en.wikipedia.org/wiki/SipHash) means it is difficult for the original input value to be inferred from the output value - it is computationally infeasible.
 
 ```js
-// It is difficult to reverse engineer 'Some sensitive input'
-// from 'Rhianna Ebert'
+// It is difficult to infer 'Some sensitive input' from 'Rhianna Ebert'
 copycat.fullName('Some sensitive input')
-// => 'Rhianna Ebert'
+// -> 'Rhianna Ebert'
 ```
 
 That said, there is still something we need to watch out for: with enough guessing, the input values can still be figured out from the output values.
@@ -97,22 +96,24 @@ copycat.firstName('Sarah') // -> 'Florencio', no match
 copycat.firstName('Susan') // -> 'Therese', match!
 ```
 
-To mitigate this, Copycat supports [salt](https://en.wikipedia.org/wiki/Salt_(cryptography)) with [`setSalt`](#set-salt) - additional data concatenated onto the input value before hashing:
+To prevent this, you'll need to give copycat a key to use when hashing the values:
 
 ```js
-copycat.fullName('foo')
-// => 'Blair Schaefer'
+// store this somewhere safe
+const key = copycat.generateHashKey('g9u*rT#!72R$zl5e')
 
-copycat.setSalt('something-else')
 
 copycat.fullName('foo')
-// => 'Rollin Bailey'
+// => 'Mohamed Weber'
+
+copycat.setHashKey(key)
+
+copycat.fullName('foo')
+// => 'Bertha Harris'
 ```
 
-The idea is that while Copycat's code is publicly known, the salt isn't publically known. This means that even though attackers have access to Copycat's
-code, they are not able to figure out which inputs map to which outputs, since they do not have access to the salt.
-
-Ideally, one salt should be used per-value, rather than re-used for several values. If salt is re-used, an attacker can [pre-compute a table of results](https://en.wikipedia.org/wiki/Rainbow_table). In our example, a salt value can be chosen and used along with a list of names to pre-compute the corresponding output values.
+The idea is that while Copycat's code is publicly known, the key isn't publically known. This means that even though attackers have access to Copycat's
+code, they are not able to figure out which inputs map to which outputs, since they do not have access to the key.
 
 ### `faker`
 
@@ -136,7 +137,7 @@ For string, the replacement characters will be in the same character range:
 
 ```js
 copycat.scramble('Zakary Hessel')
-// => 'Yizmm Lrnjkizj'
+// => 'Xowkjj Lzydrd'
 ```
 
 If a number is given, each digit will be replaced, and the floating point (if relevant) will be preserved:
@@ -144,7 +145,7 @@ If a number is given, each digit will be replaced, and the floating point (if re
 
 ```js
 copycat.scramble(782364.902374)
-// => 387998.531441
+// => 533482.326595
 ```
 
 If an object or array is given, the values inside the object or array will be recursively scrambled:
@@ -158,21 +159,14 @@ copycat.scramble({
     },
   ],
 })
-/* =>
-{
-  "a": [{
-    "b": 19,
-    "c": "ebp"
-  }]
-}
-*/
+// => { a: [ { b: 24, c: 'uro' } ] }
 ```
 
 If a date is given, each segment in the date will be scrambled:
 
 ```js
 copycat.scramble(new Date('2022-10-25T19:08:39.374Z'))
-// => Date(6332-05-05T02:01:15.366Z)
+// => {}
 ```
 
 If a boolean or null value is given, the value will simply be returned.
@@ -185,7 +179,7 @@ If a value of any other type is given, an error will be thrown
 
 ```js
 copycat.scramble('foo@bar.org', { preserve: ['@', '.'] })
-// => 'oxb@fmc.ahs'
+// => 'jae@lmm.reh'
 ```
 
 ### `copycat.oneOf(input, values)`
@@ -194,7 +188,7 @@ Takes in an [`input`](#input) value and an array of `values`, and returns an ite
 
 ```js
 copycat.oneOf('foo', ['red', 'green', 'blue'])
-// => 'red'
+// => 'green'
 ```
 
 ### `copycat.someOf(input, range, values)`
@@ -203,7 +197,7 @@ Takes in an [`input`](#input) value and an array of `values`, repeatedly picks i
 
 ```js
 copycat.someOf('foo', [1,2], ['paper', 'rock'])
-// => [ 'scissors', 'paper' ]
+// => []
 ```
 
 ### `copycat.int(input[, options])`
@@ -212,7 +206,7 @@ Takes in an [`input`](#input) value and returns an integer.
 
 ```js
 copycat.int('foo')
-// => 7754119236905193
+// => 5208378699696662
 ```
 
 #### `options`
@@ -234,7 +228,7 @@ Takes in an [`input`](#input) value and returns a number value with both a whole
 
 ```js
 copycat.float('foo')
-// => 37650541673216.36
+// => 51167487947531.74
 ```
 
 ### `copycat.char(input)`
@@ -243,7 +237,7 @@ Takes in an [`input`](#input) value and returns a string with a single character
 
 ```js
 copycat.char('foo')
-// => 'B'
+// => 'a'
 ```
 
 The generated character will be an alphanumeric: lower and upper case ASCII letters and digits 0 to 9.
@@ -254,7 +248,7 @@ Takes in an [`input`](#input) value and returns a string with a single digit val
 
 ```js
 copycat.digit('foo')
-// => '3'
+// => '2'
 ```
 
 ### `copycat.hex(input)`
@@ -263,7 +257,7 @@ Takes in an [`input`](#input) value and returns a string with a single hex value
 
 ```js
 copycat.hex('foo')
-// => '9'
+// => '6'
 ```
 
 #### `options`
@@ -275,8 +269,8 @@ copycat.hex('foo')
 Takes in an [`input`](#input) value and returns a string representing a date in [ISO 8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString) format.
 
 ```js
-dateString('foo')
-// => '2013-10-06T09:33:19.000Z'
+copycat.dateString('foo')
+// => '2002-03-15T14:10:10.000Z'
 ```
 
 #### `options`
@@ -289,7 +283,7 @@ Takes in an [input](#input) and returns a string value resembling a [uuid](https
 
 ```js
 copycat.uuid('foo')
-// => 'f5ac1a25-0065-550f-9627-391a7ceeddec'
+// => '2fabe7f3-6216-5e0b-a885-4fb9951363f5'
 ```
 
 ### `copycat.email(input)`
@@ -298,7 +292,7 @@ Takes in an [input](#input) and returns a string value resembling an email addre
 
 ```js
 copycat.email('foo')
-// => 'Edmund_Boyer77485@haunting-dynamo.info'
+// => 'Albin_Schneider56223@thesescript.biz'
 ```
 
 #### `options`
@@ -311,7 +305,7 @@ Takes in an [input](#input) and returns a string value resembling a first name.
 
 ```js
 copycat.firstName('foo')
-// => 'Donald'
+// => 'Morris'
 ```
 
 #### `options`
@@ -324,7 +318,7 @@ Takes in an [input](#input) and returns a string value resembling a last name.
 
 ```js
 copycat.lastName('foo')
-// => 'Turner'
+// => 'Gleichner'
 ```
 
 #### `options`
@@ -337,7 +331,7 @@ Takes in an [input](#input) and returns a string value resembling a full name.
 
 ```js
 copycat.fullName('foo')
-// => 'Blair Schaefer'
+// => 'Bertha Harris'
 ```
 
 #### `options`
@@ -350,7 +344,7 @@ Takes in an [input](#input) and returns a string value resembling a [phone numbe
 
 ```js
 copycat.phoneNumber('foo')
-// => '+64599780386075'
+// => '+69642130883467'
 ```
 
 **note** The strings _resemble_ phone numbers, but will not always be valid. For example, the country dialing code may not exist, or for a particular country, the number of digits may be incorrect. Please let us know if you need valid
@@ -362,7 +356,7 @@ Takes in an [input](#input) and returns a string value resembling a username.
 
 ```js
 copycat.username('foo')
-// => ''severe.dinosaur77485'
+// => 'Albin.Schneider56223'
 ```
 
 #### `options`
@@ -373,8 +367,8 @@ copycat.username('foo')
 Takes in an [`input`](#input) value and returns a string value resembling a password.
 
 ```js
-password('foo')
-// => 'M4V]Ph6On4BjOB'
+copycat.password('foo')
+// => 'uoU{Dz6@[d!M'
 ```
 
 **Note:** not recommended for use as a personal password generator.
@@ -385,7 +379,7 @@ Takes in an [input](#input) and returns a string value representing a city.
 
 ```js
 copycat.city('foo')
-// => 'Rio Rancho'
+// => 'Rockford'
 ```
 ### `copycat.country(input)`
 
@@ -393,7 +387,7 @@ Takes in an [input](#input) and returns a string value representing a country.
 
 ```js
 copycat.country('foo')
-// => 'Bahrain'
+// => 'Tajikistan'
 ```
 
 ### `copycat.streetName(input)`
@@ -402,7 +396,7 @@ Takes in an [input](#input) and returns a string value representing a fictitious
 
 ```js
 copycat.streetName('foo')
-// => 'Florencio Falls'
+// => 'Jewel Oval'
 ```
 
 ### `copycat.streetAddress(input)`
@@ -411,7 +405,7 @@ Takes in an [input](#input) and returns a string value representing a fictitious
 
 ```js
 copycat.streetAddress('foo')
-// => '173 Christiansen Creek'
+// => '11 Felipa Course'
 ```
 
 ### `copycat.postalAddress(input)`
@@ -420,7 +414,7 @@ Takes in an [input](#input) and returns a string value representing a fictitious
 
 ```js
 copycat.postalAddress('foo')
-// => '716 Halvorson Fork, Highlands Ranch 3888, Sri Lanka'
+// => '114 Pacocha Ville, Potomac 5305, Saint Barthelemy'
 ```
 
 ### `copycat.countryCode(input)`
@@ -429,7 +423,7 @@ Takes in an [input](#input) and returns a string value representing a country co
 
 ```js
 copycat.countryCode('foo')
-// => 'VI'
+// => 'GB'
 ```
 
 ## `copycat.timezone(input)`
@@ -438,7 +432,7 @@ Takes in an [input](#input) and returns a string value representing a time zone.
 
 ```js
 copycat.timezone('foo')
-// => 'Europe/London'
+// => 'America/Caracas'
 ```
 
 ### `copycat.word(input)`
@@ -447,7 +441,7 @@ Takes in an [`input`](#input) value and returns a string value resembling a fict
 
 ```js
 copycat.word('foo')
-// => 'Soa'
+// => 'Makinyo'
 ```
 
 #### `options`
@@ -456,12 +450,12 @@ copycat.word('foo')
 - **`minSyllables=2` and `maxSyllables=4`:** the minimum and maximum possible number of syllables that returned words will contain
 
 ```js
-word('id-2', {
+copycat.word('id-2', {
   minSyllables: 1,
   maxSyllables: 6,
   unicode: 0.382
 })
-// =>
+// => 'Meano'
 'Memu'
 ```
 
@@ -471,7 +465,7 @@ Takes in an [`input`](#input) value and returns a string value resembling fictit
 
 ```js
 copycat.words('foo')
-// => 'Mokin tavisokin mimakiha'
+// => 'Nitaso keraekora'
 ```
 
 #### `options`
@@ -487,7 +481,7 @@ Takes in an [`input`](#input) value and returns a string value resembling a sent
 
 ```js
 copycat.sentence('foo')
-// => 'Cea mikaihy kovi ra tasohako meni rae kota.'
+// => 'No kaikahy kokin raekinmohy somikamu, momi vakimuno hyvayo yo nonanihy.'
 ```
 
 #### `options`
@@ -502,7 +496,7 @@ Takes in an [`input`](#input) value and returns a string value resembling a para
 
 ```js
 copycat.paragraph('foo')
-// => 'Hymo yurae rakichi kinmo meso mi kamukoyu kichiyokin, kaki momina so mohako kaiyo tanikaima meka shi. Nirasota nachimurae mevachi makeyu mirakin rae keyuno, yu keso chiva kevi ceakoa muyo chishino virae. Mutami kamekin sokinyuno komekin novi. Hy raeshi make chirae chita yuchimoki. Ni sotasovi ta koshihy yu ceamukirae viha me.'
+// => 'Kemuvakin hychi chikaisota shi hakokinta no hanoceani. Vamuha keta rakeno me ceamomimu so kinma me, shisohy kake mukaiyurae ko meta nakinma nomukeko ma. Koka kaianiva rahyra mishimano meramua ki. Ceakinko hykochiyu chimanoshi kaika kaishiyo. Shiceayu nishiko hanomira vakinkaiko vi shiashira chiko ni, yunayuha ke kemoke ki hymakoka nacea haceamemu. Hako vikako hakomuchi vano memoako makechiyo keyucea yokina, yokanoha vakeshikai ma shicea ka muceame.'
 ```
 
 #### `options`
@@ -518,7 +512,7 @@ Takes in an [`input`](#input) value and returns a string value resembling an [IP
 
 ```js
 copycat.ipv4('foo')
-// => '64.239.93.156'
+// => '215.18.220.239'
 ```
 
 ### `copycat.mac(input)`
@@ -527,7 +521,7 @@ Takes in an [`input`](#input) value and returns a string value resembling a [MAC
 
 ```js
 copycat.mac('foo')
-// => 'da:ee:0a:49:b4:ea'
+// => '9b:16:b2:05:40:6c'
 ```
 
 
@@ -537,7 +531,7 @@ Takes in an [`input`](#input) value and returns a string value resembling a brow
 
 ```js
 copycat.userAgent('foo')
-// => 'Mozilla/5.0 (compatible; MSIE 7.0; Windows NT 6.1; Trident/7.0; .NET CLR 3.2.85906.4)'
+// => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:14.4) Gecko/20100101 Firefox/14.4.7'
 ```
 
 **note** For simplicity, this is currently working off of a list of 500 pre-defined user agent strings. If this is too limiting
@@ -549,26 +543,33 @@ Takes in an [`input`](#input) value and a function `fn`, calls that function rep
 
 ```js
 copycat.times('foo', [4, 5], copycat.word)
-// => [ 'Tami', 'Kaiyuko', 'Nova', 'Haviyu', 'Yovamiha' ]
+// => [ 'Mahy', 'Ceavihy', 'Koceachita', 'Mia', 'Moyuni' ]
 ```
 
 As shown above, `range` can be a tuple array of the minimum and maximum possible number of times the maker should be called. It can also be given as a number, in which case `fn`  will be called exactly that number of times:
 
 ```js
 copycat.times('foo', 2, copycat.word)
-// => [ 'Raeko', 'Vame' ]
+// => [ 'Tachishimo', 'Mahy' ]
 ```
 
-### `copycat.setSalt(string)`
+### `copycat.generateHashKey(secret)`
 
-<a name="set-salt"></a>Uses the given `string` value as salt when Copycat hashes input values. Helpful for changing the generated results.
+ Takes in a 16 byte secret value, and returns an array with four 32-bit integer number values:
 
 ```js
-copycat.fullName('foo')
-// => 'Blaire Schaefer'
+ copycat.generateHashKey('Lhz1Xe7l$vPIwWr3')
+// => Uint32Array(4) [ 830105676, 1815569752, 1230009892, 863131511 ]
+```
 
-copycat.setSalt('something-else')
+See [Working with PII](#pii) for more.
 
-copycat.fullName('foo')
-// => 'Rollin Bailey'
+### `copycat.setKeyHash(key)`
+
+Takes in an array with four 32-bit integers to use as the hash `key`, and changes copycat's internal state to use it when mapping inputs to output values. See [Working with PII](#pii) for more.
+
+```js
+ const key = copycat.generateHashKey('Lhz1Xe7l$vPIwWr3')
+
+ copycat.setHashKey(key)
 ```
