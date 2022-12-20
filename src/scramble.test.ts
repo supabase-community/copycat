@@ -25,6 +25,7 @@ test('special chars', () => {
 test('numbers', () => {
   expect(copycat.scramble(999999999)).toMatchInlineSnapshot(`633557189`)
   expect(copycat.scramble(782364.902374)).toMatchInlineSnapshot(`773673.271189`)
+  expect(copycat.scramble(-12345.6789)).toMatchInlineSnapshot(`-69254.7142`)
 })
 
 test('dates', () => {

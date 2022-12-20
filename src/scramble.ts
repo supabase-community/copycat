@@ -141,6 +141,6 @@ const scrambleTimeSegment = (input: number) => scrambleNumber(input) % 60
 const scrambleNumber = (input: number, options?: ScrambleOptions): number =>
   +scrambleString(input.toString(), {
     ...options,
-    preserve: ['.'],
+    preserve: ['.', '-'],
     charMaps: [[digitRange, char.inRanges([nonZeroDigitRange])]],
   })
