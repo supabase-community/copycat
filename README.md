@@ -426,7 +426,7 @@ copycat.countryCode('foo')
 // => 'GB'
 ```
 
-## `copycat.timezone(input)`
+### `copycat.timezone(input)`
 
 Takes in an [input](#input) and returns a string value representing a time zone.
 
