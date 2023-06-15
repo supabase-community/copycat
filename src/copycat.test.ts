@@ -240,6 +240,18 @@ test('generated values', () => {
         "green",
         "red",
       ],
+      "oneOfString": Array [
+        "red",
+        "red",
+        "blue",
+        "green",
+        "green",
+        "green",
+        "green",
+        "blue",
+        "green",
+        "red",
+      ],
       "paragraph": Array [
         "Yuta keviyo kayo mokai kinmokime vinako sona. Koha kavina so vikai hysota kevi mumohy. Nina hy koyu sovichikai kinhy hanima. Kokivahy kehycea norae vichino cea mikaiko, kiceami cea tayoyu hy yomake vi.",
         "Na ramirae kenayu niranota kochihycea noyu ravino memo, vamiso mike yumeko yo somu. Hami macea naki kanoyuhy vikaina kairae mayokin. Vishi mu kayokeno yomashino kekoayu sotamo.",

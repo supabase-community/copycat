@@ -14,6 +14,8 @@ export const TRANSFORMATIONS: {
   ...{
     times: (input: Input) => copycat.times(input, [4, 5], copycat.word),
     oneOf: (input: Input) => copycat.oneOf(input, ['red', 'green', 'blue']),
+    oneOfString: (input: Input) =>
+      copycat.oneOfString(['red', 'green', 'blue'])(input),
     someOf: (input: Input) =>
       copycat.someOf(input, [1, 2], ['rock', 'paper', 'scissors']),
     scramble: (input: Input) => copycat.scramble(copycat.fullName(input)),
