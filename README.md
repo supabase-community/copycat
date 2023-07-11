@@ -558,7 +558,7 @@ copycat.times('foo', 2, copycat.word)
  Takes in a secret value, and returns an array with four 32-bit integer number values:
 
 ```js
-// Note: If the secret is shorter or longer than 16 byte characters a hash key will still be derivated from it
+// Note: If the secret is shorter or longer than 16 byte characters seeding key will be derivated from it.
  copycat.generateHashKey('Lhz1Xe7l$vPIwWr3')
 // => Uint32Array(4) [ 830105676, 1815569752, 1230009892, 863131511 ]
 ```
