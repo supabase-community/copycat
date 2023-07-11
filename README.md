@@ -4,13 +4,13 @@
 import { copycat } from '@snaplet/copycat'
 
 copycat.email('foo')
-// => 'Raleigh.Kirlin81607@jumpy-disembodiment.name'
+// => 'Tremaine.Rogahn81607@confused-common.us'
 
 copycat.email('bar')
-// => 'Amir_Towne20608@frizzle-broad.biz'
+// => 'Regan_Herman20608@hunch-basket.com'
 
 copycat.email('foo')
-// => 'Raleigh.Kirlin81607@jumpy-disembodiment.name'
+// => 'Tremaine.Rogahn81607@confused-common.us'
 ```
 
 ## Motivation
@@ -31,13 +31,13 @@ This is exactly what we designed `Copycat` to do. For each method provided by Co
 import { copycat } from '@snaplet/copycat'
 
 copycat.email('foo')
-// => 'Raleigh.Kirlin81607@jumpy-disembodiment.name'
+// => 'Tremaine.Rogahn81607@confused-common.us'
 
 copycat.email('bar')
-// => 'Amir_Towne20608@frizzle-broad.biz'
+// => 'Regan_Herman20608@hunch-basket.com'
 
 copycat.email('foo')
-// => 'Raleigh.Kirlin81607@jumpy-disembodiment.name'
+// => 'Tremaine.Rogahn81607@confused-common.us'
 ```
 
 Copycat works statelessly: for the same input, the same value will be returned regardless of the environment, process, call ordering, or any other external factors.
@@ -61,7 +61,7 @@ Note though that for either of these approaches, hashing might also still be nee
 import { copycat } from '@snaplet/copycat'
 
 copycat.email('foo')
-// => 'Raleigh.Kirlin81607@jumpy-disembodiment.name'
+// => 'Tremaine.Rogahn81607@confused-common.us'
 ```
 
 The given input can be any JSON-serializable value. For any two calls to the same function, the input given in each call serializes down to the same value and the same output will be returned.
@@ -104,12 +104,12 @@ const key = copycat.generateHashKey('g9u*rT#!72R$zl5e')
 
 
 copycat.fullName('foo')
-// => 'Mohamed Weber'
+// => 'Kyle Pacocha'
 
 copycat.setHashKey(key)
 
 copycat.fullName('foo')
-// => 'Bertha Harris'
+// => 'Jayson Kunze'
 ```
 
 The idea is that while Copycat's code is publicly known, the key isn't publically known. This means that even though attackers have access to Copycat's
@@ -292,7 +292,7 @@ Takes in an [input](#input) and returns a string value resembling an email addre
 
 ```js
 copycat.email('foo')
-// => 'Albin_Schneider56223@thesescript.biz'
+// => 'Carroll_Macejkovic56223@dishonestmessenger.com'
 ```
 
 #### `options`
@@ -305,7 +305,7 @@ Takes in an [input](#input) and returns a string value resembling a first name.
 
 ```js
 copycat.firstName('foo')
-// => 'Morris'
+// => 'Rodrick'
 ```
 
 #### `options`
@@ -318,7 +318,7 @@ Takes in an [input](#input) and returns a string value resembling a last name.
 
 ```js
 copycat.lastName('foo')
-// => 'Gleichner'
+// => 'Abbott'
 ```
 
 #### `options`
@@ -331,7 +331,7 @@ Takes in an [input](#input) and returns a string value resembling a full name.
 
 ```js
 copycat.fullName('foo')
-// => 'Bertha Harris'
+// => 'Jayson Kunze'
 ```
 
 #### `options`
@@ -356,7 +356,7 @@ Takes in an [input](#input) and returns a string value resembling a username.
 
 ```js
 copycat.username('foo')
-// => 'Albin.Schneider56223'
+// => 'Carroll.Macejkovic56223'
 ```
 
 #### `options`
@@ -379,7 +379,7 @@ Takes in an [input](#input) and returns a string value representing a city.
 
 ```js
 copycat.city('foo')
-// => 'Rockford'
+// => 'Lakewood'
 ```
 ### `copycat.country(input)`
 
@@ -387,7 +387,7 @@ Takes in an [input](#input) and returns a string value representing a country.
 
 ```js
 copycat.country('foo')
-// => 'Tajikistan'
+// => 'France'
 ```
 
 ### `copycat.streetName(input)`
@@ -396,7 +396,7 @@ Takes in an [input](#input) and returns a string value representing a fictitious
 
 ```js
 copycat.streetName('foo')
-// => 'Jewel Oval'
+// => 'Godfrey Greenwood'
 ```
 
 ### `copycat.streetAddress(input)`
@@ -405,7 +405,7 @@ Takes in an [input](#input) and returns a string value representing a fictitious
 
 ```js
 copycat.streetAddress('foo')
-// => '11 Felipa Course'
+// => '11 Brandt Brookhaven'
 ```
 
 ### `copycat.postalAddress(input)`
@@ -414,7 +414,7 @@ Takes in an [input](#input) and returns a string value representing a fictitious
 
 ```js
 copycat.postalAddress('foo')
-// => '114 Pacocha Ville, Potomac 5305, Saint Barthelemy'
+// => '114 Bartell Fort Lauderdale, Galveston 5305, Aruba'
 ```
 
 ### `copycat.countryCode(input)`
@@ -432,7 +432,7 @@ Takes in an [input](#input) and returns a string value representing a time zone.
 
 ```js
 copycat.timezone('foo')
-// => 'America/Caracas'
+// => 'America/Metlakatla'
 ```
 
 ### `copycat.word(input)`
@@ -531,7 +531,7 @@ Takes in an [`input`](#input) value and returns a string value resembling a brow
 
 ```js
 copycat.userAgent('foo')
-// => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:14.4) Gecko/20100101 Firefox/14.4.7'
+// => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:14.4) Gecko/20100101 Firefox/4284.8978.2430'
 ```
 
 **note** For simplicity, this is currently working off of a list of 500 pre-defined user agent strings. If this is too limiting
