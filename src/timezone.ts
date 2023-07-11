@@ -1,8 +1,8 @@
 import { oneOf } from 'fictional'
-import faker from '@faker-js/faker'
+import { fakerEN_US as faker } from '@faker-js/faker'
 
 import { Input } from './types'
 
-const maker = oneOf(faker.locales.en!.address!.time_zone!)
+const maker = oneOf(faker.definitions.location.time_zone as string[])
 
 export const timezone = (input: Input): string => maker(input)

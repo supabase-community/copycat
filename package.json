@@ -13,7 +13,7 @@
   "license": "MIT",
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@faker-js/faker": "^6.2.0",
+    "@faker-js/faker": "^8.0.2",
     "fictional": "^0.8.1",
     "uuid": "^8.3.2"
   },
