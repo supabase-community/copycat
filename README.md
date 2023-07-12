@@ -4,13 +4,13 @@
 import { copycat } from '@snaplet/copycat'
 
 copycat.email('foo')
-// => 'Tremaine.Rogahn81607@confused-common.us'
+// => 'Raleigh.Kirlin81607@jumpy-disembodiment.name'
 
 copycat.email('bar')
-// => 'Regan_Herman20608@hunch-basket.com'
+// => 'Amir_Towne20608@frizzle-broad.biz'
 
 copycat.email('foo')
-// => 'Tremaine.Rogahn81607@confused-common.us'
+// => 'Raleigh.Kirlin81607@jumpy-disembodiment.name'
 ```
 
 ## Motivation
@@ -31,13 +31,13 @@ This is exactly what we designed `Copycat` to do. For each method provided by Co
 import { copycat } from '@snaplet/copycat'
 
 copycat.email('foo')
-// => 'Tremaine.Rogahn81607@confused-common.us'
+// => 'Raleigh.Kirlin81607@jumpy-disembodiment.name'
 
 copycat.email('bar')
-// => 'Regan_Herman20608@hunch-basket.com'
+// => 'Amir_Towne20608@frizzle-broad.biz'
 
 copycat.email('foo')
-// => 'Tremaine.Rogahn81607@confused-common.us'
+// => 'Raleigh.Kirlin81607@jumpy-disembodiment.name'
 ```
 
 Copycat works statelessly: for the same input, the same value will be returned regardless of the environment, process, call ordering, or any other external factors.
@@ -61,7 +61,7 @@ Note though that for either of these approaches, hashing might also still be nee
 import { copycat } from '@snaplet/copycat'
 
 copycat.email('foo')
-// => 'Tremaine.Rogahn81607@confused-common.us'
+// => 'Raleigh.Kirlin81607@jumpy-disembodiment.name'
 ```
 
 The given input can be any JSON-serializable value. For any two calls to the same function, the input given in each call serializes down to the same value and the same output will be returned.
@@ -104,12 +104,12 @@ const key = copycat.generateHashKey('g9u*rT#!72R$zl5e')
 
 
 copycat.fullName('foo')
-// => 'Kyle Pacocha'
+// => 'Mohamed Weber'
 
 copycat.setHashKey(key)
 
 copycat.fullName('foo')
-// => 'Jayson Kunze'
+// => 'Bertha Harris'
 ```
 
 The idea is that while Copycat's code is publicly known, the key isn't publically known. This means that even though attackers have access to Copycat's
@@ -292,7 +292,7 @@ Takes in an [input](#input) and returns a string value resembling an email addre
 
 ```js
 copycat.email('foo')
-// => 'Carroll_Macejkovic56223@dishonestmessenger.com'
+// => 'Albin_Schneider56223@thesescript.biz'
 ```
 
 #### `options`
@@ -305,7 +305,7 @@ Takes in an [input](#input) and returns a string value resembling a first name.
 
 ```js
 copycat.firstName('foo')
-// => 'Rodrick'
+// => 'Morris'
 ```
 
 #### `options`
@@ -318,7 +318,7 @@ Takes in an [input](#input) and returns a string value resembling a last name.
 
 ```js
 copycat.lastName('foo')
-// => 'Abbott'
+// => 'Gleichner'
 ```
 
 #### `options`
@@ -331,7 +331,7 @@ Takes in an [input](#input) and returns a string value resembling a full name.
 
 ```js
 copycat.fullName('foo')
-// => 'Jayson Kunze'
+// => 'Bertha Harris'
 ```
 
 #### `options`
@@ -356,7 +356,7 @@ Takes in an [input](#input) and returns a string value resembling a username.
 
 ```js
 copycat.username('foo')
-// => 'Carroll.Macejkovic56223'
+// => 'Albin.Schneider56223'
 ```
 
 #### `options`
@@ -379,7 +379,7 @@ Takes in an [input](#input) and returns a string value representing a city.
 
 ```js
 copycat.city('foo')
-// => 'Lakewood'
+// => 'Rockford'
 ```
 ### `copycat.country(input)`
 
@@ -387,7 +387,7 @@ Takes in an [input](#input) and returns a string value representing a country.
 
 ```js
 copycat.country('foo')
-// => 'France'
+// => 'Tajikistan'
 ```
 
 ### `copycat.streetName(input)`
@@ -396,7 +396,7 @@ Takes in an [input](#input) and returns a string value representing a fictitious
 
 ```js
 copycat.streetName('foo')
-// => 'Godfrey Greenwood'
+// => 'Jewel Oval'
 ```
 
 ### `copycat.streetAddress(input)`
@@ -405,7 +405,7 @@ Takes in an [input](#input) and returns a string value representing a fictitious
 
 ```js
 copycat.streetAddress('foo')
-// => '11 Brandt Brookhaven'
+// => '11 Felipa Course'
 ```
 
 ### `copycat.postalAddress(input)`
@@ -414,7 +414,7 @@ Takes in an [input](#input) and returns a string value representing a fictitious
 
 ```js
 copycat.postalAddress('foo')
-// => '114 Bartell Fort Lauderdale, Galveston 5305, Aruba'
+// => '114 Pacocha Ville, Potomac 5305, Saint Barthelemy'
 ```
 
 ### `copycat.countryCode(input)`
@@ -432,7 +432,7 @@ Takes in an [input](#input) and returns a string value representing a time zone.
 
 ```js
 copycat.timezone('foo')
-// => 'America/Metlakatla'
+// => 'America/Caracas'
 ```
 
 ### `copycat.word(input)`
