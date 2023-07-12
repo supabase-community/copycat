@@ -1,4 +1,4 @@
-import { faker } from '@faker-js/faker'
+import locales from './locales/en'
 import { int, oneOf } from 'fictional'
 import { despace } from './despace'
 import { firstName } from './firstName'
@@ -17,12 +17,12 @@ const nameSegments = ['-', '.', '_']
   .map((joiner) => [
     join(joiner, [firstName, lastName]),
     join(joiner, [
-      oneOfString(faker.definitions.word.adjective.map(despace), char.letter),
-      oneOfString(faker.definitions.word.noun.map(despace), ''),
+      oneOfString(locales.word.adjective.map(despace), char.letter),
+      oneOfString(locales.word.noun.map(despace), ''),
     ]),
     join(joiner, [
-      oneOfString(faker.definitions.word.verb.map(despace), char.letter),
-      oneOfString(faker.definitions.word.noun.map(despace), ''),
+      oneOfString(locales.word.verb.map(despace), char.letter),
+      oneOfString(locales.word.noun.map(despace), ''),
     ]),
   ])
   .flat()

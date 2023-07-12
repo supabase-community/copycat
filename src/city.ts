@@ -1,8 +1,8 @@
 import { oneOf } from 'fictional'
-import { fakerEN_US as faker } from '@faker-js/faker'
+import locales from './locales/en'
 
 import { Input } from './types'
 
-const maker = oneOf(faker.definitions.location.city_name as string[])
+const maker = oneOf(locales.address.city_name)
 
 export const city = (input: Input): string => maker(input)

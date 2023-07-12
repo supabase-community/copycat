@@ -1,8 +1,8 @@
-import { fakerEN_US as faker } from '@faker-js/faker'
+import locales from './locales/en'
 import { oneOfString } from './oneOfString'
 import { word } from './primitives'
 
 export const lastName = oneOfString(
-  faker.definitions.person.last_name as string[],
+  locales.name.last_name!,
   word.options({ capitalize: true })
 )
