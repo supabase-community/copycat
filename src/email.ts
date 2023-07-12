@@ -1,4 +1,4 @@
-import faker from '@faker-js/faker'
+import locales from './locales/en'
 import { int } from 'fictional'
 import { despace } from './despace'
 import { firstName as baseFirstName } from './firstName'
@@ -21,12 +21,12 @@ const lastName = (input: Input): string => emailifyName(baseLastName(input))
 const domainNameSegments = ['', '-']
   .map((joiner: string) => [
     join(joiner, [
-      oneOfString(faker.locales.en!.word!.adjective!.map(despace), char.letter),
-      oneOfString(faker.locales.en!.word!.noun!.map(despace), char.letter),
+      oneOfString(locales.word.adjective.map(despace), char.letter),
+      oneOfString(locales.word.noun.map(despace), char.letter),
     ]),
     join(joiner, [
-      oneOfString(faker.locales.en!.word!.verb!.map(despace), char.letter),
-      oneOfString(faker.locales.en!.word!.noun!.map(despace), char.letter),
+      oneOfString(locales.word.verb.map(despace), char.letter),
+      oneOfString(locales.word.noun.map(despace), char.letter),
     ]),
   ])
   .flat()
@@ -47,7 +47,7 @@ export const email = (input: Input, options: EmailOptions = {}): string =>
       '@',
       oneOf(domainNameSegments),
       '.',
-      oneOfString(faker.locales.en!.internet!.domain_suffix!),
+      oneOfString(locales.internet.domain_suffix),
     ],
     options
   )

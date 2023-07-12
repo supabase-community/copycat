@@ -531,7 +531,7 @@ Takes in an [`input`](#input) value and returns a string value resembling a brow
 
 ```js
 copycat.userAgent('foo')
-// => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:14.4) Gecko/20100101 Firefox/14.4.7'
+// => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:14.4) Gecko/20100101 Firefox/4284.8978.2430'
 ```
 
 **note** For simplicity, this is currently working off of a list of 500 pre-defined user agent strings. If this is too limiting
@@ -555,9 +555,10 @@ copycat.times('foo', 2, copycat.word)
 
 ### `copycat.generateHashKey(secret)`
 
- Takes in a 16 byte secret value, and returns an array with four 32-bit integer number values:
+ Takes in a secret value, and returns an array with four 32-bit integer number values:
 
 ```js
+// Note: If the secret is shorter or longer than 16 byte characters seeding key will be derivated from it.
  copycat.generateHashKey('Lhz1Xe7l$vPIwWr3')
 // => Uint32Array(4) [ 830105676, 1815569752, 1230009892, 863131511 ]
 ```

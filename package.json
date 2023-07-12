@@ -1,6 +1,6 @@
 {
   "name": "@snaplet/copycat",
-  "version": "0.14.0",
+  "version": "0.15.0",
   "description": "",
   "main": "dist/index.js",
   "files": [
@@ -13,7 +13,7 @@
   "license": "MIT",
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@faker-js/faker": "^6.2.0",
+    "@faker-js/faker": "^8.0.2",
     "fictional": "^0.8.1",
     "uuid": "^8.3.2"
   },
@@ -40,7 +40,7 @@
   },
   "scripts": {
     "build": "yarn build:js && yarn build:types && yarn build:docs",
-    "build:js": "esbuild src/**.ts --platform=node --target=node14 --outdir=dist --format=cjs",
+    "build:js": "node ./scripts/buildjs.js",
     "build:types": "tsc --build --verbose",
     "build:docs": "./scripts/update-readme.sh",
     "test": "jest src"
