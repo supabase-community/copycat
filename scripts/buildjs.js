@@ -10,7 +10,8 @@ const files = glob.sync(`${inputDir}/**/*.ts`, { ignore: `${inputDir}/**/*.test.
 
 const options = {
   format: 'cjs',
-  // Add any other options you need
+  platform: 'node',
+  target: 'node14',
 };
 
 Promise.all(
