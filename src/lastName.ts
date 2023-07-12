@@ -3,6 +3,6 @@ import { oneOfString } from './oneOfString'
 import { word } from './primitives'
 
 export const lastName = oneOfString(
-  locales.name.last_name!,
+  locales.name.last_name,
   word.options({ capitalize: true })
 )
