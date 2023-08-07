@@ -298,6 +298,12 @@ copycat.email('foo')
 #### `options`
 
 - **`limit`:** Constrain generated values to be less than or equal to `limit` number of chars
+- **`domain`:** Constrain the generated email addresses to use the given `domain`
+
+```js
+copycat.email('foo', { domain: 'acme.org' })
+// => 'Albin_Schneider56223@acme.org'
+```
 
 ### `copycat.firstName(input)`
 

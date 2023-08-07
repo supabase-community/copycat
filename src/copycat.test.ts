@@ -336,6 +336,18 @@ test('generated values', () => {
         Array [],
         Array [],
       ],
+      "state": Array [
+        "Massachusetts",
+        "Vermont",
+        "South Dakota",
+        "Kansas",
+        "Alaska",
+        "Tennessee",
+        "Hawaii",
+        "Utah",
+        "Washington",
+        "Maryland",
+      ],
       "streetAddress": Array [
         "88 McClure Parks",
         "195 Gutmann Pines",

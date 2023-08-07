@@ -11,6 +11,7 @@ import { Input } from './types'
 
 interface EmailOptions {
   limit?: number
+  domain?: string
 }
 
 const emailifyName = (s: string) => s.replace(/[^A-Za-z]/g, '_')
@@ -45,9 +46,13 @@ export const email = (input: Input, options: EmailOptions = {}): string =>
         max: 99999,
       }),
       '@',
-      oneOf(domainNameSegments),
-      '.',
-      oneOfString(locales.internet.domain_suffix),
+      ...(options.domain
+        ? [options.domain]
+        : [
+            oneOf(domainNameSegments),
+            '.',
+            oneOfString(locales.internet.domain_suffix),
+          ]),
     ],
     options
   )
