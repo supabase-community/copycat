@@ -14,7 +14,7 @@
   "types": "dist/index.d.ts",
   "dependencies": {
     "@faker-js/faker": "^8.0.2",
-    "fictional": "^0.8.1",
+    "fictional": "^0.8.2",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
@@ -34,6 +34,7 @@
     "is-mac-address": "^1.0.4",
     "jest": "^28.0.1",
     "prettier": "^2.6.2",
+    "tsup": "^7.2.0",
     "typescript": "^4.6.3",
     "user-agent-is-browser": "^0.1.0",
     "worker-farm": "^1.7.0"

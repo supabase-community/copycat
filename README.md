@@ -558,10 +558,24 @@ As shown above, `range` can be a tuple array of the minimum and maximum possible
 copycat.times('foo', 2, copycat.word)
 // => [ 'Tachishimo', 'Mahy' ]
 ```
+### `copycat.setHashKey(key)`
+
+Takes in a key and changes copycat's internal state to use it when mapping inputs to output values.
+
+`key` can either be a string, or an array of four 32-bit integers (as is returned by [`copycat.generateHashKey()`](#api-copycat-generateHashKey)). If the key is a string is given, four 32-bit integers will be derived from it.
+
+See [Working with PII](#pii) for more.
+
+```js
+ const key = copycat.generateHashKey('Lhz1Xe7l$vPIwWr3')
+
+ copycat.setHashKey(key)
+```
 
 ### `copycat.generateHashKey(secret)`
 
- Takes in a secret value, and returns an array with four 32-bit integer number values:
+<a name="api-copycat-generateHashKey"></a>
+Takes in a secret value, and returns an array with four 32-bit integer number values:
 
 ```js
 // Note: If the secret is shorter or longer than 16 byte characters seeding key will be derivated from it.
@@ -570,13 +584,3 @@ copycat.times('foo', 2, copycat.word)
 ```
 
 See [Working with PII](#pii) for more.
-
-### `copycat.setKeyHash(key)`
-
-Takes in an array with four 32-bit integers to use as the hash `key`, and changes copycat's internal state to use it when mapping inputs to output values. See [Working with PII](#pii) for more.
-
-```js
- const key = copycat.generateHashKey('Lhz1Xe7l$vPIwWr3')
-
- copycat.setHashKey(key)
-```
