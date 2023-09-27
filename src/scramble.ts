@@ -1,5 +1,12 @@
-import { char, hash, Input, JSONPrimitive, PlainNested } from 'fictional'
-
+import {
+  char,
+  hash,
+  Input,
+  JSONPrimitive,
+  PlainNested,
+  expandRange,
+  fromCodePoint,
+} from 'fictional'
 interface ScrambleOptions {
   preserve?: string[]
   charMaps?: CharMapEntry[]
@@ -11,23 +18,54 @@ type CharMapEntry = [[number, number], (input: Input) => string]
 
 const codeOf = (x: string) => x.charCodeAt(0)
 
-const safeSpecialChars = '-_+'.split('').map(codeOf)
+const safeSpecialChars = '-_+'.split('')
+const digits: [number, number] = [0x30, 0x39]
+const asciiLowers: [number, number] = [0x61, 0x7a]
+const asciiUppers: [number, number] = [0x41, 0x5a]
 
-const safeAscii = char.inRanges([
-  char.lower,
-  char.upper,
-  char.digit,
-  ...safeSpecialChars.map((code): [number, number] => [code, code]),
-])
-
-const CHAR_RANGES_TO_MAKERS: [[number, number], (input: Input) => string][] = [
-  [[codeOf('a'), codeOf('z')], char.lower],
-  [[codeOf('A'), codeOf('Z')], char.upper],
-  [[codeOf('0'), codeOf('9')], char.digit],
-  [[0x20, 0x7e], safeAscii],
+const fallbackChars = [
+  ...expandRange(...digits).map((v) => fromCodePoint(v)),
+  ...expandRange(...asciiLowers).map((v) => fromCodePoint(v)),
+  ...expandRange(...asciiUppers).map((v) => fromCodePoint(v)),
+  ...safeSpecialChars,
 ]
 
-const FALLBACK_MAKER = char.inRanges([char.ascii, char.latin1])
+const fallbackCharsLen = fallbackChars.length
+
+const determineCharRange = (codePoint: number) => {
+  if (digits[0] <= codePoint && codePoint <= digits[1]) {
+    return digits
+  } else if (asciiLowers[0] <= codePoint && codePoint <= asciiLowers[1]) {
+    return asciiLowers
+  } else if (asciiUppers[0] <= codePoint && codePoint <= asciiUppers[1]) {
+    return asciiUppers
+  } else {
+    return null
+  }
+}
+
+const scrambleChar = (char: string, offset: number) => {
+  const sourceCodePoint = char.charCodeAt(0)
+  const range = determineCharRange(sourceCodePoint)
+  const rotatedCodePoint = sourceCodePoint + offset
+
+  let resultCodePoint
+
+  if (range !== null) {
+    const [min, max] = range
+    resultCodePoint = (rotatedCodePoint % (max + 1 - min)) + min
+    return fromCodePoint(resultCodePoint)
+  } else {
+    return fallbackChars[rotatedCodePoint % fallbackCharsLen]
+  }
+}
+
+const xorshift32 = (a: number) => {
+  a ^= a << 13
+  a ^= a >>> 17
+  a ^= a << 5
+  return a >>> 0
+}
 
 export const scramble = <Value extends ScrambleInput>(
   input: Value,
@@ -85,36 +123,24 @@ const scrambleString = (
 ): string => {
   const { preserve = [' '] } = options
   const preserveSet = new Set(preserve)
-  const charMaps = [...(options.charMaps ?? []), ...CHAR_RANGES_TO_MAKERS]
-  const hashSeq = hash.sequence(input)
 
   let result = ''
+  let i = -1
+  const n = input.length
+  let key = hash(input)
 
-  for (const char of input.split('')) {
+  while (++i < n) {
+    const char = input[i]
+
     if (preserveSet.has(char)) {
       result += char
     } else {
-      const maker = findMatchingMaker(char, charMaps)
-      result += maker(hashSeq.next().value)
+      key = xorshift32(key + i)
+      result += scrambleChar(char, key)
     }
   }
 
   return result
-}
-
-const findMatchingMaker = (
-  char: string,
-  charMaps: CharMapEntry[]
-): ((input: Input) => string) => {
-  const code = char.charCodeAt(0)
-
-  for (const [[start, end], maker] of charMaps) {
-    if (start <= code && code <= end) {
-      return maker
-    }
-  }
-
-  return FALLBACK_MAKER
 }
 
 const digitRange = [codeOf('0'), codeOf('9')] as [number, number]
