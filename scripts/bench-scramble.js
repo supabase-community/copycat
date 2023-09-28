@@ -1,6 +1,5 @@
 const b = require('benny');
-const { copycat, fictional } = require('../dist')
-//const { copycat, fictional } = require('../0.17.3')
+const { copycat, fictional } = require('../0.17.3')
 
 let i = -1
 

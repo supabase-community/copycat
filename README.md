@@ -137,7 +137,7 @@ For string, the replacement characters will be in the same character range:
 
 ```js
 copycat.scramble('Zakary Hessel')
-// => 'Kdvffk Drllrm'
+// => 'Ptcvip Asozuv'
 ```
 
 If a number is given, each digit will be replaced, and the floating point (if relevant) will be preserved:
@@ -145,7 +145,7 @@ If a number is given, each digit will be replaced, and the floating point (if re
 
 ```js
 copycat.scramble(782364.902374)
-// => 117935.253024
+// => 443318.786974
 ```
 
 If an object or array is given, the values inside the object or array will be recursively scrambled:
@@ -159,7 +159,7 @@ copycat.scramble({
     },
   ],
 })
-// => { a: [ { b: 5, c: 'rae' } ] }
+// => { a: [ { b: 1, c: 'aat' } ] }
 ```
 
 If a date is given, each segment in the date will be scrambled:
@@ -179,7 +179,7 @@ If a value of any other type is given, an error will be thrown
 
 ```js
 copycat.scramble('foo@bar.org', { preserve: ['@', '.'] })
-// => 'brw@vzc.wky'
+// => 'rpo@spc.gxf'
 ```
 
 ### `copycat.oneOf(input, values)`

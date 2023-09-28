@@ -1,13 +1,13 @@
 Running "100 words" suite...
 {
   "name": "100 words",
-  "date": "2023-09-28T20:42:17.701Z",
+  "date": "2023-09-28T22:30:37.886Z",
   "results": [
     {
-      "ms": 0.764525993883792,
+      "ms": 0.7836990595611285,
       "name": "copycat.scramble(): before (0.17.3)",
-      "ops": 1308,
-      "margin": 1.25,
+      "ops": 1276,
+      "margin": 1.26,
       "options": {
         "delay": 0.005,
         "initCount": 1,
@@ -15,27 +15,27 @@ Running "100 words" suite...
         "maxTime": 5,
         "minSamples": 5
       },
-      "samples": 83,
+      "samples": 82,
       "promise": false,
       "details": {
-        "min": 0.000660375,
-        "max": 0.0008941471234567902,
-        "mean": 0.0007647214166294811,
-        "median": 0.0007593667777777778,
-        "standardDeviation": 0.000044574740978921494,
-        "marginOfError": 0.000009589718377255549,
-        "relativeMarginOfError": 1.254014621366608,
-        "standardErrorOfMean": 0.000004892713457783443,
-        "sampleVariance": 1.986907533337943e-9
+        "min": 0.00067517135,
+        "max": 0.0008716635375,
+        "mean": 0.0007835356637195121,
+        "median": 0.0007823546874999999,
+        "standardDeviation": 0.000045732967137729394,
+        "marginOfError": 0.000009898708251782515,
+        "relativeMarginOfError": 1.263338570294616,
+        "standardErrorOfMean": 0.000005050361352950263,
+        "sampleVariance": 2.091504283220637e-9
       },
       "completed": true,
-      "percentSlower": 95.06
+      "percentSlower": 95.24
     },
     {
-      "ms": 0.03774154589371981,
+      "ms": 0.03727726832177738,
       "name": "copycat.scramble(): after (reimplementation)",
-      "ops": 26496,
-      "margin": 0.34,
+      "ops": 26826,
+      "margin": 0.4,
       "options": {
         "delay": 0.005,
         "initCount": 1,
@@ -43,18 +43,18 @@ Running "100 words" suite...
         "maxTime": 5,
         "minSamples": 5
       },
-      "samples": 94,
+      "samples": 93,
       "promise": false,
       "details": {
-        "min": 0.000036772593681116827,
-        "max": 0.000040285278234854154,
-        "mean": 0.00003774201393865685,
-        "median": 0.00003760616749922843,
-        "standardDeviation": 6.295583648651802e-7,
-        "marginOfError": 1.2727061516325092e-7,
-        "relativeMarginOfError": 0.3372120400625876,
-        "standardErrorOfMean": 6.493398732818924e-8,
-        "sampleVariance": 3.9634373477171943e-13
+        "min": 0.00003636174655047204,
+        "max": 0.000039798140378548894,
+        "mean": 0.00003727736422264061,
+        "median": 0.000037139887436456065,
+        "standardDeviation": 7.337579732090387e-7,
+        "marginOfError": 1.4913082847285064e-7,
+        "relativeMarginOfError": 0.4000573312591538,
+        "standardErrorOfMean": 7.608715738410747e-8,
+        "sampleVariance": 5.384007632478363e-13
       },
       "completed": true,
       "percentSlower": 0
@@ -72,13 +72,13 @@ Running "100 words" suite...
 Running "1000 words" suite...
 {
   "name": "1000 words",
-  "date": "2023-09-28T20:42:28.504Z",
+  "date": "2023-09-28T22:30:48.806Z",
   "results": [
     {
-      "ms": 7.6923076923076925,
+      "ms": 7.936507936507937,
       "name": "copycat.scramble(): before (0.17.3)",
-      "ops": 130,
-      "margin": 1.24,
+      "ops": 126,
+      "margin": 1.96,
       "options": {
         "delay": 0.005,
         "initCount": 1,
@@ -86,27 +86,27 @@ Running "1000 words" suite...
         "maxTime": 5,
         "minSamples": 5
       },
-      "samples": 76,
+      "samples": 73,
       "promise": false,
       "details": {
-        "min": 0.006895734375,
-        "max": 0.009054390625,
-        "mean": 0.007680302361842103,
-        "median": 0.007735125,
-        "standardDeviation": 0.0004248737896462586,
-        "marginOfError": 0.00009552327760898184,
-        "relativeMarginOfError": 1.2437437109711758,
-        "standardErrorOfMean": 0.00004873636612703155,
-        "sampleVariance": 1.805177371283732e-7
+        "min": 0.007050177125,
+        "max": 0.010732099,
+        "mean": 0.007963761028538808,
+        "median": 0.007784197875,
+        "standardDeviation": 0.0006811152332954451,
+        "marginOfError": 0.00015624827622421163,
+        "relativeMarginOfError": 1.9619910198746895,
+        "standardErrorOfMean": 0.000079718508277659,
+        "sampleVariance": 4.639179610271085e-7
       },
       "completed": true,
-      "percentSlower": 93.88
+      "percentSlower": 93.99
     },
     {
-      "ms": 0.4708097928436911,
+      "ms": 0.477326968973747,
       "name": "copycat.scramble(): after (reimplementation)",
-      "ops": 2124,
-      "margin": 0.12,
+      "ops": 2095,
+      "margin": 0.2,
       "options": {
         "delay": 0.005,
         "initCount": 1,
@@ -114,18 +114,18 @@ Running "1000 words" suite...
         "maxTime": 5,
         "minSamples": 5
       },
-      "samples": 100,
+      "samples": 99,
       "promise": false,
       "details": {
-        "min": 0.00046676195370370374,
-        "max": 0.0004823449519230769,
-        "mean": 0.00047077451314225897,
-        "median": 0.0004700780747663552,
-        "standardDeviation": 0.0000029622784397990136,
-        "marginOfError": 5.806065742006066e-7,
-        "relativeMarginOfError": 0.12333007798685962,
-        "standardErrorOfMean": 2.9622784397990135e-7,
-        "sampleVariance": 8.775093554898078e-12
+        "min": 0.0004694622242990654,
+        "max": 0.0004937729813084112,
+        "mean": 0.00047734888044518534,
+        "median": 0.00047664992523364485,
+        "standardDeviation": 0.000004761159698622723,
+        "marginOfError": 9.378885261543821e-7,
+        "relativeMarginOfError": 0.19647862696979368,
+        "standardErrorOfMean": 4.78514554160399e-7,
+        "sampleVariance": 2.2668641675789217e-11
       },
       "completed": true,
       "percentSlower": 0
@@ -143,13 +143,13 @@ Running "1000 words" suite...
 Running "10000 words" suite...
 {
   "name": "10000 words",
-  "date": "2023-09-28T20:42:40.298Z",
+  "date": "2023-09-28T22:31:00.685Z",
   "results": [
     {
-      "ms": 76.92307692307692,
+      "ms": 83.33333333333333,
       "name": "copycat.scramble(): before (0.17.3)",
-      "ops": 13,
-      "margin": 1.5,
+      "ops": 12,
+      "margin": 1.28,
       "options": {
         "delay": 0.005,
         "initCount": 1,
@@ -157,27 +157,27 @@ Running "10000 words" suite...
         "maxTime": 5,
         "minSamples": 5
       },
-      "samples": 36,
+      "samples": 35,
       "promise": false,
       "details": {
-        "min": 0.074046541,
-        "max": 0.092966834,
-        "mean": 0.07904324186111111,
-        "median": 0.0786167505,
-        "standardDeviation": 0.0036277427460868297,
-        "marginOfError": 0.0011850626303883643,
-        "relativeMarginOfError": 1.49925863677336,
-        "standardErrorOfMean": 0.0006046237910144716,
-        "sampleVariance": 0.000013160517431785611
+        "min": 0.075477709,
+        "max": 0.088026791,
+        "mean": 0.0803204988,
+        "median": 0.079660666,
+        "standardDeviation": 0.0030911881626436784,
+        "marginOfError": 0.0010241120845072944,
+        "relativeMarginOfError": 1.2750320276986309,
+        "standardErrorOfMean": 0.0005225061655649461,
+        "sampleVariance": 0.000009555444256868402
       },
       "completed": true,
-      "percentSlower": 93.63
+      "percentSlower": 93.75
     },
     {
-      "ms": 4.901960784313726,
+      "ms": 5.208333333333333,
       "name": "copycat.scramble(): after (reimplementation)",
-      "ops": 204,
-      "margin": 0.06,
+      "ops": 192,
+      "margin": 2.59,
       "options": {
         "delay": 0.005,
         "initCount": 1,
@@ -185,18 +185,18 @@ Running "10000 words" suite...
         "maxTime": 5,
         "minSamples": 5
       },
-      "samples": 87,
+      "samples": 83,
       "promise": false,
       "details": {
-        "min": 0.0048651931818181815,
-        "max": 0.0049642689090909084,
-        "mean": 0.004911927029258097,
-        "median": 0.004912087090909091,
-        "standardDeviation": 0.000014163163722234224,
-        "marginOfError": 0.000002976163050475177,
-        "relativeMarginOfError": 0.0605905387589746,
-        "standardErrorOfMean": 0.000001518450535956723,
-        "sampleVariance": 2.005952066228116e-10
+        "min": 0.004966121272727273,
+        "max": 0.01025980309090909,
+        "mean": 0.005204979330010954,
+        "median": 0.005092875,
+        "standardDeviation": 0.0006256332018040679,
+        "marginOfError": 0.00013459744422516807,
+        "relativeMarginOfError": 2.5859361909297887,
+        "standardErrorOfMean": 0.00006867216542100412,
+        "sampleVariance": 3.914169031996096e-7
       },
       "completed": true,
       "percentSlower": 0
@@ -214,13 +214,13 @@ Running "10000 words" suite...
 Running "100000 words" suite...
 {
   "name": "100000 words",
-  "date": "2023-09-28T20:43:06.991Z",
+  "date": "2023-09-28T22:31:27.915Z",
   "results": [
     {
       "ms": 1000,
       "name": "copycat.scramble(): before (0.17.3)",
       "ops": 1,
-      "margin": 1.22,
+      "margin": 1.28,
       "options": {
         "delay": 0.005,
         "initCount": 1,
@@ -231,24 +231,24 @@ Running "100000 words" suite...
       "samples": 8,
       "promise": false,
       "details": {
-        "min": 0.746681958,
-        "max": 0.777371333,
-        "mean": 0.7605825988749999,
-        "median": 0.758657833,
-        "standardDeviation": 0.011053635564897872,
-        "marginOfError": 0.009242539036012574,
-        "relativeMarginOfError": 1.2151920185504488,
-        "standardErrorOfMean": 0.00390805033235204,
-        "sampleVariance": 0.00012218285920157513
+        "min": 0.759332625,
+        "max": 0.797152083,
+        "mean": 0.774206161375,
+        "median": 0.772968042,
+        "standardDeviation": 0.011882564334390215,
+        "marginOfError": 0.009935650950651461,
+        "relativeMarginOfError": 1.2833340066689238,
+        "standardErrorOfMean": 0.004201120909366368,
+        "sampleVariance": 0.0001411953351609224
       },
       "completed": true,
-      "percentSlower": 93.33
+      "percentSlower": 93.75
     },
     {
-      "ms": 66.66666666666667,
+      "ms": 62.5,
       "name": "copycat.scramble(): after (reimplementation)",
-      "ops": 15,
-      "margin": 1.59,
+      "ops": 16,
+      "margin": 1.3,
       "options": {
         "delay": 0.005,
         "initCount": 1,
@@ -259,15 +259,15 @@ Running "100000 words" suite...
       "samples": 42,
       "promise": false,
       "details": {
-        "min": 0.060434417,
-        "max": 0.075168334,
-        "mean": 0.06541807935714286,
-        "median": 0.0652568965,
-        "standardDeviation": 0.003435739682300471,
-        "marginOfError": 0.0010390864394502458,
-        "relativeMarginOfError": 1.5883780900650826,
-        "standardErrorOfMean": 0.000530146142576656,
-        "sampleVariance": 0.000011804307164534141
+        "min": 0.060428875,
+        "max": 0.071270958,
+        "mean": 0.06396865969047617,
+        "median": 0.06375906249999999,
+        "standardDeviation": 0.002745820612827194,
+        "marginOfError": 0.0008304310651502323,
+        "relativeMarginOfError": 1.2981842501756669,
+        "standardErrorOfMean": 0.00042368931895420017,
+        "sampleVariance": 0.000007539530837826707
       },
       "completed": true,
       "percentSlower": 0
