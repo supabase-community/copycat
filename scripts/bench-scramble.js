@@ -1,6 +1,8 @@
 const b = require('benny');
 const { copycat, fictional } = require('../dist')
-const { copycat: copycat_0_17_3 } = require('../0.17.3')
+//const { copycat, fictional } = require('../0.17.3')
+
+let i = -1
 
 ;[100, 1_000, 10_000, 100_000].forEach(numWords => {
   const inputsIterator = generateInputs(numWords)
@@ -8,14 +10,25 @@ const { copycat: copycat_0_17_3 } = require('../0.17.3')
 
   b.suite(
     `${numWords} words`,
-    b.add('copycat.scramble(): before (0.17.3)', () => copycat_0_17_3.scramble(input)),
-    b.add('copycat.scramble(): after (reimplementation)', () => copycat.scramble(input)),
+    b.add('copycat.scramble()', () => copycat.scramble(input)),
+    b.add('rot13()', () => rot13(input)),
+    b.add('copycat.sentence()', () => copycat.sentence(input, {
+      minWords: numWords,
+      maxWords: numWords
+    })),
     b.cycle(() => {
       input = inputsIterator.next().value
     }),
     complete()
   );
 })
+
+b.suite(
+  'length-independent copycat methods',
+  b.add('copycat.firstName()', () => copycat.firstName(++i)),
+  b.add('copycat.email()', () => copycat.email(++i)),
+  complete(),
+)
 
 function complete() {
   return b.complete((summary) => {

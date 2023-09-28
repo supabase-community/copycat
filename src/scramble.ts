@@ -18,46 +18,44 @@ type CharMapEntry = [[number, number], (input: Input) => string]
 
 const codeOf = (x: string) => x.charCodeAt(0)
 
-const safeSpecialChars = '-_+'.split('')
-const digits: [number, number] = [0x30, 0x39]
-const asciiLowers: [number, number] = [0x61, 0x7a]
-const asciiUppers: [number, number] = [0x41, 0x5a]
-
-const fallbackChars = [
-  ...expandRange(...digits).map((v) => fromCodePoint(v)),
-  ...expandRange(...asciiLowers).map((v) => fromCodePoint(v)),
-  ...expandRange(...asciiUppers).map((v) => fromCodePoint(v)),
-  ...safeSpecialChars,
-]
-
-const fallbackCharsLen = fallbackChars.length
-
-const determineCharRange = (codePoint: number) => {
-  if (digits[0] <= codePoint && codePoint <= digits[1]) {
-    return digits
-  } else if (asciiLowers[0] <= codePoint && codePoint <= asciiLowers[1]) {
-    return asciiLowers
-  } else if (asciiUppers[0] <= codePoint && codePoint <= asciiUppers[1]) {
-    return asciiUppers
-  } else {
-    return null
+const computeCharSet = (from: number, to: number) => {
+  const values = expandRange(from, to).map((v) => fromCodePoint(v))
+  return {
+    values,
+    set: new Set(values),
+    from,
+    to,
   }
 }
 
-const scrambleChar = (char: string, offset: number) => {
-  const sourceCodePoint = char.charCodeAt(0)
-  const range = determineCharRange(sourceCodePoint)
-  const rotatedCodePoint = sourceCodePoint + offset
+const DIGITS = computeCharSet(0x30, 0x39)
+const ASCII_LOWERS = computeCharSet(0x61, 0x7a)
+const ASCII_UPPERS = computeCharSet(0x41, 0x5a)
 
-  let resultCodePoint
+const FALLBACK_CHARS = [
+  ...DIGITS.values,
+  ...ASCII_LOWERS.values,
+  ...ASCII_UPPERS.values,
+  ...'-_+'.split(''),
+]
 
-  if (range !== null) {
-    const [min, max] = range
-    resultCodePoint = (rotatedCodePoint % (max + 1 - min)) + min
-    return fromCodePoint(resultCodePoint)
+const determineCharSet = (char: string) => {
+  const codePoint = char.codePointAt(0) as number
+
+  if (DIGITS.from <= codePoint && codePoint <= DIGITS.to) {
+    return DIGITS.values
+  } else if (ASCII_LOWERS.from <= codePoint && codePoint <= ASCII_LOWERS.to) {
+    return ASCII_LOWERS.values
+  } else if (ASCII_UPPERS.from <= codePoint && codePoint <= ASCII_UPPERS.to) {
+    return ASCII_UPPERS.values
   } else {
-    return fallbackChars[rotatedCodePoint % fallbackCharsLen]
+    return FALLBACK_CHARS
   }
+}
+
+const scrambleChar = (char: string, key: number) => {
+  const charSetValues = determineCharSet(char)
+  return charSetValues[key % charSetValues.length]
 }
 
 const xorshift32 = (a: number) => {
@@ -135,7 +133,7 @@ const scrambleString = (
     if (preserveSet.has(char)) {
       result += char
     } else {
-      key = xorshift32(key + i)
+      key = xorshift32(key)
       result += scrambleChar(char, key)
     }
   }
