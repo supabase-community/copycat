@@ -58,17 +58,6 @@ const scrambleChar = (char: string, key: number) => {
   return charSetValues[key % charSetValues.length]
 }
 
-// Adapted from https://github.com/bryc/code/blob/master/jshash/PRNGs.md#splitmix32
-const splitmix32 = (a: number) => {
-  a |= 0
-  a = (a + 0x9e3779b9) | 0
-  let t = a ^ (a >>> 15)
-  t = Math.imul(t, 0x85ebca6b)
-  t = t ^ (t >>> 13)
-  t = Math.imul(t, 0xc2b2ae35)
-  return (t = t ^ (t >>> 16)) >>> 0
-}
-
 export const scramble = <Value extends ScrambleInput>(
   input: Value,
   options?: ScrambleOptions
@@ -129,7 +118,7 @@ const scrambleString = (
   let result = ''
   let i = -1
   const n = input.length
-  let key = hash(input)
+  const sequence = hash.sequence(input)
 
   while (++i < n) {
     const char = input[i]
@@ -137,8 +126,7 @@ const scrambleString = (
     if (preserveSet.has(char)) {
       result += char
     } else {
-      key = splitmix32(key)
-      result += scrambleChar(char, key)
+      result += scrambleChar(char, sequence.next().value)
     }
   }
 
