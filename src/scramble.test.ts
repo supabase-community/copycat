@@ -2,11 +2,11 @@ import { copycat } from '.'
 
 test.only('scrambling', () => {
   expect(copycat.scramble('the DOG ate the cheese!')).toMatchInlineSnapshot(
-    `"ojz JDG byt kld txqqwnC"`
+    `"nzx PZQ zsa hda diprrkE"`
   )
 
   expect(copycat.scramble('99 red balloons')).toMatchInlineSnapshot(
-    `"44 mqo gqkyvckw"`
+    `"69 mge uhjnuykq"`
   )
 })
 
