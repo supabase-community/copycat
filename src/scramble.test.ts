@@ -1,12 +1,12 @@
 import { copycat } from '.'
 
-test('scrambling', () => {
+test.only('scrambling', () => {
   expect(copycat.scramble('the DOG ate the cheese!')).toMatchInlineSnapshot(
-    `"dmo VAR wyf ork xzzgmvF"`
+    `"nzx PZQ zsa hda diprrkE"`
   )
 
   expect(copycat.scramble('99 red balloons')).toMatchInlineSnapshot(
-    `"08 glw tkqksgpy"`
+    `"69 mge uhjnuykq"`
   )
 })
 
