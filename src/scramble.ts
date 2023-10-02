@@ -118,7 +118,7 @@ const scrambleString = (
   let result = ''
   let i = -1
   const n = input.length
-  const sequence = hash.sequence(input)
+  let key = hash(input)
 
   while (++i < n) {
     const char = input[i]
@@ -126,7 +126,8 @@ const scrambleString = (
     if (preserveSet.has(char)) {
       result += char
     } else {
-      result += scrambleChar(char, sequence.next().value)
+      key = hash.sequenceNext(key)
+      result += scrambleChar(char, key)
     }
   }
 
