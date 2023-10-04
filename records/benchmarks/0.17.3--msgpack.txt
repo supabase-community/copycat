@@ -1,0 +1,1204 @@
+[
+  {
+    person: {
+      name: 'Pqtkqeh Pfigskwipb',
+      age: 38,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Gpxwq Syjumq',
+      age: 70,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Wqig Ispnx',
+      age: 51,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Sawuz Puuybx',
+      age: 83,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Azlc Kerwnto',
+      age: 55,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Oontkk Kxylhx',
+      age: 36,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Ilrswn Ruzeld',
+      age: 3,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Wojyz Bqkexi',
+      age: 3,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Dpqangc Osnj',
+      age: 3,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Pxjg Pmyttdf',
+      age: 89,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Zmxezv Dlnn',
+      age: 3,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Jeusmo Lgfcmbzsf',
+      age: 23,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Hkymosqv Souyo',
+      age: 84,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Pvaqfo Shrmdwqs',
+      age: 38,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Unujgk Zbsib',
+      age: 79,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Ovu Mlecgx',
+      age: 83,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Fpejom Jxyddbom',
+      age: 23,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Ejltvvq Buzzql',
+      age: 79,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Cuexoa Fwjjlb',
+      age: 58,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Injox Jvbyne',
+      age: 79,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Guhqxgh Iroj',
+      age: 58,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Ynfpoczg Ylryp',
+      age: 84,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Okafv Zlolbu',
+      age: 83,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Hvyrmmxn Knzt',
+      age: 84,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Sljrzpg Xpchuy',
+      age: 51,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Dtgkjbca Xjadheatw',
+      age: 38,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Rplmhiev Fifqn',
+      age: 55,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Oegpsq Jkhjoldm',
+      age: 83,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Wxajdm Vrfaod',
+      age: 23,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Aiajez Aegre',
+      age: 3,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Cqar Tsbzqcr',
+      age: 84,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Dlwrkj Guib',
+      age: 38,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Qzdp Zgtlkwkr',
+      age: 3,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Euhhau Pmyjrsx',
+      age: 80,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Wvj Kfswsv',
+      age: 79,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Njjzqwibg Fcwvkwjqv',
+      age: 48,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Uvxdtak Kfai',
+      age: 48,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Tcsscb Wicidydbr',
+      age: 70,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Wvgrjjn Nguio',
+      age: 38,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Nqvep Fslfkxuw',
+      age: 70,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Lpds Nzpbvxorz',
+      age: 78,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Zjogey Rosp',
+      age: 80,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Zwzngedn Omcj',
+      age: 3,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Ighrfk Dodflr',
+      age: 48,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Zloo Lzfhfj',
+      age: 36,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Iyjjoth Dunhn',
+      age: 74,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Mojxd Jmvdupf',
+      age: 83,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Aank Qvqmkwo',
+      age: 74,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Hzewd Fcluegc',
+      age: 48,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Zdtkvjr Cfhumfgqr',
+      age: 48,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Aadj Vc',
+      age: 3,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Xydyudgyo Eluzupv',
+      age: 78,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Founzt Rhrkmf',
+      age: 78,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Xxqlctyue Eiuut',
+      age: 58,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Aybdrqw Thustxyef',
+      age: 23,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Hvzrffo Ajvk',
+      age: 83,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Gicfuk Wtaj',
+      age: 78,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Zdpra Zhqkxx',
+      age: 55,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Edrzp Xqxza',
+      age: 55,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Ahvrerc Howpf',
+      age: 38,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Hzehhcc Ntxoty',
+      age: 80,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Lgsyswgh Zxivzul',
+      age: 51,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Zbwwuq Cowywh',
+      age: 84,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Tpvsv Ngchufjy',
+      age: 38,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Ekugkudr Pumdpm',
+      age: 83,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Uqtzi Najga',
+      age: 74,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Ibgmnx Zrwpcan',
+      age: 51,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Ktwhwzi Zcccopt',
+      age: 37,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Ttlxv Rddxff',
+      age: 70,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Ubhqwg Njzox',
+      age: 38,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Dktevsvh Wyboapv',
+      age: 3,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Qzxcnlm Yxnlirl',
+      age: 36,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Thbvb Otzzo',
+      age: 51,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Neqjxhl Pkzqynv',
+      age: 80,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Kzknu Pqdkh',
+      age: 55,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Yfxzdy Blkvf',
+      age: 3,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Ttmnrto Lmackrc',
+      age: 79,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Cibqa Xoozzcos',
+      age: 36,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Tcnipk Cptpeffyj',
+      age: 55,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Nxpoc Qqjyuqq',
+      age: 3,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Jaftk Dntgv',
+      age: 23,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Rwpfs Ahlef',
+      age: 74,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Pjz Gwby',
+      age: 70,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Wdwkdqetq Uhimc',
+      age: 58,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Typovyqnr Enpzxiwy',
+      age: 51,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Wcavtahz Iftqhs',
+      age: 48,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Fcpsxffb Bsxvn',
+      age: 89,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Izfs Ckcoyq',
+      age: 36,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Nmiwfnw Suifp',
+      age: 79,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Atnsvqu Vhbfdmsj',
+      age: 79,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Xpavmyqo Vxefycc',
+      age: 38,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Eifcktk Yzwmdf',
+      age: 74,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Ajvn Ntuqjlm',
+      age: 70,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Jwtz Gqoseo',
+      age: 83,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Drpqgcu Pmkijvfq',
+      age: 55,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Gldssni Ryjztwj',
+      age: 89,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Rxgccw Vuvdpz',
+      age: 3,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Nnsxrf Uuznc',
+      age: 48,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Jbldfj Fxnry',
+      age: 79,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: false,
+      friends: [Array]
+    }
+  },
+  {
+    person: {
+      name: 'Cakcrdlg Nziwmu',
+      age: 70,
+      address: [Object],
+      contacts: [Array],
+      hobbies: [Object],
+      education: [Array],
+      isStudent: true,
+      friends: [Array]
+    }
+  },
+  ... 900 more items
+]
+Running "copycat.scramble()" suite...

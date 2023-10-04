@@ -1,6 +1,5 @@
 const b = require('benny');
 const { copycat, fictional } = require('../dist')
-const nestedSample = require('./samples/nested')
 
 ;[100, 1_000, 10_000, 100_000].forEach(numWords => {
   const inputsIterator = generateInputs(numWords)
@@ -14,19 +13,12 @@ const nestedSample = require('./samples/nested')
       minWords: numWords,
       maxWords: numWords
     })),
-    b.cycle(() => {
+  b.cycle(({name}) => {
       input = inputsIterator.next().value
     }),
-    complete()
+    complete(`${numWords} words`)
   );
 })
-
-b.suite(
-  `~1.47MB large nested json`,
-  b.add('copycat.scramble()', () => copycat.scramble(nestedSample)),
-  b.add('copycat.email()', () => copycat.email(nestedSample)),
-  complete()
-);
 
 function complete() {
   return b.complete((summary) => {
