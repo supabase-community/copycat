@@ -1,0 +1,732 @@
+Running "copycat.scramble(): 100_000 words" suite...
+{
+  "name": "copycat.scramble(): 100_000 words",
+  "date": "2023-10-04T19:25:03.521Z",
+  "results": [
+    {
+      "ms": 63.81620931716656,
+      "name": "msgpack-lite",
+      "ops": 15.67,
+      "margin": 1.89,
+      "options": {
+        "delay": 0.005,
+        "initCount": 1,
+        "minTime": 0.05,
+        "maxTime": 5,
+        "minSamples": 5
+      },
+      "samples": 44,
+      "promise": false,
+      "details": {
+        "min": 0.056597083,
+        "max": 0.075108667,
+        "mean": 0.06380466381818183,
+        "median": 0.062936979,
+        "standardDeviation": 0.004091047037326447,
+        "marginOfError": 0.00120882715109607,
+        "relativeMarginOfError": 1.894574908412262,
+        "standardErrorOfMean": 0.0006167485464775867,
+        "sampleVariance": 0.0000167366658616175
+      },
+      "completed": true,
+      "percentSlower": 0.63
+    },
+    {
+      "ms": 64.43298969072166,
+      "name": "msgpack.js",
+      "ops": 15.52,
+      "margin": 2.07,
+      "options": {
+        "delay": 0.005,
+        "initCount": 1,
+        "minTime": 0.05,
+        "maxTime": 5,
+        "minSamples": 5
+      },
+      "samples": 43,
+      "promise": false,
+      "details": {
+        "min": 0.05818075,
+        "max": 0.075344209,
+        "mean": 0.06443535655813955,
+        "median": 0.063816958,
+        "standardDeviation": 0.004473111151890905,
+        "marginOfError": 0.0013370003889802992,
+        "relativeMarginOfError": 2.0749483829951862,
+        "standardErrorOfMean": 0.0006821430556021935,
+        "sampleVariance": 0.000020008723377170785
+      },
+      "completed": true,
+      "percentSlower": 1.59
+    },
+    {
+      "ms": 64.85084306095979,
+      "name": "msgpack-js",
+      "ops": 15.42,
+      "margin": 1.44,
+      "options": {
+        "delay": 0.005,
+        "initCount": 1,
+        "minTime": 0.05,
+        "maxTime": 5,
+        "minSamples": 5
+      },
+      "samples": 43,
+      "promise": false,
+      "details": {
+        "min": 0.059573875,
+        "max": 0.075211292,
+        "mean": 0.06485475772093023,
+        "median": 0.06495625,
+        "standardDeviation": 0.0031204869459442986,
+        "marginOfError": 0.0009327048040762003,
+        "relativeMarginOfError": 1.4381439956797395,
+        "standardErrorOfMean": 0.00047586979799806137,
+        "sampleVariance": 0.000009737438779808777
+      },
+      "completed": true,
+      "percentSlower": 2.22
+    },
+    {
+      "ms": 64.14368184733804,
+      "name": "@msgpack/msgpack",
+      "ops": 15.59,
+      "margin": 2.05,
+      "options": {
+        "delay": 0.005,
+        "initCount": 1,
+        "minTime": 0.05,
+        "maxTime": 5,
+        "minSamples": 5
+      },
+      "samples": 43,
+      "promise": false,
+      "details": {
+        "min": 0.05771825,
+        "max": 0.074516083,
+        "mean": 0.06416090897674417,
+        "median": 0.063407875,
+        "standardDeviation": 0.004399889070971478,
+        "marginOfError": 0.0013151145141725971,
+        "relativeMarginOfError": 2.049713034223494,
+        "standardErrorOfMean": 0.0006709767929452027,
+        "sampleVariance": 0.00001935902383685426
+      },
+      "completed": true,
+      "percentSlower": 1.14
+    },
+    {
+      "ms": 64.76683937823834,
+      "name": "fast-json-stable-stringify",
+      "ops": 15.44,
+      "margin": 1.72,
+      "options": {
+        "delay": 0.005,
+        "initCount": 1,
+        "minTime": 0.05,
+        "maxTime": 5,
+        "minSamples": 5
+      },
+      "samples": 43,
+      "promise": false,
+      "details": {
+        "min": 0.059009042,
+        "max": 0.076562167,
+        "mean": 0.064762731627907,
+        "median": 0.064101833,
+        "standardDeviation": 0.003734580436346038,
+        "marginOfError": 0.0011162556275763759,
+        "relativeMarginOfError": 1.723608006514921,
+        "standardErrorOfMean": 0.0005695181773348857,
+        "sampleVariance": 0.000013947091035538561
+      },
+      "completed": true,
+      "percentSlower": 2.09
+    },
+    {
+      "ms": 63.41154090044388,
+      "name": "sia",
+      "ops": 15.77,
+      "margin": 1.96,
+      "options": {
+        "delay": 0.005,
+        "initCount": 1,
+        "minTime": 0.05,
+        "maxTime": 5,
+        "minSamples": 5
+      },
+      "samples": 44,
+      "promise": false,
+      "details": {
+        "min": 0.057643792,
+        "max": 0.073630167,
+        "mean": 0.0634011808409091,
+        "median": 0.06278262500000001,
+        "standardDeviation": 0.004214202254937888,
+        "marginOfError": 0.0012452171924447865,
+        "relativeMarginOfError": 1.9640283917887542,
+        "standardErrorOfMean": 0.0006353148941044829,
+        "sampleVariance": 0.000017759500645523577
+      },
+      "completed": true,
+      "percentSlower": 0
+    }
+  ],
+  "fastest": {
+    "name": "sia",
+    "index": 5
+  },
+  "slowest": {
+    "name": "msgpack-js",
+    "index": 2
+  }
+}
+Running "copycat.email(): 100_000 words" suite...
+{
+  "name": "copycat.email(): 100_000 words",
+  "date": "2023-10-04T19:25:58.314Z",
+  "results": [
+    {
+      "ms": 6.4935064935064934,
+      "name": "msgpack-lite",
+      "ops": 154,
+      "margin": 1.1,
+      "options": {
+        "delay": 0.005,
+        "initCount": 1,
+        "minTime": 0.05,
+        "maxTime": 5,
+        "minSamples": 5
+      },
+      "samples": 80,
+      "promise": false,
+      "details": {
+        "min": 0.006144773111111111,
+        "max": 0.007289217555555556,
+        "mean": 0.006513444813194447,
+        "median": 0.006425341972222222,
+        "standardDeviation": 0.0003264470067171963,
+        "marginOfError": 0.00007153585441095618,
+        "relativeMarginOfError": 1.0982798881790512,
+        "standardErrorOfMean": 0.00003649788490354907,
+        "sampleVariance": 1.0656764819461721e-7
+      },
+      "completed": true,
+      "percentSlower": 5.52
+    },
+    {
+      "ms": 7.8125,
+      "name": "msgpack.js",
+      "ops": 128,
+      "margin": 0.21,
+      "options": {
+        "delay": 0.005,
+        "initCount": 1,
+        "minTime": 0.05,
+        "maxTime": 5,
+        "minSamples": 5
+      },
+      "samples": 83,
+      "promise": false,
+      "details": {
+        "min": 0.0077032559999999995,
+        "max": 0.007974398857142857,
+        "mean": 0.00782390835111876,
+        "median": 0.007810190571428572,
+        "standardDeviation": 0.00007676452875786293,
+        "marginOfError": 0.00001651496331742569,
+        "relativeMarginOfError": 0.21108329208718524,
+        "standardErrorOfMean": 0.000008426001692564127,
+        "sampleVariance": 5.892792875416766e-9
+      },
+      "completed": true,
+      "percentSlower": 21.47
+    },
+    {
+      "ms": 6.993006993006993,
+      "name": "msgpack-js",
+      "ops": 143,
+      "margin": 0.75,
+      "options": {
+        "delay": 0.005,
+        "initCount": 1,
+        "minTime": 0.05,
+        "maxTime": 5,
+        "minSamples": 5
+      },
+      "samples": 83,
+      "promise": false,
+      "details": {
+        "min": 0.006893739625,
+        "max": 0.008951494875,
+        "mean": 0.006998926082831327,
+        "median": 0.006939052125,
+        "standardDeviation": 0.0002447878738493462,
+        "marginOfError": 0.00005266316126194539,
+        "relativeMarginOfError": 0.7524463130298009,
+        "standardErrorOfMean": 0.000026868959827523157,
+        "sampleVariance": 5.992110318368341e-8
+      },
+      "completed": true,
+      "percentSlower": 12.27
+    },
+    {
+      "ms": 7.407407407407407,
+      "name": "@msgpack/msgpack",
+      "ops": 135,
+      "margin": 0.81,
+      "options": {
+        "delay": 0.005,
+        "initCount": 1,
+        "minTime": 0.05,
+        "maxTime": 5,
+        "minSamples": 5
+      },
+      "samples": 87,
+      "promise": false,
+      "details": {
+        "min": 0.0072805417142857145,
+        "max": 0.008461505999999999,
+        "mean": 0.0074219568899835785,
+        "median": 0.007305898714285714,
+        "standardDeviation": 0.00028484207424188477,
+        "marginOfError": 0.00005985502061580879,
+        "relativeMarginOfError": 0.8064587480504919,
+        "standardErrorOfMean": 0.00003053827582439224,
+        "sampleVariance": 8.11350072584194e-8
+      },
+      "completed": true,
+      "percentSlower": 17.18
+    },
+    {
+      "ms": 7.518796992481203,
+      "name": "fast-json-stable-stringify",
+      "ops": 133,
+      "margin": 0.14,
+      "options": {
+        "delay": 0.005,
+        "initCount": 1,
+        "minTime": 0.05,
+        "maxTime": 5,
+        "minSamples": 5
+      },
+      "samples": 86,
+      "promise": false,
+      "details": {
+        "min": 0.007494363142857142,
+        "max": 0.007722839285714286,
+        "mean": 0.007545980061461796,
+        "median": 0.0075188451428571425,
+        "standardDeviation": 0.00004960743925830971,
+        "marginOfError": 0.00001048464318361953,
+        "relativeMarginOfError": 0.1389434254824742,
+        "standardErrorOfMean": 0.0000053493077467446585,
+        "sampleVariance": 2.4608980297668874e-9
+      },
+      "completed": true,
+      "percentSlower": 18.4
+    },
+    {
+      "ms": 6.134969325153374,
+      "name": "sia",
+      "ops": 163,
+      "margin": 0.42,
+      "options": {
+        "delay": 0.005,
+        "initCount": 1,
+        "minTime": 0.05,
+        "maxTime": 5,
+        "minSamples": 5
+      },
+      "samples": 85,
+      "promise": false,
+      "details": {
+        "min": 0.006053763888888889,
+        "max": 0.006824569444444445,
+        "mean": 0.006142000988235291,
+        "median": 0.006114180555555555,
+        "standardDeviation": 0.00012111778229010281,
+        "marginOfError": 0.000025748653242928884,
+        "relativeMarginOfError": 0.41922255128661157,
+        "standardErrorOfMean": 0.000013137067981086165,
+        "sampleVariance": 1.4669517186872741e-8
+      },
+      "completed": true,
+      "percentSlower": 0
+    }
+  ],
+  "fastest": {
+    "name": "sia",
+    "index": 5
+  },
+  "slowest": {
+    "name": "msgpack.js",
+    "index": 1
+  }
+}
+Running "copycat.scramble(): nested json" suite...
+{
+  "name": "copycat.scramble(): nested json",
+  "date": "2023-10-04T19:26:31.886Z",
+  "results": [
+    {
+      "ms": 69.44444444444444,
+      "name": "msgpack-lite",
+      "ops": 14.4,
+      "margin": 2.03,
+      "options": {
+        "delay": 0.005,
+        "initCount": 1,
+        "minTime": 0.05,
+        "maxTime": 5,
+        "minSamples": 5
+      },
+      "samples": 40,
+      "promise": false,
+      "details": {
+        "min": 0.065112791,
+        "max": 0.088218458,
+        "mean": 0.069562619675,
+        "median": 0.0685470625,
+        "standardDeviation": 0.004551771646208367,
+        "marginOfError": 0.0014106086475172714,
+        "relativeMarginOfError": 2.02782565422019,
+        "standardErrorOfMean": 0.0007196982895496283,
+        "sampleVariance": 0.000020718625119226423
+      },
+      "completed": true,
+      "percentSlower": 22.99
+    },
+    {
+      "ms": 68.02721088435375,
+      "name": "msgpack.js",
+      "ops": 14.7,
+      "margin": 2.84,
+      "options": {
+        "delay": 0.005,
+        "initCount": 1,
+        "minTime": 0.05,
+        "maxTime": 5,
+        "minSamples": 5
+      },
+      "samples": 41,
+      "promise": false,
+      "details": {
+        "min": 0.063183958,
+        "max": 0.092444583,
+        "mean": 0.06816863012195123,
+        "median": 0.066376167,
+        "standardDeviation": 0.006331625450945907,
+        "marginOfError": 0.0019381141804659737,
+        "relativeMarginOfError": 2.843117394318702,
+        "standardErrorOfMean": 0.0009888337655438641,
+        "sampleVariance": 0.00004008948085106596
+      },
+      "completed": true,
+      "percentSlower": 21.39
+    },
+    {
+      "ms": 62.893081761006286,
+      "name": "msgpack-js",
+      "ops": 15.9,
+      "margin": 0.54,
+      "options": {
+        "delay": 0.005,
+        "initCount": 1,
+        "minTime": 0.05,
+        "maxTime": 5,
+        "minSamples": 5
+      },
+      "samples": 44,
+      "promise": false,
+      "details": {
+        "min": 0.060967916,
+        "max": 0.065446791,
+        "mean": 0.0627338608181818,
+        "median": 0.062662479,
+        "standardDeviation": 0.0011507530521330976,
+        "marginOfError": 0.0003400257980251033,
+        "relativeMarginOfError": 0.5420131864840615,
+        "standardErrorOfMean": 0.0001734825500128078,
+        "sampleVariance": 0.0000013242325869936397
+      },
+      "completed": true,
+      "percentSlower": 14.97
+    },
+    {
+      "ms": 68.4931506849315,
+      "name": "@msgpack/msgpack",
+      "ops": 14.6,
+      "margin": 1.86,
+      "options": {
+        "delay": 0.005,
+        "initCount": 1,
+        "minTime": 0.05,
+        "maxTime": 5,
+        "minSamples": 5
+      },
+      "samples": 41,
+      "promise": false,
+      "details": {
+        "min": 0.065141125,
+        "max": 0.087772291,
+        "mean": 0.06857737490243904,
+        "median": 0.067726667,
+        "standardDeviation": 0.004162969757690613,
+        "marginOfError": 0.001274287429466602,
+        "relativeMarginOfError": 1.8581746986953862,
+        "standardErrorOfMean": 0.0006501466476870419,
+        "sampleVariance": 0.000017330317203446644
+      },
+      "completed": true,
+      "percentSlower": 21.93
+    },
+    {
+      "ms": 62.5,
+      "name": "fast-json-stable-stringify",
+      "ops": 16,
+      "margin": 1.75,
+      "options": {
+        "delay": 0.005,
+        "initCount": 1,
+        "minTime": 0.05,
+        "maxTime": 5,
+        "minSamples": 5
+      },
+      "samples": 44,
+      "promise": false,
+      "details": {
+        "min": 0.059238666,
+        "max": 0.080550042,
+        "mean": 0.0624456439318182,
+        "median": 0.0616218335,
+        "standardDeviation": 0.0037082038135017163,
+        "marginOfError": 0.0010957042074217472,
+        "relativeMarginOfError": 1.7546527482655172,
+        "standardErrorOfMean": 0.0005590327588886466,
+        "sampleVariance": 0.00001375077552246867
+      },
+      "completed": true,
+      "percentSlower": 14.44
+    },
+    {
+      "ms": 53.475935828877006,
+      "name": "sia",
+      "ops": 18.7,
+      "margin": 1.54,
+      "options": {
+        "delay": 0.005,
+        "initCount": 1,
+        "minTime": 0.05,
+        "maxTime": 5,
+        "minSamples": 5
+      },
+      "samples": 51,
+      "promise": false,
+      "details": {
+        "min": 0.051071792,
+        "max": 0.069724166,
+        "mean": 0.05334508090196079,
+        "median": 0.052487417,
+        "standardDeviation": 0.0029862237988591495,
+        "marginOfError": 0.0008195837435506148,
+        "relativeMarginOfError": 1.5363811052360585,
+        "standardErrorOfMean": 0.00041815497119929325,
+        "sampleVariance": 0.000008917532576872771
+      },
+      "completed": true,
+      "percentSlower": 0
+    }
+  ],
+  "fastest": {
+    "name": "sia",
+    "index": 5
+  },
+  "slowest": {
+    "name": "msgpack-lite",
+    "index": 0
+  }
+}
+Running "copycat.email(): nested json" suite...
+{
+  "name": "copycat.email(): nested json",
+  "date": "2023-10-04T19:27:04.467Z",
+  "results": [
+    {
+      "ms": 17.18213058419244,
+      "name": "msgpack-lite",
+      "ops": 58.2,
+      "margin": 0.31,
+      "options": {
+        "delay": 0.005,
+        "initCount": 1,
+        "minTime": 0.05,
+        "maxTime": 5,
+        "minSamples": 5
+      },
+      "samples": 76,
+      "promise": false,
+      "details": {
+        "min": 0.016806013666666664,
+        "max": 0.017854514,
+        "mean": 0.017175870995614042,
+        "median": 0.017112777833333336,
+        "standardDeviation": 0.00023339236746494174,
+        "marginOfError": 0.00005247300363652228,
+        "relativeMarginOfError": 0.30550417879781216,
+        "standardErrorOfMean": 0.000026771940630878714,
+        "sampleVariance": 5.44719971908904e-8
+      },
+      "completed": true,
+      "percentSlower": 51.58
+    },
+    {
+      "ms": 17.21170395869191,
+      "name": "msgpack.js",
+      "ops": 58.1,
+      "margin": 0.39,
+      "options": {
+        "delay": 0.005,
+        "initCount": 1,
+        "minTime": 0.05,
+        "maxTime": 5,
+        "minSamples": 5
+      },
+      "samples": 76,
+      "promise": false,
+      "details": {
+        "min": 0.016851930666666667,
+        "max": 0.018579972333333333,
+        "mean": 0.017213196995614032,
+        "median": 0.017144020833333332,
+        "standardDeviation": 0.00029726596119106197,
+        "marginOfError": 0.0000668335388685577,
+        "relativeMarginOfError": 0.3882691802434322,
+        "standardErrorOfMean": 0.000034098744320692704,
+        "sampleVariance": 8.836705168284597e-8
+      },
+      "completed": true,
+      "percentSlower": 51.66
+    },
+    {
+      "ms": 33.003300330033,
+      "name": "msgpack-js",
+      "ops": 30.3,
+      "margin": 0.23,
+      "options": {
+        "delay": 0.005,
+        "initCount": 1,
+        "minTime": 0.05,
+        "maxTime": 5,
+        "minSamples": 5
+      },
+      "samples": 55,
+      "promise": false,
+      "details": {
+        "min": 0.032639208,
+        "max": 0.0340951875,
+        "mean": 0.03300225906363636,
+        "median": 0.032904667,
+        "standardDeviation": 0.0002897940872602802,
+        "marginOfError": 0.00007658862043922833,
+        "relativeMarginOfError": 0.2320708418522105,
+        "standardErrorOfMean": 0.000039075826754708335,
+        "sampleVariance": 8.398061301101888e-8
+      },
+      "completed": true,
+      "percentSlower": 74.79
+    },
+    {
+      "ms": 10.330578512396695,
+      "name": "@msgpack/msgpack",
+      "ops": 96.8,
+      "margin": 0.56,
+      "options": {
+        "delay": 0.005,
+        "initCount": 1,
+        "minTime": 0.05,
+        "maxTime": 5,
+        "minSamples": 5
+      },
+      "samples": 84,
+      "promise": false,
+      "details": {
+        "min": 0.0101319334,
+        "max": 0.0124262832,
+        "mean": 0.010335005773809521,
+        "median": 0.0102730334,
+        "standardDeviation": 0.00027108091679549324,
+        "marginOfError": 0.00005797161163142411,
+        "relativeMarginOfError": 0.5609248112694141,
+        "standardErrorOfMean": 0.000029577352873175567,
+        "sampleVariance": 7.348486345068514e-8
+      },
+      "completed": true,
+      "percentSlower": 19.47
+    },
+    {
+      "ms": 25.51020408163265,
+      "name": "fast-json-stable-stringify",
+      "ops": 39.2,
+      "margin": 1.55,
+      "options": {
+        "delay": 0.005,
+        "initCount": 1,
+        "minTime": 0.05,
+        "maxTime": 5,
+        "minSamples": 5
+      },
+      "samples": 53,
+      "promise": false,
+      "details": {
+        "min": 0.023198291666666666,
+        "max": 0.031200930333333335,
+        "mean": 0.025500848918239,
+        "median": 0.025330777999999998,
+        "standardDeviation": 0.0014721645585565497,
+        "marginOfError": 0.000396346013817657,
+        "relativeMarginOfError": 1.554246351125111,
+        "standardErrorOfMean": 0.0002022173539886005,
+        "sampleVariance": 0.000002167268487470001
+      },
+      "completed": true,
+      "percentSlower": 67.39
+    },
+    {
+      "ms": 8.319467554076539,
+      "name": "sia",
+      "ops": 120.2,
+      "margin": 0.35,
+      "options": {
+        "delay": 0.005,
+        "initCount": 1,
+        "minTime": 0.05,
+        "maxTime": 5,
+        "minSamples": 5
+      },
+      "samples": 79,
+      "promise": false,
+      "details": {
+        "min": 0.008159476142857143,
+        "max": 0.008700714285714286,
+        "mean": 0.00831848371971067,
+        "median": 0.008262125,
+        "standardDeviation": 0.00013190860257137333,
+        "marginOfError": 0.000029088119465097862,
+        "relativeMarginOfError": 0.3496805481048606,
+        "standardErrorOfMean": 0.000014840877278111155,
+        "sampleVariance": 1.7399879432332516e-8
+      },
+      "completed": true,
+      "percentSlower": 0
+    }
+  ],
+  "fastest": {
+    "name": "sia",
+    "index": 5
+  },
+  "slowest": {
+    "name": "msgpack-js",
+    "index": 2
+  }
+}
