@@ -447,22 +447,21 @@ Takes in an [`input`](#input) value and returns a string value resembling a fict
 
 ```js
 copycat.word('foo')
-// => 'Koyuma'
+// => 'Explicet'
 ```
 
 #### `options`
 
 - **`capitalize=true`:** whether or not the word should start with an upper case letter
-- **`minSyllables=2` and `maxSyllables=4`:** the minimum and maximum possible number of syllables that returned words will contain
+- **`minSyllables=1` and `maxSyllables=4`:** the minimum and maximum possible number of syllables that returned words will contain
 
 ```js
 copycat.word('id-2', {
-  minSyllables: 1,
+  minSyllables: 3,
   maxSyllables: 6,
   unicode: 0.382
 })
-// => 'Shiraeko'
-'Memu'
+// => 'Nullam'
 ```
 
 ### `copycat.words(input)`
@@ -471,7 +470,7 @@ Takes in an [`input`](#input) value and returns a string value resembling fictit
 
 ```js
 copycat.words('foo')
-// => 'Vakinva mokai'
+// => 'Aequo ophortatis'
 ```
 
 #### `options`
@@ -487,7 +486,7 @@ Takes in an [`input`](#input) value and returns a string value resembling a sent
 
 ```js
 copycat.sentence('foo')
-// => 'Nochiyu mitamoke hykahykin yokameha so raekaceami chi, kinyukai koma ceayuviyu yu yoniva.'
+// => 'Poetista graecis ne vel loque sic horum, eo quae aliquaque ut multo.'
 ```
 
 #### `options`
@@ -502,7 +501,7 @@ Takes in an [`input`](#input) value and returns a string value resembling a para
 
 ```js
 copycat.paragraph('foo')
-// => 'Kai ni viramira memayo kayu. Hahyceavi nameta mohy shichiacea menivayu shi mika yokinmu, nahyraki hyka chi niceavi ta. Ta hamevakin yuno hyakova nivami yohycea ko, yoha shiyu miha hy kiko kinyoshi ka ninoshi. Notakimu yo yukake kakekaihy vaceaso vakiso nomu rae, yukin chiraekimo ceavino yo muyo. Hyva memayo shikemavi ka kakesokin mamuhamo kinmukame mora, ranino masochiyo kinoa kesoni mamo. Va nohakin komiva shimo hykikayo makinra yorae, sovami kai raenira raeyo sonavi mo mora chirae.'
+// => 'Et modo lucilias legatomnem et. Quis ratio iudicur ut defuitur quod interessar endis, doloria romandum athenisse explicem quia. Expeten quam hoc ex amus ant sive, providintem ad claudicur torquato nes nihil nec ut. Audiri dicerea summum arisset ne exceperem tam si, amartifex doloris nam quae ipsum. Et causa iudicitat extremum endam tota tum antippus, de vidi videbo rerum ut. Affere ab mundi nimium summa partemerror causae, his am semperfruique in sapiens gloriatur et dicenim.'
 ```
 
 #### `options`
@@ -549,14 +548,14 @@ Takes in an [`input`](#input) value and a function `fn`, calls that function rep
 
 ```js
 copycat.times('foo', [4, 5], copycat.word)
-// => [ 'Raenoha', 'Soceami', 'Kekayo', 'Kayukinyo', 'Kinmime' ]
+// => [ 'Conspecta', 'Mihi', 'Fuisse', 'Philos', 'Divelistius' ]
 ```
 
 As shown above, `range` can be a tuple array of the minimum and maximum possible number of times the maker should be called. It can also be given as a number, in which case `fn`  will be called exactly that number of times:
 
 ```js
 copycat.times('foo', 2, copycat.word)
-// => [ 'Hyrakinma', 'Raenoha' ]
+// => [ 'Pugnari', 'Conspecta' ]
 ```
 ### `copycat.setHashKey(key)`
 
