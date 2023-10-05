@@ -453,7 +453,7 @@ copycat.word('foo')
 #### `options`
 
 - **`capitalize=true`:** whether or not the word should start with an upper case letter
-- **`minSyllables=2` and `maxSyllables=4`:** the minimum and maximum possible number of syllables that returned words will contain
+- **`minSyllables=1` and `maxSyllables=4`:** the minimum and maximum possible number of syllables that returned words will contain
 
 ```js
 copycat.word('id-2', {
@@ -461,7 +461,7 @@ copycat.word('id-2', {
   maxSyllables: 6,
   unicode: 0.382
 })
-// => 'Conversatis'
+// => 'Nullam'
 ```
 
 ### `copycat.words(input)`
@@ -470,7 +470,7 @@ Takes in an [`input`](#input) value and returns a string value resembling fictit
 
 ```js
 copycat.words('foo')
-// => 'Aequo inmorbis'
+// => 'Aequo ophortatis'
 ```
 
 #### `options`
@@ -486,7 +486,7 @@ Takes in an [`input`](#input) value and returns a string value resembling a sent
 
 ```js
 copycat.sentence('foo')
-// => 'Poetista velindivid extremum sedationem an dolortumcum af, fieri quae aliquaque ut multo.'
+// => 'Poetista graecis ne vel loque sic horum, eo quae aliquaque ut multo.'
 ```
 
 #### `options`
@@ -501,7 +501,7 @@ Takes in an [`input`](#input) value and returns a string value resembling a para
 
 ```js
 copycat.paragraph('foo')
-// => 'Et mod lucil legatom et. Recoribus ratio et qui futur dol sequam voluptat, doloria romandum at explic disciplina. Ex quam hoc ex amus quibusque siv, provid ad neque omnino accus et loquuntur delectatib. Audiri dic scaevolen magnumquidem dixi sapientiam eaque cum, amar doloris porro quae ipsum. Et causa iudicitat ex collegendo percipi continean eum, iner praeclare videbo rerum ut. Af audaccom esse reicien itudo neglegani putatio, vitat am suavit inos nostris seq quidem quod.'
+// => 'Et modo lucilias legatomnem et. Quis ratio iudicur ut defuitur quod interessar endis, doloria romandum athenisse explicem quia. Expeten quam hoc ex amus ant sive, providintem ad claudicur torquato nes nihil nec ut. Audiri dicerea summum arisset ne exceperem tam si, amartifex doloris nam quae ipsum. Et causa iudicitat extremum endam tota tum antippus, de vidi videbo rerum ut. Affere ab mundi nimium summa partemerror causae, his am semperfruique in sapiens gloriatur et dicenim.'
 ```
 
 #### `options`
@@ -548,7 +548,7 @@ Takes in an [`input`](#input) value and a function `fn`, calls that function rep
 
 ```js
 copycat.times('foo', [4, 5], copycat.word)
-// => [ 'Conspecta', 'Mihi', 'Fuisse', 'Contentam', 'Divelis' ]
+// => [ 'Conspecta', 'Mihi', 'Fuisse', 'Philos', 'Divelistius' ]
 ```
 
 As shown above, `range` can be a tuple array of the minimum and maximum possible number of times the maker should be called. It can also be given as a number, in which case `fn`  will be called exactly that number of times:
