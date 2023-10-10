@@ -1,8 +1,13 @@
 {
   "name": "@snaplet/copycat",
-  "version": "0.18.0-rc.3",
+  "version": "0.18.0-rc.4",
   "description": "",
   "main": "dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./next": "./dist/next.js",
+    "./dist/locales/en": "./dist/locales/en"
+  },
   "files": [
     "dist"
   ],
