@@ -19,13 +19,16 @@ export const char = fictional.char
 
 export const digit = fictional.char.digit
 
-export const word = fictional.word
+export const word = fictional.word.options({ unicode: false })
 
-export const words = fictional.words
+export const words = fictional.words.options({
+  minSyllables: 2,
+  unicode: false,
+})
 
-export const sentence = fictional.sentence
+export const sentence = fictional.sentence.options({ unicode: false })
 
-export const paragraph = fictional.paragraph
+export const paragraph = fictional.paragraph.options({ unicode: false })
 
 export const oneOf = fictional.oneOf
 
