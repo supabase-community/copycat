@@ -6,6 +6,20 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./next": {
+      "types": "./dist/next.d.ts",
+      "default": "./dist/next.js"
+    },
+    "./dist/locales/en": {
+      "types": "./dist/locales/en/index.d.ts",
+      "default": "./dist/locales/en/index.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/snaplet/copycat.git"
@@ -40,7 +54,10 @@
     "worker-farm": "^1.7.0"
   },
   "scripts": {
-    "build": "yarn build:js && yarn build:types && yarn build:docs",
+    "build": "yarn clean && git checkout main && yarn build:main && git checkout next && yarn build:next && git checkout main",
+    "build:main": "yarn build:js && yarn build:types && yarn build:docs",
+    "build:next": "NODE_ENV=production yarn tsup --entry.next src/index.ts --dts --platform=node --external @faker-js/faker --minify",
+    "clean": "tsc --build --clean && rm -r dist",
     "build:js": "node ./scripts/buildjs.js",
     "build:types": "tsc --build --verbose",
     "build:docs": "./scripts/update-readme.sh",
