@@ -11,7 +11,6 @@
     "moduleResolution": "Node",
     "declarationMap": true,
     "sourceMap": true,
-    "composite": true,
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
