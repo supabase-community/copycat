@@ -59,7 +59,7 @@
     "build:next": "yarn build:next:js && yarn build:next:types",
     "build:next:js": "NODE_ENV=production yarn -s esbuild dist/index.js --bundle --platform=node --external:@faker-js/faker --minify > ./dist/next.js",
     "build:next:types": "NODE_ENV=production yarn tsup --entry.next src/index.ts --dts-only --platform=node --format=cjs --external @faker-js/faker --minify",
-    "clean": "tsc --build --clean && rm -r dist",
+    "clean": "tsc --build --clean && rm -rf dist",
     "build:js": "node ./scripts/buildjs.js",
     "build:types": "tsc --build --verbose",
     "build:docs": "./scripts/update-readme.sh",
