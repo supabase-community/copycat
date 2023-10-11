@@ -56,7 +56,9 @@
   "scripts": {
     "build": "yarn clean && git checkout next && yarn && yarn build:next && git checkout main && yarn && yarn build:main && yarn build:docs",
     "build:main": "yarn build:js && yarn build:types",
-    "build:next": "NODE_ENV=production yarn tsup --entry.next src/index.ts --dts --platform=node --external @faker-js/faker --minify",
+    "build:next": "yarn build:next:js && yarn build:next:types",
+    "build:next:js": "NODE_ENV=production yarn -s esbuild dist/index.js --bundle --platform=node --external:@faker-js/faker --minify > ./dist/next.js",
+    "build:next:types": "NODE_ENV=production yarn tsup --entry.next src/index.ts --dts-only --platform=node --format=cjs --external @faker-js/faker --minify",
     "clean": "tsc --build --clean && rm -r dist",
     "build:js": "node ./scripts/buildjs.js",
     "build:types": "tsc --build --verbose",
