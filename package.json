@@ -54,7 +54,7 @@
     "worker-farm": "^1.7.0"
   },
   "scripts": {
-    "build": "yarn clean && git checkout next && yarn && yarn build:next && git checkout main && yarn && build:main && yarn build:docs",
+    "build": "yarn clean && git checkout next && yarn && yarn build:next && git checkout main && yarn && yarn build:main && yarn build:docs",
     "build:main": "yarn build:js && yarn build:types",
     "build:next": "NODE_ENV=production yarn tsup --entry.next src/index.ts --dts --platform=node --external @faker-js/faker --minify",
     "clean": "tsc --build --clean && rm -r dist",
