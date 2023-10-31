@@ -28,7 +28,7 @@
   "types": "dist/index.d.ts",
   "dependencies": {
     "@faker-js/faker": "^8.0.2",
-    "fictional": "^0.8.4",
+    "fictional": "^0.10.1",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
