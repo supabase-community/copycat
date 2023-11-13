@@ -1,7 +1,4 @@
-import { join, char, times } from 'fictional'
+import { int } from 'fictional'
 
-export const phoneNumber = join('', [
-  '+',
-  times([2, 3], char.digit),
-  times([10, 12], char.digit),
-])
+export const phoneNumber = (input: string) =>
+  `+${int(input, { min: 10000000000, max: 999999999999999 })}`

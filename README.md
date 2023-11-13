@@ -350,7 +350,7 @@ Takes in an [input](#input) and returns a string value resembling a [phone numbe
 
 ```js
 copycat.phoneNumber('foo')
-// => '+18312203332869'
+// => '+208438699696662'
 ```
 
 **note** The strings _resemble_ phone numbers, but will not always be valid. For example, the country dialing code may not exist, or for a particular country, the number of digits may be incorrect. Please let us know if you need valid
