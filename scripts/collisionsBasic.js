@@ -1,6 +1,10 @@
 const { v4: uuid } = require('uuid')
+const {copycat, fictional} = require('../dist/index')
 
-const { TRANSFORMATIONS } = require('../dist/testutils')
+const TRANSFORMATIONS = {
+  ...fictional,
+  ...copycat,
+}
 
 const METHOD = process.env.METHOD ? process.env.METHOD : 'phoneNumber'
 const MAX_N = +(process.env.MAX_N ?? 999999)
