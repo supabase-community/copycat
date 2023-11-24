@@ -377,6 +377,89 @@ copycat.username('foo')
 #### `options`
 - **`limit`:** Constrain generated values to be less than or equal to `limit` number of chars
 
+### `copycat.unique(input, method, store, options)`
+
+The `unique` function is tailored to maintain uniqueness of values after they have undergone a specific transformation.
+This method is especially useful when the transformed values need to be unique, regardless of whether the input values are identical.
+
+**note** This method will try his best to generate unique values, but be aware of those limitations:
+1. The uniqueness is not guaranteed, but the probability of generating a duplicate is lower as the number of attempts increases.
+2. On the contrary of the other methods, the `unique` method is not stateless. It will store the generated values in the `store` object to ensure uniqueness.
+Meaning that the deterministic property over input is not guaranteed anymore. Now the determinism is based over a combination of:
+  - the `input` value
+  - the state of the `store` object
+  - the number of `attempts`
+3. The `unique` method as it alter the global copycat hashKey between attemps before restoring the original one, it is not thread safe.
+4. If duplicates exists in the passed `input` accross calls, the method might hide those duplicates by generating a unique value for each of them.
+If you want to ensure duplicate value for duplicate input you should use the `uniqueByInput` method.
+
+#### `parameters`
+
+- **`input`** (_Input_): The seed input for the generation method.
+- **`method`** (_Function_): A deterministic function that takes `input` and returns a value of type `T`.
+- **`store`** (_Store<T>_): A store object to track generated values and ensure uniqueness. It must have `has(value: T): boolean` and `add(value: T): void` methods.
+- **`options`** (_UniqueOptions_): An optional configuration object for additional control.
+
+#### `options`
+
+- **`attempts`** (_number_): The maximum number of attempts to generate a unique value. Defaults to 10.
+- **`attemptsReached`** (_Function_): An optional callback function that is called when the maximum number of attempts is reached.
+
+```js
+// Define a method to generate a value
+const generateValue = (seed) => {
+  return copycat.int(seed, { max: 3 });
+};
+// Create a store to track unique values
+const store = new Set();
+// Use the unique method to generate a unique number
+copycat.unique('exampleSeed', generateValue, store);
+// => 1
+copycat.unique('exampleSeed1', generateValue, store);
+// => 2
+copycat.unique('exampleSeed', generateValue, store);
+// => 3
+```
+
+### `copycat.uniqueByInput(input, method, inputStore, resultStore, options)`
+
+The `uniqueByInput` function is designed to generate unique values while preserving duplicates for identical inputs.
+It is particularly useful in scenarios where input consistency needs to be maintained alongside the uniqueness of the transformed values.
+- **Preserving Input Duplication**: If the same input is provided multiple times, `uniqueByInput` ensures that the transformed value is consistently the same for each occurrence of that input.
+- **Uniqueness Preservation**: For new and unique inputs, `uniqueByInput` employs the `unique` method to generate distinct values, avoiding duplicates in the `resultStore`.
+
+#### `parameters`
+
+- **`input`** (_Input_): The seed input for the generation method.
+- **`method`** (_Function_): A deterministic function that takes `input` and returns a value of type `T`.
+- **`inputStore`** (_Store_): A store object to track the inputs and ensure consistent output for duplicate inputs.
+- **`resultStore`** (_Store_): A store object to track the generated values and ensure their uniqueness.
+- **`options`** (_UniqueOptions_): An optional configuration object for additional control.
+
+#### `options`
+
+- **`attempts`** (_number_): The maximum number of attempts to generate a unique value after transformation. Defaults to 10.
+- **`attemptsReached`** (_Function_): An optional callback function that is invoked when the maximum number of attempts is reached.
+
+```js
+// Define a method to generate a value
+const method = (seed) => {
+  return copycat.int(seed, { max: 1000 });
+};
+
+// Create stores to track unique values and inputs
+const resultStore = new Set();
+const inputStore = new Set();
+
+// Generate a unique number or retrieve the existing one for duplicate input
+copycat.uniqueByInput('exampleSeed', method, inputStore, resultStore);
+// => 1
+copycat.uniqueByInput('exampleSeed1', method, store);
+// => 2
+copycat.uniqueByInput('exampleSeed', method, inputStore, resultStore);
+// => 1
+```
+
 ### `copycat.password(input)`
 
 Takes in an [`input`](#input) value and returns a string value resembling a password.
