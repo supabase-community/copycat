@@ -354,7 +354,7 @@ copycat.phoneNumber('foo')
 ```
 ```js
 copycat.phoneNumber('foo', { prefixes: ['+3319900', '+3363998'], min: 1000, max: 9999 })
-// => '+33639983457'
+// => '+33639987662'
 ```
 
 **note** The strings _resemble_ phone numbers, but will not always be valid. For example, the country dialing code may not exist, or for a particular country, the number of digits may be incorrect. Please let us know if you need valid
@@ -414,11 +414,11 @@ const generateValue = (seed) => {
 const store = new Set();
 // Use the unique method to generate a unique number
 copycat.unique('exampleSeed', generateValue, store);
-// => 1
-copycat.unique('exampleSeed1', generateValue, store);
-// => 2
-copycat.unique('exampleSeed', generateValue, store);
 // => 3
+copycat.unique('exampleSeed1', generateValue, store);
+// => 1
+copycat.unique('exampleSeed', generateValue, store);
+// => 0
 ```
 
 ### `copycat.uniqueByInput(input, method, inputStore, resultStore, options)`
@@ -453,11 +453,11 @@ const inputStore = new Set();
 
 // Generate a unique number or retrieve the existing one for duplicate input
 copycat.uniqueByInput('exampleSeed', method, inputStore, resultStore);
-// => 1
-copycat.uniqueByInput('exampleSeed1', method, store);
-// => 2
+// => 388
+copycat.uniqueByInput('exampleSeed1', method, inputStore, resultStore);
+// => 655
 copycat.uniqueByInput('exampleSeed', method, inputStore, resultStore);
-// => 1
+// => 388
 ```
 
 ### `copycat.password(input)`

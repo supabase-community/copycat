@@ -45,9 +45,9 @@ export const unique = <T>(
   input: Input,
   method: (input: Input) => T,
   store: Store<T>,
-  options: UniqueOptions
+  options?: UniqueOptions
 ): T => {
-  const { attempts = 10 } = options
+  const { attempts = 10 } = options ?? {}
   const originalKey = getHashKey()
   let result: T = method(input)
 
@@ -66,7 +66,7 @@ export const unique = <T>(
     }
 
     if (attempt >= attempts) {
-      options.attemptsReached?.(input)
+      options?.attemptsReached?.(input)
     }
     store.add(result)
   } finally {

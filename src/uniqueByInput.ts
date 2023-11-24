@@ -21,7 +21,7 @@ export const uniqueByInput = <T>(
   method: (input: Input) => T,
   inputStore: Store<Input>,
   resultStore: Store<T>,
-  options: UniqueOptions
+  options?: UniqueOptions
 ): T => {
   if (inputStore.has(input)) {
     return method(input)
