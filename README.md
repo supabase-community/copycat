@@ -445,7 +445,7 @@ It is particularly useful in scenarios where input consistency needs to be maint
 ```js
 // Define a method to generate a value
 const method = (seed) => {
-  return copycat.int(seed, { max: 1000 });
+  return copycat.int(seed, { max: 3 });
 };
 
 // Create stores to track unique values and inputs
@@ -454,11 +454,11 @@ const inputStore = new Set();
 
 // Generate a unique number or retrieve the existing one for duplicate input
 copycat.uniqueByInput('exampleSeed', method, inputStore, resultStore);
-// => 388
+// => 3
 copycat.uniqueByInput('exampleSeed1', method, inputStore, resultStore);
-// => 655
+// => 1
 copycat.uniqueByInput('exampleSeed', method, inputStore, resultStore);
-// => 388
+// => 3
 ```
 
 ### `copycat.password(input)`
