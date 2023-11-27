@@ -50,7 +50,7 @@ test('should be able to generate 5 unique numbers with low possibility space bas
   expect(numberOfCollisions).toBe(0)
 })
 
-test('should work with scramble method', () => {
+test('should work with scramble method and not alter method input value', () => {
   const collisionsStore = new Set()
   let numberOfCollisions = 0
   const store = new Set<ReturnType<typeof method>>()
@@ -80,6 +80,7 @@ test('should work with scramble method', () => {
   // Without unique the two first results would be the same
   expect(results).toEqual([
     'zmnmq ngcsx',
+    // Since we are using the same input, we should keep the same "shape"
     'zvzkv uviju',
     'wnzx dd tqjjomm jmnz',
     'ugwfa zugvm xhky hbn fo',

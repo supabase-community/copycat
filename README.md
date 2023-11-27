@@ -381,8 +381,9 @@ copycat.username('foo')
 
 The `unique` function is tailored to maintain uniqueness of values after they have undergone a specific transformation.
 This method is especially useful when the transformed values need to be unique, regardless of whether the input values are identical.
+It will do so by trying to generate a new value multiples times (up to attempts time) until it finds a unique one.
 
-**note** This method will try his best to generate unique values, but be aware of those limitations:
+**note** This method will try its best to generate unique values, but be aware of these limitations:
 1. The uniqueness is not guaranteed, but the probability of generating a duplicate is lower as the number of attempts increases.
 2. On the contrary of the other methods, the `unique` method is not stateless. It will store the generated values in the `store` object to ensure uniqueness.
 Meaning that the deterministic property over input is not guaranteed anymore. Now the determinism is based over a combination of:
