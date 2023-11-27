@@ -1,6 +1,6 @@
 {
   "name": "@snaplet/copycat",
-  "version": "0.18.2-rc.2",
+  "version": "1.1.0-rc.1",
   "description": "",
   "main": "dist/index.js",
   "files": [
