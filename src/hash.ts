@@ -1,4 +1,18 @@
-import { hash } from 'fictional'
+import { HashKey, hash } from 'fictional'
+
+// We need to be able to get and set the hash key used by fictional from outside of fictional.
+// for the copycat.unique method to work.
+const hashKey = {
+  value: hash.generateKey('chinochinochino!') as string | HashKey,
+}
+export function getHashKey() {
+  return hashKey.value
+}
+
+function setKey(key: string | HashKey) {
+  hashKey.value = key
+  return hash.setKey(key)
+}
 
 // We'll use this function to generate a hash key using fictional requirement
 // for a 16 character string from arbitrary long string input.
@@ -19,7 +33,7 @@ function derive16CharacterString(input: string) {
   return output.padEnd(16, '0')
 }
 
-export const setHashKey = hash.setKey
+export const setHashKey = setKey
 
 export const generateHashKey = (input: string) => {
   return input.length === 16
