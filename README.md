@@ -305,6 +305,19 @@ copycat.email('foo', { domain: 'acme.org' })
 // => 'Albin_Goyette47922@acme.org'
 ```
 
+### `copycat.url(input)`
+
+Takes in an [input](#input) and returns a string value resembling a URL.
+
+```js
+copycat.url('foo')
+// => 'https://noisy-shoe.biz'
+```
+
+#### `options`
+
+- **`limit`:** Constrain generated values to be less than or equal to `limit` number of chars
+
 ### `copycat.firstName(input)`
 
 Takes in an [input](#input) and returns a string value resembling a first name.

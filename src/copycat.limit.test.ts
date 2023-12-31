@@ -2,7 +2,7 @@ import { copycat } from '.'
 
 const NUM_CHECKS = 10
 
-export const LIMIT_TRANSFORMATION_NAMES = [
+export const TINY_LIMIT_TRANSFORMATION_NAMES = [
   'email',
   'username',
   'firstName',
@@ -10,10 +10,17 @@ export const LIMIT_TRANSFORMATION_NAMES = [
   'fullName',
 ] as const
 
-const generateValues = (limit: number) => {
+const SMALL_LIMIT_TRANSFORMATION_NAMES = TINY_LIMIT_TRANSFORMATION_NAMES
+
+export const LIMIT_TRANSFORMATION_NAMES = [
+  ...SMALL_LIMIT_TRANSFORMATION_NAMES,
+  'url',
+] as const
+
+const generateValues = (limit: number, names = LIMIT_TRANSFORMATION_NAMES) => {
   const results = {}
 
-  for (const name of LIMIT_TRANSFORMATION_NAMES) {
+  for (const name of names) {
     let i = -1
     const fn = copycat[name]
     const transformationResults: unknown[] = []
@@ -80,6 +87,18 @@ test('limit: medium', () => {
         "Goodwin",
         "Ruecker",
       ],
+      "url": Array [
+        "https://v-n.biz",
+        "https://z-b.com",
+        "https://mid.biz",
+        "https://w-y.biz",
+        "https://ttv.org",
+        "https://zcd.biz",
+        "https://x-z.info",
+        "https://pad.org",
+        "https://r-c.com",
+        "https://o-d.com",
+      ],
       "username": Array [
         "rich.plan63293",
         "lamp.force73904",
@@ -97,7 +116,8 @@ test('limit: medium', () => {
 })
 
 test('limit: small', () => {
-  expect(generateValues(10)).toMatchInlineSnapshot(`
+  expect(generateValues(10, SMALL_LIMIT_TRANSFORMATION_NAMES))
+    .toMatchInlineSnapshot(`
     Object {
       "email": Array [
         "G63@gz.mag",
@@ -214,6 +234,18 @@ test('limit: very large', () => {
         "Goodwin",
         "Ruecker",
       ],
+      "url": Array [
+        "https://airdrop-harald.biz",
+        "https://commentate-toga.com",
+        "https://untrueemerald.biz",
+        "https://upright-reservoir.biz",
+        "https://anxiouscastle.org",
+        "https://shyweekender.biz",
+        "https://decent-colonization.info",
+        "https://perfectcap.org",
+        "https://generate-supermarket.com",
+        "https://peer-identification.com",
+      ],
       "username": Array [
         "truthful.blackbird63293",
         "page.textual73904",
@@ -231,7 +263,8 @@ test('limit: very large', () => {
 })
 
 test('limit: tiny', () => {
-  expect(generateValues(5)).toMatchInlineSnapshot(`
+  expect(generateValues(5, TINY_LIMIT_TRANSFORMATION_NAMES))
+    .toMatchInlineSnapshot(`
     Object {
       "email": Array [
         "G@g.m",
