@@ -10,8 +10,10 @@ export const TINY_LIMIT_TRANSFORMATION_NAMES = [
   'fullName',
 ] as const
 
+const SMALL_LIMIT_TRANSFORMATION_NAMES = TINY_LIMIT_TRANSFORMATION_NAMES
+
 export const LIMIT_TRANSFORMATION_NAMES = [
-  ...TINY_LIMIT_TRANSFORMATION_NAMES,
+  ...SMALL_LIMIT_TRANSFORMATION_NAMES,
   'url',
 ] as const
 
@@ -114,7 +116,8 @@ test('limit: medium', () => {
 })
 
 test('limit: small', () => {
-  expect(generateValues(10)).toMatchInlineSnapshot(`
+  expect(generateValues(10, SMALL_LIMIT_TRANSFORMATION_NAMES))
+    .toMatchInlineSnapshot(`
     Object {
       "email": Array [
         "G63@gz.mag",
@@ -163,18 +166,6 @@ test('limit: small', () => {
         "VonRueden",
         "Lebsack",
         "Kerluke",
-      ],
-      "url": Array [
-        "https://.",
-        "https://.",
-        "https://.",
-        "https://.",
-        "https://.",
-        "https://.",
-        "https://.",
-        "https://.",
-        "https://.",
-        "https://.",
       ],
       "username": Array [
         "L63293",
