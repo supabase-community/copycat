@@ -228,7 +228,7 @@ Takes in an [`input`](#input) value and returns a number value with both a whole
 
 ```js
 copycat.float('foo')
-// => 51167487947531.74
+// => 5208378699696662
 ```
 
 ### `copycat.char(input)`
