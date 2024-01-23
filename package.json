@@ -1,6 +1,6 @@
 {
   "name": "@snaplet/copycat",
-  "version": "1.2.0",
+  "version": "2.0.0-rc.1",
   "description": "",
   "main": "dist/index.js",
   "files": [
@@ -55,6 +55,7 @@
     "worker-farm": "^1.7.0"
   },
   "scripts": {
+    "release": "git checkout next && git pull && git checkout main && git pull && yarn build && yarn publish && git push && git push --tags",
     "build": "yarn clean && git checkout next && git pull && yarn && yarn build:next && git checkout main && yarn && yarn build:main && yarn build:docs",
     "build:main": "yarn build:js && yarn build:types",
     "build:next": "yarn build:next:js && yarn build:next:types",
