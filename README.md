@@ -227,8 +227,8 @@ copycat.bool('foo')
 Takes in an [`input`](#input) value and returns a number value with both a whole and decimal segment.
 
 ```js
-copycat.float('foo')
-// => 5208378699696662
+copycat.float('foo', { min: 0, max: 1 })
+// => 0.5782461953370469
 ```
 
 ### `copycat.char(input)`
