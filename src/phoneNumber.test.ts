@@ -35,7 +35,7 @@ test('distributes uniformly', () => {
   )
 })
 
-test('ensures number is within min/max even when prefix given', () => {
+test('ensures number is within {min,max}Length even when prefix given', () => {
   const ranges = [
     [9, 9],
     [2, 3],
@@ -59,7 +59,7 @@ test('ensures number is within min/max even when prefix given', () => {
   }
 })
 
-test('ensures number is within min/max even when no prefix given', () => {
+test('ensures number is within {min,max}Length even when no prefix given', () => {
   const ranges = [
     [9, 9],
     [2, 3],
@@ -80,4 +80,30 @@ test('ensures number is within min/max even when no prefix given', () => {
         })
     )
   }
+})
+
+test('defaults maxLength to minLength when not specified', () => {
+  expectGeneratedValue(
+    (result: string) => {
+      const len = result.length
+      expect(len).toBe(4)
+    },
+    (input) =>
+      copycat.phoneNumber(input, {
+        minLength: 4,
+      })
+  )
+})
+
+test('defaults minLength to maxLength when not specified', () => {
+  expectGeneratedValue(
+    (result: string) => {
+      const len = result.length
+      expect(len).toBe(4)
+    },
+    (input) =>
+      copycat.phoneNumber(input, {
+        maxLength: 4,
+      })
+  )
 })

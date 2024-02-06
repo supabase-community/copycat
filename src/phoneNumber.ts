@@ -1,6 +1,9 @@
 import { int, oneOf } from 'fictional'
 import { Input } from './types'
 
+const DEFAULT_MIN_LENGTH = 12
+const DEFAULT_MAX_LENGTH = 16
+
 type PhoneNumberOptions = {
   /**
    * An array of prefixes to use when generating a phone number.
@@ -31,19 +34,20 @@ type PhoneNumberOptions = {
   prefixes?: Array<string>
   /**
    * Constrain generated values have a length greater than or equal to `minLength`
-   * @default 12
+   * @default maxLength ?? 12
    */
   minLength?: number
   /**
    * Constrain generated values to have a length less than or equal to `maxLength`
-   * @default 16
+   * @default minLength ?? 16
    */
   maxLength?: number
 }
 
 export const phoneNumber = (input: Input, options: PhoneNumberOptions = {}) => {
-  const { minLength = 12, maxLength = 16 } = options
   let prefix = '+'
+  const minLength = options.minLength ?? options.maxLength ?? DEFAULT_MIN_LENGTH
+  const maxLength = options.maxLength ?? options.minLength ?? DEFAULT_MAX_LENGTH
 
   if (options.prefixes) {
     prefix =
@@ -56,6 +60,5 @@ export const phoneNumber = (input: Input, options: PhoneNumberOptions = {}) => {
   const min = 10 ** (minLength - prefix.length - 1)
   const max = 10 ** (maxLength - prefix.length) - 1
 
-  console.log(min, max)
   return `${prefix}${int(input, { min, max })}`
 }

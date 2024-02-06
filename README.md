@@ -374,8 +374,8 @@ copycat.phoneNumber('foo', { prefixes: ['+3319900', '+3363998'], minLength: 11, 
 phone numbers, and feel free to contribute :)
 
 #### `options`
-- **`minLength=12`:** Constrain generated values have a length greater than or equal to `minLength`
-- **`maxLength=16`:** Constrain generated values to have a length less than or equal to `maxLength`
+- **`minLength=maxLength ?? 12`:** Constrain generated values have a length greater than or equal to `minLength`. If `minLength` is not specified but `maxLength` is, `minLength` is taken as the given `maxLength`. If neither `minLength` or `maxLength` are given, `minLength` defaults to `12`.
+- **`maxLength=minLength ?? 16`:** Constrain generated values to have a length less than or equal to `maxLength`. If `maxLength` is not specified but `minLength` is, `minLength` is taken as the given `maxLength`. If neither `minLength` or `maxLength` are given, `maxLength` defaults to `16`
 - **`prefixes`:** An array of strings that should be used as prefixes for the generated phone numbers. Allowing to control the country dialing code.
 
 ### `copycat.username(input)`
