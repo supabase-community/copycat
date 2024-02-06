@@ -6,83 +6,77 @@ test('distributes uniformly', () => {
 
   checkEntropy((input: Input) =>
     copycat.phoneNumber(input, {
-      minLength: 9,
-      maxLength: 9,
+      length: 9,
     })
   )
 
   checkEntropy((input: Input) =>
     copycat.phoneNumber(input, {
       prefixes: ['9', '8', '7', '6'],
-      minLength: 9,
-      maxLength: 9,
+      length: 9,
     })
   )
 
   checkEntropy((input: Input) =>
     copycat.phoneNumber(input, {
-      minLength: 2,
-      maxLength: 20,
+      length: { min: 2, max: 20 },
     })
   )
 
   checkEntropy((input: Input) =>
     copycat.phoneNumber(input, {
       prefixes: ['9', '8', '7', '6'],
-      minLength: 2,
-      maxLength: 20,
+      length: { min: 2, max: 20 },
     })
   )
 })
 
-test('ensures number is within {min,max}Length even when prefix given', () => {
+test('ensures number is within {min,max} length when prefix given', () => {
   const ranges = [
     [9, 9],
     [2, 3],
     [2, 20],
   ]
 
-  for (const [minLength, maxLength] of ranges) {
+  for (const [min, max] of ranges) {
     expectGeneratedValue(
       (result: string) => {
         const len = result.length
-        expect(len).toBeGreaterThanOrEqual(minLength)
-        expect(len).toBeLessThanOrEqual(maxLength)
+        expect(len).toBeGreaterThanOrEqual(min)
+        expect(len).toBeLessThanOrEqual(max)
       },
       (input) =>
         copycat.phoneNumber(input, {
           prefixes: ['9', '8', '7', '6'],
-          minLength,
-          maxLength,
+          length: { min, max },
         })
     )
   }
 })
 
-test('ensures number is within {min,max}Length even when no prefix given', () => {
+test('ensures number is within { min, max } length when no prefix given', () => {
   const ranges = [
     [9, 9],
     [2, 3],
     [2, 20],
   ]
 
-  for (const [minLength, maxLength] of ranges) {
+  for (const [min, max] of ranges) {
     expectGeneratedValue(
       (result: string) => {
         const len = result.length
-        expect(len).toBeGreaterThanOrEqual(minLength)
-        expect(len).toBeLessThanOrEqual(maxLength)
+        expect(len).toBeGreaterThanOrEqual(min)
+        expect(len).toBeLessThanOrEqual(max)
       },
       (input) =>
         copycat.phoneNumber(input, {
-          minLength,
-          maxLength,
+          length: { min, max },
         })
     )
   }
 })
 
-test('defaults maxLength to minLength when not specified', () => {
+test('length as number', () => {
   expectGeneratedValue(
     (result: string) => {
       const len = result.length
@@ -90,20 +84,21 @@ test('defaults maxLength to minLength when not specified', () => {
     },
     (input) =>
       copycat.phoneNumber(input, {
-        minLength: 4,
+        length: 4,
       })
   )
 })
 
-test('defaults minLength to maxLength when not specified', () => {
+test('length as { min, max }', () => {
   expectGeneratedValue(
     (result: string) => {
       const len = result.length
-      expect(len).toBe(4)
+      expect(len).toBeGreaterThanOrEqual(2)
+      expect(len).toBeLessThanOrEqual(20)
     },
     (input) =>
       copycat.phoneNumber(input, {
-        maxLength: 4,
+        length: { min: 2, max: 20 },
       })
   )
 })
