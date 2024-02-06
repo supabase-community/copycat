@@ -366,16 +366,16 @@ copycat.phoneNumber('foo')
 // => '+208438699696662'
 ```
 ```js
-copycat.phoneNumber('foo', { prefixes: ['+3319900', '+3363998'], min: 1000, max: 9999 })
-// => '+336399884004662'
+copycat.phoneNumber('foo', { prefixes: ['+3319900', '+3363998'], minLength: 11, maxLength: 11 })
+// => '+3363998462'
 ```
 
 **note** The strings _resemble_ phone numbers, but will not always be valid. For example, the country dialing code may not exist, or for a particular country, the number of digits may be incorrect. Please let us know if you need valid
 phone numbers, and feel free to contribute :)
 
 #### `options`
-- **`min=10000000000`:** Constrain generated values to be greater than or equal to `min` allow to control the minimum number of digits in the phone number
-- **`max=999999999999999`:** Constrain generated values to be less than or equal to `max` allow to control the maximum number of digits in the phone number
+- **`minLength=12`:** Constrain generated values have a length greater than or equal to `minLength`
+- **`maxLength=16`:** Constrain generated values to have a length less than or equal to `maxLength`
 - **`prefixes`:** An array of strings that should be used as prefixes for the generated phone numbers. Allowing to control the country dialing code.
 
 ### `copycat.username(input)`
