@@ -111,20 +111,27 @@ export const checkGeneratedValue = <Result>(
 }
 
 export function measureEntropy<V>(data: V[]) {
+  // Create a Map to store the counts of each unique value
   const counts = new Map()
 
+  // Count occurrences of each unique value in the data array
   for (const value of data) {
+    // Update the count for the current value
     counts.set(value, (counts.get(value) ?? 0) + 1)
   }
 
+  // Calculate the probability for each unique value
   const probabilities = [...counts.values()].map((count) => count / data.length)
 
+  // Calculate Shannon entropy
   const entropy = probabilities.reduce(
     (sum, prob) => sum - prob * Math.log2(prob),
     0
   )
 
+  // Normalize the entropy to be between 0 and 1
   const normalizedEntropy = entropy / Math.log2(data.length)
 
+  // Return the normalized entropy
   return normalizedEntropy
 }
