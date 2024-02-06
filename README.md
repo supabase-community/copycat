@@ -367,7 +367,7 @@ copycat.phoneNumber('foo')
 ```
 ```js
 copycat.phoneNumber('foo', { prefixes: ['+3319900', '+3363998'], min: 1000, max: 9999 })
-// => '+33639987662'
+// => '+336399884004662'
 ```
 
 **note** The strings _resemble_ phone numbers, but will not always be valid. For example, the country dialing code may not exist, or for a particular country, the number of digits may be incorrect. Please let us know if you need valid

@@ -31,38 +31,28 @@ type PhoneNumberOptions = {
    * The minimum number to generate.
    * @default 10000000000
    */
-  min?: number
+  minLength?: number
   /**
    * The maximum number to generate.
    * @default 999999999999999
    */
-  max?: number
+  maxLength?: number
 }
 
-export const phoneNumber = (
-  input: Input,
-  options: PhoneNumberOptions = { min: 10000000000, max: 999999999999999 }
-) => {
-  // Use provided min and max, or default values if not provided
-  const min = options.min ?? 10000000000
-  const max = options.max ?? 999999999999999
+export const phoneNumber = (input: Input, options: PhoneNumberOptions = {}) => {
+  const { minLength = 12, maxLength = 16 } = options
+  let prefix = '+'
 
   if (options.prefixes) {
-    const prefix =
+    prefix =
       options.prefixes.length > 1
         ? // If multiple prefixes are provided, pick one deterministically
           oneOf(input, options.prefixes)
         : options.prefixes[0]
-    const prefixLength = prefix.length
-
-    // Adjust min and max based on prefix length to keep a valid number of digits in the phone number
-    const adjustedMin = Math.max(min, 10 ** (10 - prefixLength))
-    const adjustedMax = Math.min(max, 10 ** (15 - prefixLength) - 1)
-    return `${prefix}${int(input, {
-      min: adjustedMin,
-      max: adjustedMax,
-    })}`
   }
 
-  return `+${int(input, { min, max })}`
+  const min = 10 ** (minLength - prefix.length - 1)
+  const max = 10 ** (maxLength - prefix.length) - 1
+
+  return `${prefix}${int(input, { min, max })}`
 }
