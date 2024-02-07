@@ -47,7 +47,12 @@ const computeVersion = async (bumpType) => {
   return result
 }
 
-const publish = () => exec('yarn publish && git push && git push --tags')
+const publish = async () => {
+  const version = await readPkgVersion()
+  await exec(`git commit -m "chore: v${version}"`)
+  await exec(`git tag v${version}`)
+  await exec('git push && git push --tags')
+}
 
 const ensureCleanGitState = () => {
   console.log('Ensuring clean git state')
