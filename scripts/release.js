@@ -78,6 +78,7 @@ const releasePreviewVersion = async () => {
   await exec('git checkout main')
 
   console.log('Building `@snaplet/copycat/next`')
+  await exec('yarn install')
   await exec(`yarn build:next`)
 
   await bumpVersion(previewVersion)
