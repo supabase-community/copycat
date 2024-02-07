@@ -49,6 +49,7 @@
     "is-url": "^1.2.4",
     "jest": "^28.0.1",
     "prettier": "^2.6.2",
+    "semver": "^7.6.0",
     "tsup": "^7.2.0",
     "typescript": "^4.6.3",
     "user-agent-is-browser": "^0.1.0",
