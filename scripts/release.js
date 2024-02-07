@@ -74,6 +74,10 @@ const releasePreviewVersion = async () => {
   console.log('Ensuring dependencies are in sync with lockfile for preview version')
   await exec(`git checkout v${await readPkgVersion()}`)
   await exec('yarn install')
+
+  // context(justinvdm, 7 Feb 2024): Ensure `scripts` are up to date in case they have since changed
+  await exec(`git checkout main package.json`)
+
   await exec(`yarn build`)
   await exec('git checkout main')
 
