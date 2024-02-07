@@ -120,7 +120,8 @@ const npmPublishPacked = async () => {
   }
 
   if (failed.length) {
-    console.log(`The following files failed to be published to npm and will need to be published manually:\n${failed.join(', ')}`)
+    console.log()
+    console.log(`**note**: The following files failed to be published to npm and will need to be published manually (**in this order**):\n${failed.join(', ')}`)
   }
 }
 
