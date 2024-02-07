@@ -49,6 +49,7 @@ const computeVersion = async (bumpType) => {
 
 const publish = async () => {
   const version = await readPkgVersion()
+  await exec(`git add package.json`)
   await exec(`git commit -m "chore: v${version}"`)
   await exec(`git tag v${version}`)
   await exec('git push && git push --tags')
