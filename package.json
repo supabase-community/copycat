@@ -55,10 +55,8 @@
     "worker-farm": "^1.7.0"
   },
   "scripts": {
-    "merge:next": "git checkout main && git pull --rebase && git push && git checkout next && git pull --rebase && git merge main && git push && git checkout main && git merge next && git push",
-    "bump": "./scripts/bump.js",
-    "release": "git checkout main && git pull --rebase && git push && git checkout next && git pull --rebase && git merge main && git push && git checkout main && yarn build && yarn publish && git push && git push --tags",
-    "build": "yarn clean && git checkout next && git pull && yarn && yarn build:next && git checkout main && yarn && yarn build:main && yarn build:docs",
+    "release": "./scripts/release.js",
+    "build": "yarn clean && build:main && yarn build:docs",
     "build:main": "yarn build:js && yarn build:types",
     "build:next": "yarn build:next:js && yarn build:next:types",
     "build:next:js": "yarn build:main && NODE_ENV=production yarn -s esbuild dist/index.js --bundle --platform=node --external:@faker-js/faker --minify > ./next.js && yarn clean && mkdir -p dist && mv ./next.js ./dist/next.js",
