@@ -79,6 +79,8 @@ const releasePreviewVersion = async () => {
   await exec(`git checkout main package.json`)
 
   await exec(`yarn build`)
+  await exec(`git restore .`)
+
   await exec('git checkout main')
 
   console.log('Building `@snaplet/copycat/next`')
