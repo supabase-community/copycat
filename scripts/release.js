@@ -51,6 +51,7 @@ const publish = async () => {
   const version = await readPkgVersion()
   await exec(`git add package.json`)
   await exec(`git commit -m "chore: v${version}"`)
+  await exec(`npm publish`)
   await exec(`git tag v${version}`)
   await exec('git push && git push --tags')
 }
@@ -66,9 +67,9 @@ const releasePreviewVersion = async () => {
 
   console.log('Ensuring dependencies are in sync with lockfile for preview version')
   await exec(`git checkout v${await readPkgVersion()}`)
-  await exec('yarn')
+  await exec('yarn install')
   await exec(`yarn build`)
-  await exec('git checkout -')
+  await exec('git checkout main')
 
   console.log('Building `@snaplet/copycat/next`')
   await exec(`yarn build:next`)
@@ -82,7 +83,7 @@ const releaseVersion = async () => {
   console.log(`Releasing version ${version}`)
 
   console.log('Ensuring dependencies are in sync with lockfile')
-  await exec('yarn')
+  await exec('yarn install')
 
   await exec(`yarn build`)
 
