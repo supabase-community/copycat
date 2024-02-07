@@ -57,7 +57,7 @@
   },
   "scripts": {
     "release": "./scripts/release.js",
-    "build": "yarn clean && build:main && yarn build:docs",
+    "build": "yarn clean && yarn build:main && yarn build:docs",
     "build:main": "yarn build:js && yarn build:types",
     "build:next": "yarn build:next:js && yarn build:next:types",
     "build:next:js": "yarn build:main && NODE_ENV=production yarn -s esbuild dist/index.js --bundle --platform=node --external:@faker-js/faker --minify > ./next.js && yarn clean && mkdir -p dist && mv ./next.js ./dist/next.js",

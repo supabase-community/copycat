@@ -3,6 +3,9 @@ const semver = require('semver')
 const util = require('util')
 const cp = require('child_process')
 const fs = require('fs/promises');
+const path = require('path')
+
+let packed = []
 
 const doExec = util.promisify(cp.exec);
 
@@ -51,7 +54,10 @@ const publish = async () => {
   const version = await readPkgVersion()
   await exec(`git add package.json`)
   await exec(`git commit -m "chore: v${version}"`)
-  await exec(`npm publish`)
+  await exec(`npm pack`)
+
+  packed.push(`snaplet-copycat-${version}.tgz`)
+
   await exec(`git tag v${version}`)
   await exec('git push && git push --tags')
 }
@@ -91,6 +97,26 @@ const releaseVersion = async () => {
   await publish()
 }
 
+const npmPublishPacked = async () => {
+  console.log('Attempting to `npm publish` packaged releases')
+  const failed = []
+
+  for (const filename of packed) {
+    try {
+      await exec(`npm publish --access=public ${path.join(process.cwd(), filename)}`, {
+        shell: true
+      })
+    } catch (e) {
+      console.log(e)
+      failed.push(filename)
+    }
+  }
+
+  if (failed.length) {
+    console.log(`The following files failed to be published to npm and will need to be published manually:\n${failed.join(', ')}`)
+  }
+}
+
 const main = async () => {
   const bumpType = process.argv[2]
 
@@ -114,6 +140,8 @@ Example: yarn release major
   }
 
   await releaseVersion(bumpType)
+
+  await npmPublishPacked()
 }
 
 main()
