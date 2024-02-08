@@ -4,17 +4,17 @@ const util = require('util')
 const cp = require('child_process')
 const fs = require('fs/promises');
 const path = require('path')
+const spawn = require('@expo/spawn-async')
 
 let packed = []
-
-const doExec = util.promisify(cp.exec);
 
 const exec = async (cmd, opts) => {
   console.log()
   console.log(`$ ${cmd}`)
+  const [command, ...args] = cmd.split(' ')
 
   if (!process.env.DRY) {
-    return await doExec(cmd, { stdio: 'inherit', ...opts })
+    return await spawn(command, args, { stdio: 'inherit', ...opts })
   }
 
   console.log()
@@ -91,8 +91,8 @@ const releasePreviewVersion = async () => {
   await publish()
 }
 
-const releaseVersion = async () => {
-  const version = await computeVersion('major')
+const releaseVersion = async (bumpType) => {
+  const version = await computeVersion(bumpType)
   console.log(`Releasing version ${version}`)
 
   console.log('Ensuring dependencies are in sync with lockfile')
@@ -106,23 +106,32 @@ const releaseVersion = async () => {
 
 const npmPublishPacked = async () => {
   console.log('Attempting to `npm publish` packaged releases')
-  const failed = []
+  const failedFiles = []
 
   for (const filename of packed) {
+    const filepath = path.join(process.cwd(), filename)
+
     try {
-      await exec(`npm publish --access=public ${path.join(process.cwd(), filename)}`, {
+      await exec(`npm publish --access=public ${filepath}`, {
         shell: true
       })
     } catch (e) {
       console.log(e)
-      failed.push(filename)
+      failedFiles.push(filename)
     }
   }
 
-  if (failed.length) {
+  if (failedFiles.length) {
     console.log()
-    console.log(`**note**: The following files failed to be published to npm and will need to be published manually (**in this order**):\n${failed.join(', ')}`)
+    console.log(`**note**: The following files failed to be published to npm and will need to be published manually (**in this order**):\n${failedFiles.join('\n')}`)
+    console.log()
+  } else {
+    for (const filename of packed) {
+      await fs.rm(path.join(process.cwd(), filename))
+    }
   }
+
+  packed = []
 }
 
 const main = async () => {
