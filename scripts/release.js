@@ -3,13 +3,14 @@ const semver = require('semver')
 const fs = require('fs/promises');
 const path = require('path')
 const spawn = require('@expo/spawn-async')
+const { parseArgsStringToArgv } = require('string-argv')
 
 let packed = []
 
 const exec = async (cmd, opts) => {
   console.log()
   console.log(`$ ${cmd}`)
-  const [command, ...args] = cmd.split(' ')
+  const [command, ...args] = parseArgsStringToArgv(cmd)
 
   if (!process.env.DRY) {
     return await spawn(command, args, { stdio: 'inherit', ...opts })

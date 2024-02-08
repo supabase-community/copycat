@@ -29,6 +29,7 @@
   "dependencies": {
     "@faker-js/faker": "^8.0.2",
     "fictional": "^1.0.0",
+    "string-argv": "^0.3.2",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
