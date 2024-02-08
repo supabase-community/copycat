@@ -22,7 +22,7 @@ export const TRANSFORMATIONS: {
     times: (input: Input) => copycat.times(input, [4, 5], copycat.word),
     oneOf: (input: Input) => copycat.oneOf(input, ['red', 'green', 'blue']),
     oneOfString: (input: Input) =>
-      copycat.oneOfString(['red', 'green', 'blue'])(input),
+      copycat.oneOfString(input, ['red', 'green', 'blue'], { limit: 3 }),
     someOf: (input: Input) =>
       copycat.someOf(input, [1, 2], ['rock', 'paper', 'scissors']),
     scramble: (input: Input) => copycat.scramble(copycat.fullName(input)),
@@ -60,7 +60,7 @@ export const checkEntropy = <Result>(
 }
 
 export const expectGeneratedValue = <Result>(
-  expectFn: (result: Result) => unknown,
+  expectFn: (result: Result, input: Input) => unknown,
   makerFn: (input: Input) => Result
 ) => {
   let i = -1
@@ -69,7 +69,7 @@ export const expectGeneratedValue = <Result>(
     const input = uuidv4()
     const result = makerFn(input)
     try {
-      expectFn(result)
+      expectFn(result, input)
     } catch (e) {
       if (e instanceof Error) {
         e.message = [

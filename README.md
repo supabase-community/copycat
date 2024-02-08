@@ -182,13 +182,38 @@ copycat.scramble('foo@bar.org', { preserve: ['@', '.'] })
 // => 'nzx@vib.elt'
 ```
 
-### `copycat.oneOf(input, values)`
+### `copycat.oneOf(input, values[, options])`
 
 Takes in an [`input`](#input) value and an array of `values`, and returns an item in `values` that corresponds to that `input`:
 
 ```js
 copycat.oneOf('foo', ['red', 'green', 'blue'])
 // => 'green'
+```
+
+### `copycat.oneOfString(input, values[, options])`
+
+Like `oneOf()`, takes in an [`input`](#input) value and an array of `values`, and returns an item in `values` that corresponds to that `input`. However, `values` needs to be an array of _string_ values, and only values within the character limit set by the `limit` option will be picked.
+
+```js
+copycat.oneOfString('foo', ['short', 'loooooooong'], { limit: 6 })
+// => 'short'
+```
+
+#### `options`
+
+- **`limit`**: If the `values` are strings, the picked value will be constrained to be less than `limit`'s amount of characters
+- **`fallback: string | (input) => string`**: When `limit` is specified but no values match the given `limit`, fallback is called with the given input value.
+
+
+#### `options`
+
+- **`limit`**: If the `values` are strings, the picked value will be constrained to be less than or equal `limit`'s amount of characters
+- **`fallback: string | `**: When `limit` is specified but no values match the given `limit`, fallback will be used.
+
+```js
+copycat.oneOfString('foo', ['short', 'loooooooong'], { limit: 2 })
+// => 'ta'
 ```
 
 ### `copycat.someOf(input, range, values)`

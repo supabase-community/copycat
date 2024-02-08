@@ -2,19 +2,50 @@ import { Input, JSONSerializable, oneOf } from 'fictional'
 import { word } from './primitives'
 import { Transform } from './types'
 
-export interface OneOfOptions {
+type Fallback = string | Transform
+
+export interface OneOfStringOptions {
   limit?: number
+  fallback?: Fallback
+}
+
+export interface OneOfString {
+  (choices: string[], fallback?: Fallback): (
+    input: Input,
+    options?: OneOfStringOptions
+  ) => string
+  (input: Input, choices: string[], options?: OneOfStringOptions): string
+}
+
+export const oneOfString: OneOfString = (...args: unknown[]) => {
+  if (Array.isArray(args[1])) {
+    const input = args[0] as Input
+    const choices = args[1] as string[]
+    const options = args[2] as OneOfStringOptions | undefined
+
+    if (options?.limit == null) {
+      return oneOf(input, choices)
+    } else {
+      return oneOfStringImplementation(choices)(input, options)
+    }
+  } else {
+    const choices = args[0] as string[]
+    const fallback = args[0] as string[]
+    return oneOfStringImplementation(choices, fallback)
+  }
 }
 
 const defaultFallback = word.options({ capitalize: false })
 
-export const oneOfString = (
+const oneOfStringImplementation = (
   rawChoices: string[],
-  fallback: string | number | Transform = defaultFallback
+  curriedFallback?: Fallback
 ) => {
   const sortedChoices = rawChoices.slice().sort(compareByLength)
 
-  const oneOfStringFn = (input: Input, options: OneOfOptions = {}) => {
+  const oneOfStringFn = (input: Input, options: OneOfStringOptions = {}) => {
+    const fallback: string | Transform =
+      options.fallback ?? curriedFallback ?? defaultFallback
     const { limit } = options
 
     if (limit == null) {
