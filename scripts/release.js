@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 const semver = require('semver')
-const util = require('util')
-const cp = require('child_process')
 const fs = require('fs/promises');
 const path = require('path')
 const spawn = require('@expo/spawn-async')
@@ -59,12 +57,16 @@ const publish = async () => {
   packed.push(`snaplet-copycat-${version}.tgz`)
 
   await exec(`git tag v${version}`)
-  await exec('git push && git push --tags')
+  await exec('git push')
+  await exec('git push --tags')
 }
 
-const ensureCleanGitState = () => {
+const ensureCleanGitState = async () => {
   console.log('Ensuring clean git state')
-  return exec('git clean -df && git checkout main && git pull --rebase && git push')
+  await exec('git clean -df')
+  await exec('git checkout main')
+  await exec('git pull --rebase')
+  await exec('git push')
 }
 
 const releasePreviewVersion = async () => {
