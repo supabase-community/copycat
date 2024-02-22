@@ -222,7 +222,7 @@ Takes in an [`input`](#input) value and an array of `values`, repeatedly picks i
 
 ```js
 copycat.someOf('foo', [1,2], ['paper', 'rock'])
-// => []
+// => [ 'rock' ]
 ```
 
 ### `copycat.int(input[, options])`

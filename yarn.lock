@@ -2156,10 +2156,10 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "2.1.1"
 
-fictional@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/fictional/-/fictional-1.0.0.tgz#f369882021b2e479b7d24c85772d2e1ba606a2f2"
-  integrity sha512-Te371TlrOeJmCbIernQfpntIO6Mp3233n4mbvrjJUWFEi2GLFumy9HfyKJu8dc+6afXqxlSYw3IXNT2a4t5aUg==
+fictional@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/fictional/-/fictional-2.0.0.tgz#131bb506af81306726d7a3e32d1ddc1707b1e9fd"
+  integrity sha512-uK8lBK3Xdk1y36wLj30ftvt8F7DPFBolTN/739eM71w36eCwhraFl//Udpiu9s1CIYZ2qywbPpi5aHh/i+zA1A==
   dependencies:
     decimal.js "^10.4.0"
     fast-json-stable-stringify "^2.1.0"

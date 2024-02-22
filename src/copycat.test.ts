@@ -241,16 +241,16 @@ test('generated values', () => {
         "red",
       ],
       "oneOfString": Array [
-        "red",
-        "red",
-        "blue",
-        "green",
-        "green",
-        "green",
-        "green",
-        "blue",
-        "green",
-        "red",
+        "qua",
+        "rer",
+        "vit",
+        "his",
+        "vol",
+        "ac",
+        "eiu",
+        "fod",
+        "bon",
+        "vol",
       ],
       "paragraph": Array [
         "Tua vita non quam scriberamus unt, caderror sunt numquam id haec consentio ibus finitista. Poetae cupis aut et iis et atis sed, maximper cur stulti nisi ius coniunt. Dixitas cupid quam sit nocet a. Aiunt mirars in quo osarum tamentiumve ne.",
@@ -325,16 +325,41 @@ test('generated values', () => {
         "Famillius et complectitia eten se perspicuum composset, pertinguantur adipsi et estiae studiosum facimo.",
       ],
       "someOf": Array [
-        Array [],
-        Array [],
-        Array [],
-        Array [],
-        Array [],
-        Array [],
-        Array [],
-        Array [],
-        Array [],
-        Array [],
+        Array [
+          "rock",
+        ],
+        Array [
+          "paper",
+          "rock",
+        ],
+        Array [
+          "paper",
+        ],
+        Array [
+          "scissors",
+          "paper",
+        ],
+        Array [
+          "rock",
+        ],
+        Array [
+          "scissors",
+        ],
+        Array [
+          "scissors",
+          "rock",
+        ],
+        Array [
+          "scissors",
+        ],
+        Array [
+          "paper",
+          "scissors",
+        ],
+        Array [
+          "paper",
+          "rock",
+        ],
       ],
       "state": Array [
         "Massachusetts",
