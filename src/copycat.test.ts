@@ -35,8 +35,8 @@ test('generated values', () => {
   Object.keys(TRANSFORMATIONS).forEach(addResults)
 
   expect(results).toMatchInlineSnapshot(`
-    Object {
-      "bool": Array [
+    {
+      "bool": [
         true,
         true,
         false,
@@ -48,7 +48,7 @@ test('generated values', () => {
         false,
         true,
       ],
-      "char": Array [
+      "char": [
         "B",
         "D",
         "S",
@@ -60,7 +60,7 @@ test('generated values', () => {
         "8",
         "l",
       ],
-      "city": Array [
+      "city": [
         "Brooklyn Park",
         "Sparks",
         "Canton",
@@ -72,7 +72,7 @@ test('generated values', () => {
         "Melbourne",
         "Beaumont",
       ],
-      "country": Array [
+      "country": [
         "Mali",
         "Israel",
         "Congo",
@@ -84,7 +84,7 @@ test('generated values', () => {
         "Algeria",
         "Estonia",
       ],
-      "countryCode": Array [
+      "countryCode": [
         "GE",
         "SN",
         "VC",
@@ -96,7 +96,7 @@ test('generated values', () => {
         "HR",
         "IO",
       ],
-      "dateString": Array [
+      "dateString": [
         "1989-02-02T01:50:46.000Z",
         "2019-08-16T07:35:00.000Z",
         "1996-09-17T09:12:15.000Z",
@@ -108,7 +108,7 @@ test('generated values', () => {
         "2012-05-01T17:08:34.000Z",
         "2001-02-18T13:05:43.000Z",
       ],
-      "digit": Array [
+      "digit": [
         "9",
         "9",
         "6",
@@ -120,7 +120,7 @@ test('generated values', () => {
         "2",
         "1",
       ],
-      "email": Array [
+      "email": [
         "Filiberto_Walker71127@bleakcricket.org",
         "Pete.Kassulke82520@fox-min.com",
         "Sam.Dickinson32909@memorableparticular.org",
@@ -132,7 +132,7 @@ test('generated values', () => {
         "Leopoldo.Hahn37105@twinhusband.net",
         "Vince_Mante46530@strip-lapdog.biz",
       ],
-      "firstName": Array [
+      "firstName": [
         "Daphnee",
         "Pearline",
         "Elisa",
@@ -144,7 +144,7 @@ test('generated values', () => {
         "Sharon",
         "Cayla",
       ],
-      "float": Array [
+      "float": [
         7160713753216129,
         8623714756216519,
         2907664520202416,
@@ -156,7 +156,7 @@ test('generated values', () => {
         5847863928185272,
         1039041630284941,
       ],
-      "fullName": Array [
+      "fullName": [
         "Elody Trantow",
         "Betsy Prohaska",
         "Alessandra Waelchi",
@@ -168,7 +168,7 @@ test('generated values', () => {
         "Laverne Huel",
         "Bridget Metz",
       ],
-      "hex": Array [
+      "hex": [
         "1",
         "7",
         "0",
@@ -180,7 +180,7 @@ test('generated values', () => {
         "8",
         "d",
       ],
-      "int": Array [
+      "int": [
         7160713753216129,
         8623714756216519,
         2907664520202416,
@@ -192,7 +192,7 @@ test('generated values', () => {
         5847863928185272,
         1039041630284941,
       ],
-      "ipv4": Array [
+      "ipv4": [
         "18.25.41.248",
         "236.20.8.162",
         "245.48.91.221",
@@ -204,7 +204,7 @@ test('generated values', () => {
         "86.200.206.250",
         "225.122.18.42",
       ],
-      "lastName": Array [
+      "lastName": [
         "Gleason",
         "Huel",
         "Moore",
@@ -216,7 +216,7 @@ test('generated values', () => {
         "Kohler",
         "Ebert",
       ],
-      "mac": Array [
+      "mac": [
         "7c:3a:88:43:c3:cd",
         "ed:d8:14:a9:48:2d",
         "aa:46:a1:c2:c1:27",
@@ -228,7 +228,7 @@ test('generated values', () => {
         "58:cd:4e:df:ed:69",
         "1d:46:62:63:0b:43",
       ],
-      "oneOf": Array [
+      "oneOf": [
         "red",
         "red",
         "blue",
@@ -240,7 +240,7 @@ test('generated values', () => {
         "green",
         "red",
       ],
-      "oneOfString": Array [
+      "oneOfString": [
         "qua",
         "rer",
         "vit",
@@ -252,7 +252,7 @@ test('generated values', () => {
         "bon",
         "vol",
       ],
-      "paragraph": Array [
+      "paragraph": [
         "Tua vita non quam scriberamus unt, caderror sunt numquam id haec consentio ibus finitista. Poetae cupis aut et iis et atis sed, maximper cur stulti nisi ius coniunt. Dixitas cupid quam sit nocet a. Aiunt mirars in quo osarum tamentiumve ne.",
         "Ent libiderat stoicis maxim bene levatum, in habenimum et potes se. Voce autem legenti magnosci omni, iudicis sic at sapientia dolore. Abillud patiat probarum ituro in sine quidem, probam si quod alesse cur quod.",
         "Cuius efficilit confidetur ex itia sed linatem, quidem as non caderi etiam claris. Non pueril secut tamenda ut laetamaris sensibi. Genuit inas exerne omnia laetitos, nunc eos epicabduc stabiliusteq simae estiae. Atque voluptatem sapiens quis in tamentantam nec, quod nomini titudinem insequantur ego sublata. Sent physicis ut non privamus autem. Multa voluptas pacem quae affecere scriptorquate non, aeque rescernimus non sanciret multis inam tot. Int rationem recte publiciatur esto sit quos tem, modus praeterudo dem ad autem quam.",
@@ -264,7 +264,7 @@ test('generated values', () => {
         "In habet melius videt negatum qui. Cuius sane expedire fruitur ores, nec teri ullus sensibus aliquam geomet. Tamenimos tam minim siculis quae. Ore quaerenimis videamus dicunumque studiis videat.",
         "Tum afflueret qui omnium omni deniquisse int quod, copullo ut quid sit alienum. Quos cum neque et quam extremum male, nostram tam sitne si quae. Qui atum maximi es theseo et doloratque quanta, inter de fabulis voluptat tamquam. Placetitur quo pugnantium parum fore illis apudines disputaris. Bono vetuit is potestia ad nec esse ne.",
       ],
-      "password": Array [
+      "password": [
         "UFr0Q]w^BczvdD",
         "rbHi0$XCeXlQSt",
         "JyG9j%ZVW!qAGC",
@@ -276,7 +276,7 @@ test('generated values', () => {
         "l3QBiIfYRMKFL",
         "00FsocgN!#I^4J",
       ],
-      "phoneNumber": Array [
+      "phoneNumber": [
         "+160793753216129",
         "+623804756216519",
         "+907694520202416",
@@ -288,7 +288,7 @@ test('generated values', () => {
         "+847923928185272",
         "+39061630284941",
       ],
-      "postalAddress": Array [
+      "postalAddress": [
         "773 Vivienne Crest, Pleasanton 4408, Romania",
         "208 Fay Lane, Revere 1270, Burkina Faso",
         "814 Macejkovic Plaza, Billings 5605, New Zealand",
@@ -300,7 +300,7 @@ test('generated values', () => {
         "654 Hailie Mountains, Kansas City 7565, Rwanda",
         "525 Sanford Motorway, Vallejo 5388, Western Sahara",
       ],
-      "scramble": Array [
+      "scramble": [
         "Hiqez Catragh",
         "Ffuda Jdulaevc",
         "Ctfeyeerfy Hcrbqck",
@@ -312,7 +312,7 @@ test('generated values', () => {
         "Laawmvr Gubp",
         "Uficzsd Ekox",
       ],
-      "sentence": Array [
+      "sentence": [
         "Discens sibus possitatque fatem quos.",
         "Advero quisquamquam inquam ii possit est dolorem synephebos.",
         "Dicunt ut nulla in odia qui doctis et, recte quisitural ita beate sitata voluptatem nostri quoniam.",
@@ -324,44 +324,44 @@ test('generated values', () => {
         "Omnisi ut sent quibus quia.",
         "Famillius et complectitia eten se perspicuum composset, pertinguantur adipsi et estiae studiosum facimo.",
       ],
-      "someOf": Array [
-        Array [
+      "someOf": [
+        [
           "rock",
         ],
-        Array [
+        [
           "paper",
           "rock",
         ],
-        Array [
+        [
           "paper",
         ],
-        Array [
+        [
           "scissors",
           "paper",
         ],
-        Array [
+        [
           "rock",
         ],
-        Array [
+        [
           "scissors",
         ],
-        Array [
+        [
           "scissors",
           "rock",
         ],
-        Array [
+        [
           "scissors",
         ],
-        Array [
+        [
           "paper",
           "scissors",
         ],
-        Array [
+        [
           "paper",
           "rock",
         ],
       ],
-      "state": Array [
+      "state": [
         "Massachusetts",
         "Vermont",
         "South Dakota",
@@ -373,7 +373,7 @@ test('generated values', () => {
         "Washington",
         "Maryland",
       ],
-      "streetAddress": Array [
+      "streetAddress": [
         "88 Purdy Trace",
         "195 Michele Mission",
         "73 Nikko Crest",
@@ -385,7 +385,7 @@ test('generated values', () => {
         "782 Bauch View",
         "906 Frami Spurs",
       ],
-      "streetName": Array [
+      "streetName": [
         "Horace Trail",
         "Hessel Pine",
         "Wuckert Glen",
@@ -397,64 +397,64 @@ test('generated values', () => {
         "Hansen Junctions",
         "Baylee Street",
       ],
-      "times": Array [
-        Array [
+      "times": [
+        [
           "Modo",
           "Ut",
           "Em",
           "Sitne",
         ],
-        Array [
+        [
           "Volum",
           "Parendum",
           "Deditatem",
           "Artes",
         ],
-        Array [
+        [
           "Menandis",
           "Una",
           "Tam",
           "An",
           "Nunc",
         ],
-        Array [
+        [
           "Depravatae",
           "Probest",
           "Ore",
           "Desid",
         ],
-        Array [
+        [
           "Deteriti",
           "Iis",
           "Quoddam",
           "Quas",
         ],
-        Array [
+        [
           "Torquatus",
           "Tam",
           "Is",
           "Numquam",
         ],
-        Array [
+        [
           "Cetere",
           "Aut",
           "Malivola",
           "Ut",
         ],
-        Array [
+        [
           "Iliorem",
           "Legita",
           "Amicis",
           "Legittantum",
           "Er",
         ],
-        Array [
+        [
           "Bene",
           "Ut",
           "Quam",
           "Sum",
         ],
-        Array [
+        [
           "Inut",
           "Enime",
           "Vituptatum",
@@ -462,7 +462,7 @@ test('generated values', () => {
           "Verum",
         ],
       ],
-      "timezone": Array [
+      "timezone": [
         "Pacific/Auckland",
         "Europe/Berlin",
         "Asia/Muscat",
@@ -474,7 +474,7 @@ test('generated values', () => {
         "Asia/Tokyo",
         "Europe/Skopje",
       ],
-      "url": Array [
+      "url": [
         "https://losehyena.net",
         "https://violentkeyboarding.name",
         "https://troubledmanufacturing.info",
@@ -486,7 +486,7 @@ test('generated values', () => {
         "https://long-vodka.net",
         "https://picturepup.biz",
       ],
-      "userAgent": Array [
+      "userAgent": [
         "Mozilla/5.0 (Windows; U; Windows NT 6.2) AppleWebKit/534.0.0 (KHTML, like Gecko) Chrome/4029.1630.3593.0 Safari/534.0.0",
         "Mozilla/5.0 (Windows; U; Windows NT 6.0) AppleWebKit/533.1.1 (KHTML, like Gecko) Chrome/1869.8131.9851.0 Safari/533.1.1",
         "Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10_5_3 rv:2.0; RO) AppleWebKit/538.0.2 (KHTML, like Gecko) Version/6841.576.856 Safari/538.0.2",
@@ -498,7 +498,7 @@ test('generated values', () => {
         "Mozilla/5.0 (Windows; U; Windows NT 6.2) AppleWebKit/534.1.1 (KHTML, like Gecko) Chrome/13.7277.6005.0 Safari/534.1.1",
         "Mozilla/5.0 (Windows; U; Windows NT 6.2) AppleWebKit/531.1.1 (KHTML, like Gecko) Chrome/6118.2408.1925.0 Safari/531.1.1",
       ],
-      "username": Array [
+      "username": [
         "sneer.courthouse71127",
         "pungent.marble82520",
         "amazing.hobbit32909",
@@ -510,7 +510,7 @@ test('generated values', () => {
         "piddle_sea37105",
         "Vince_Mante46530",
       ],
-      "uuid": Array [
+      "uuid": [
         "bf77f3f3-3419-52ef-9354-55f20a169c25",
         "8712a510-02d2-5579-a73a-72373fa4e846",
         "22d47378-a85d-5d75-a3a8-86cb61eb3a0e",
@@ -522,7 +522,7 @@ test('generated values', () => {
         "cc963b7e-a353-588f-825a-279190b206d3",
         "8c766997-b4d2-500c-8d22-e007954d571e",
       ],
-      "word": Array [
+      "word": [
         "Is",
         "Quod",
         "Quidem",
@@ -534,7 +534,7 @@ test('generated values', () => {
         "Ita",
         "Amicur",
       ],
-      "words": Array [
+      "words": [
         "Igimus gratiam quod",
         "Erisfacio quid apere",
         "Militaque idua",

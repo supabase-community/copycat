@@ -54,9 +54,9 @@ test('nested values', () => {
       ],
     })
   ).toMatchInlineSnapshot(`
-    Object {
-      "a": Array [
-        Object {
+    {
+      "a": [
+        {
           "b": 36,
           "c": "ear",
         },

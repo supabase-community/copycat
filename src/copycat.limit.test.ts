@@ -38,8 +38,8 @@ const generateValues = (limit: number, names = LIMIT_TRANSFORMATION_NAMES) => {
 
 test('limit: medium', () => {
   expect(generateValues(25)).toMatchInlineSnapshot(`
-    Object {
-      "email": Array [
+    {
+      "email": [
         "G.To63293@uphate.net",
         "Z.Br73904@abagas.com",
         "K.Da99990@ab-ad.biz",
@@ -51,7 +51,7 @@ test('limit: medium', () => {
         "S_Ku42363@ab-ad.biz",
         "A.Na63344@bepet.com",
       ],
-      "firstName": Array [
+      "firstName": [
         "Domingo",
         "Paolo",
         "Jacques",
@@ -63,7 +63,7 @@ test('limit: medium', () => {
         "Drake",
         "Ashley",
       ],
-      "fullName": Array [
+      "fullName": [
         "Johnathan Funk",
         "Miguel McDermott",
         "Carmela Spinka",
@@ -75,7 +75,7 @@ test('limit: medium', () => {
         "Emerson Bernier",
         "Shayne Konopelski",
       ],
-      "lastName": Array [
+      "lastName": [
         "Batz",
         "Stark",
         "Thompson",
@@ -87,7 +87,7 @@ test('limit: medium', () => {
         "Goodwin",
         "Ruecker",
       ],
-      "url": Array [
+      "url": [
         "https://a-a.biz",
         "https://a-a.com",
         "https://abat.net",
@@ -99,7 +99,7 @@ test('limit: medium', () => {
         "https://a-a.com",
         "https://a-a.com",
       ],
-      "username": Array [
+      "username": [
         "rich.plan63293",
         "lamp.force73904",
         "Kane_Doyle99990",
@@ -118,8 +118,8 @@ test('limit: medium', () => {
 test('limit: small', () => {
   expect(generateValues(10, SMALL_LIMIT_TRANSFORMATION_NAMES))
     .toMatchInlineSnapshot(`
-    Object {
-      "email": Array [
+    {
+      "email": [
         "G63@aA.com",
         "Z73@aA.com",
         "K99@a.biz",
@@ -131,7 +131,7 @@ test('limit: small', () => {
         "S42@a.net",
         "A63@aA.com",
       ],
-      "firstName": Array [
+      "firstName": [
         "Horace",
         "Rosina",
         "Albin",
@@ -143,7 +143,7 @@ test('limit: small', () => {
         "Miles",
         "Alberto",
       ],
-      "fullName": Array [
+      "fullName": [
         "Joe Dach",
         "Eve Mohr",
         "Ole Conn",
@@ -155,7 +155,7 @@ test('limit: small', () => {
         "Mac Wiza",
         "Tom Rice",
       ],
-      "lastName": Array [
+      "lastName": [
         "Jaskolski",
         "Hermann",
         "Funk",
@@ -167,7 +167,7 @@ test('limit: small', () => {
         "Lebsack",
         "Kerluke",
       ],
-      "username": Array [
+      "username": [
         "a.AT63293",
         "a.AT73904",
         "A_Ab99990",
@@ -185,8 +185,8 @@ test('limit: small', () => {
 
 test('limit: very large', () => {
   expect(generateValues(999)).toMatchInlineSnapshot(`
-    Object {
-      "email": Array [
+    {
+      "email": [
         "Granville.Towne63293@asteriskracism.net",
         "Zachariah.Breitenberg73904@drearyvilla.com",
         "Kelsie.Dare99990@popular-pumpkinseed.biz",
@@ -198,7 +198,7 @@ test('limit: very large', () => {
         "Sherwood_Kub42363@cavernous-pinto.biz",
         "Antonio.Nader63344@voidchecking.com",
       ],
-      "firstName": Array [
+      "firstName": [
         "Domingo",
         "Paolo",
         "Jacques",
@@ -210,7 +210,7 @@ test('limit: very large', () => {
         "Drake",
         "Ashley",
       ],
-      "fullName": Array [
+      "fullName": [
         "Jon Funk",
         "Kaylee McDermott",
         "Gardner Spinka",
@@ -222,7 +222,7 @@ test('limit: very large', () => {
         "Idella Bernier",
         "Ally Konopelski",
       ],
-      "lastName": Array [
+      "lastName": [
         "Batz",
         "Stark",
         "Thompson",
@@ -234,7 +234,7 @@ test('limit: very large', () => {
         "Goodwin",
         "Ruecker",
       ],
-      "url": Array [
+      "url": [
         "https://airdrop-harald.biz",
         "https://commentate-toga.com",
         "https://untrueemerald.biz",
@@ -246,7 +246,7 @@ test('limit: very large', () => {
         "https://generate-supermarket.com",
         "https://peer-identification.com",
       ],
-      "username": Array [
+      "username": [
         "truthful.blackbird63293",
         "page.textual73904",
         "Sonia_Quitzon99990",
@@ -265,8 +265,8 @@ test('limit: very large', () => {
 test('limit: tiny', () => {
   expect(generateValues(5, TINY_LIMIT_TRANSFORMATION_NAMES))
     .toMatchInlineSnapshot(`
-    Object {
-      "email": Array [
+    {
+      "email": [
         "G@a.c",
         "Z@a.c",
         "K@a.c",
@@ -278,7 +278,7 @@ test('limit: tiny', () => {
         "S@a.c",
         "A@a.c",
       ],
-      "firstName": Array [
+      "firstName": [
         "Jada",
         "Noel",
         "Kurt",
@@ -290,7 +290,7 @@ test('limit: tiny', () => {
         "Edna",
         "Lisa",
       ],
-      "fullName": Array [
+      "fullName": [
         "A Ab",
         "A Ab",
         "A Ab",
@@ -302,7 +302,7 @@ test('limit: tiny', () => {
         "A Ab",
         "A Ab",
       ],
-      "lastName": Array [
+      "lastName": [
         "Fay",
         "Kihn",
         "Von",
@@ -314,7 +314,7 @@ test('limit: tiny', () => {
         "West",
         "Ward",
       ],
-      "username": Array [
+      "username": [
         "a6329",
         "a7390",
         "A9999",
