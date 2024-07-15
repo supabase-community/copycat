@@ -636,7 +636,7 @@ copycat.paragraph('foo')
 
 #### `options`
 
-- **`minSentences=3` and `minSentences=7`:** the minimum and maximum possible number of sentences that a returned paragraph will contain.
+- **`minSentences=3` and `maxSentences=7`:** the minimum and maximum possible number of sentences that a returned paragraph will contain.
 - **`minClauses=1` and `maxClauses=2`:** the minimum and maximum possible number of clauses that each sentence will contain.
 - **`minWords=5` and `maxWords=8`:** the minimum and maximum possible number of words that each clause will contain.
 - **`minSyllables=1` and `maxSyllables=4`:** the minimum and maximum possible number of syllables that returned words will contain
