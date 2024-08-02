@@ -1583,7 +1583,7 @@ __metadata:
     eslint-config-prettier: "npm:^9.1.0"
     eslint-plugin-prettier: "npm:^5.1.3"
     fast-stats: "npm:^0.0.6"
-    fictional: "npm:^2.0.2"
+    fictional: "npm:^2.0.3"
     is-email: "npm:^1.0.2"
     is-mac-address: "npm:^1.0.4"
     is-url: "npm:^1.2.4"
@@ -3394,15 +3394,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fictional@npm:^2.0.2":
-  version: 2.0.2
-  resolution: "fictional@npm:2.0.2"
+"fictional@npm:^2.0.3":
+  version: 2.0.3
+  resolution: "fictional@npm:2.0.3"
   dependencies:
     decimal.js: "npm:^10.4.3"
     fast-json-stable-stringify: "npm:^2.1.0"
     fnv-plus: "npm:^1.3.1"
     siphash: "npm:^1.1.0"
-  checksum: 10c0/a21b0cd85333b7e41079c10d41a5f3467290460ea75a6257b9ae1403e6a7ef45b0dc4ede4ca110f2e7d265802c89e37921b46284ff97791f3627b7850e7a70cf
+  checksum: 10c0/d2ce8cfdceeb5ee8fe7294e8b46669d8677dc57cba3a45a2f02e7403e19b7b6d295146caa7c12d1a7d7f420954083aa5f49403495e41f0205f527968170b9252
   languageName: node
   linkType: hard
 
