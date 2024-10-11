@@ -301,6 +301,8 @@ copycat.dateString('foo')
 #### `options`
 
 - **`minYear=1980` and `maxYear=2019`:** the minimum and maximum possible year values for returned dates
+- **`min=new Date(Date.UTC(1980, 0, 1)): Date | string amd max=new Date(Date.UTC(2019, 11, 31, 23, 59, 59, 999)): Date | string`:** the minimum and maximum possible values.
+- **`min: Date | string amd max: Date | string`:** alternatively to `minYear` and `maxYear` you can provide exact values.
 
 ### `copycat.uuid(input)`
 
