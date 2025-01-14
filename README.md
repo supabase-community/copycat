@@ -506,7 +506,7 @@ Takes in an [`input`](#input) value and returns a string value resembling a pass
 
 ```js
 copycat.password('foo')
-// => 'orq[s$^zgx6L'
+// => 'o%qesg^]^x6L'
 ```
 
 **Note:** not recommended for use as a personal password generator.
